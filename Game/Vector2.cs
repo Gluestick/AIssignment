@@ -55,5 +55,16 @@ namespace ISGPAI.Game
 				a.Y + b.Y
 			);
 		}
+
+		/// <summary>
+		/// Subtract the components of two vectors with eachother.
+		/// </summary>
+		public static Vector2 operator -(Vector2 a, Vector2 b)
+		{
+			return new Vector2(
+				a.X - b.X,
+				a.Y - b.Y
+			);
+		}
 	}
 }
