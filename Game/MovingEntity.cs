@@ -2,12 +2,12 @@
 {
 	abstract internal class MovingEntity
 	{
-		protected Vector2 _velocity;
-		protected Vector2 _heading;
-		protected Vector2 _side;
-		protected double _mass;
-		protected double _maxSpeed;
-		protected double _maxForce;
-		protected double _maxTurnRate;
+		private Vector2 _velocity;
+		private Vector2 _heading;
+		private Vector2 _side;
+		private double _mass;
+		private double _maxSpeed;
+		private double _maxForce;
+		private double _maxTurnRate;
 	}
 }
