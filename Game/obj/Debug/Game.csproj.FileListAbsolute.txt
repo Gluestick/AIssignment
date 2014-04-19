@@ -1,0 +1,13 @@
+C:\Cygwin\home\Joep\isgpai\ISGPAI\Game\bin\Debug\Game.exe.config
+C:\Cygwin\home\Joep\isgpai\ISGPAI\Game\obj\Debug\Game.csprojResolveAssemblyReference.cache
+C:\Cygwin\home\Joep\isgpai\ISGPAI\Game\obj\Debug\ISGPAI.Game.Properties.Resources.resources
+C:\Cygwin\home\Joep\isgpai\ISGPAI\Game\obj\Debug\Game.csproj.GenerateResource.Cache
+C:\Cygwin\home\Joep\isgpai\ISGPAI\Game\bin\Debug\Game.exe
+C:\Cygwin\home\Joep\isgpai\ISGPAI\Game\bin\Debug\Game.pdb
+C:\Cygwin\home\Joep\isgpai\ISGPAI\Game\bin\Debug\Game.exe.CodeAnalysisLog.xml
+C:\Cygwin\home\Joep\isgpai\ISGPAI\Game\bin\Debug\Game.exe.lastcodeanalysissucceeded
+C:\Cygwin\home\Joep\isgpai\ISGPAI\Game\obj\Debug\Game.exe
+C:\Cygwin\home\Joep\isgpai\ISGPAI\Game\obj\Debug\Game.pdb
+C:\Cygwin\home\Joep\isgpai\Game\bin\Debug\Game.exe.config
+C:\Cygwin\home\Joep\isgpai\Game\obj\Debug\Game.exe
+C:\Cygwin\home\Joep\isgpai\Game\obj\Debug\Game.pdb
