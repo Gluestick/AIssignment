@@ -21,6 +21,15 @@
 			}
 		}
 
+		/// <summary>
+		/// Get the current position of this entity in the game world.
+		/// </summary>
+		public Vector2 Position
+		{
+			get { return _position; }
+			set { _position = value; }
+		}
+
 		// The BaseGameEntity constructor in the book takes an id as a parameter.
 		// This means that whoever is creating an entity object is responsible
 		// for picking a correct id. I thought it was a better idea to keep this
