@@ -82,5 +82,25 @@ namespace ISGPAI.Game
 				a.Y - b.Y
 			);
 		}
+
+		/// <summary>
+		/// Multiply the two components of the vector with the double value.
+		/// </summary>
+		public static Vector2 operator *(Vector2 v, double d)
+		{
+			return new Vector2(
+				v.X * d,
+				v.Y * d
+			);
+		}
+
+		/// <summary>
+		/// Multiply the two components of the vector with the double value.
+		/// </summary>
+		public static Vector2 operator *(double d, Vector2 v)
+		{
+			// Copy pasta kills kittens :(. Call other operator instead.
+			return v * d;
+		}
 	}
 }
