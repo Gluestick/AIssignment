@@ -12,6 +12,7 @@
 		/// </summary>
 		public Seek(Entity target)
 		{
+			this._target = target;
 		}
 
 		public Vector2 Steer(MovingEntity agent)
