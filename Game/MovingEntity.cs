@@ -3,7 +3,7 @@
 	/// <summary>
 	/// Abstract entity that allows implementations to move around the game world.
 	/// </summary>
-	abstract internal class MovingEntity
+	abstract internal class MovingEntity : Entity
 	{
 		private Vector2 _velocity;
 		private Vector2 _heading;
