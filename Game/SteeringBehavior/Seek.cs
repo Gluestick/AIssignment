@@ -15,9 +15,15 @@
 			this._target = target;
 		}
 
+		/// <summary>
+		/// Calculate steering velocity for the agent.
+		/// </summary>
 		public Vector2 Steer(MovingEntity agent)
 		{
-			throw new System.NotImplementedException();
+			Vector2 desiredVelocity = Vector2.Normalize(
+				_target.Position - agent.Position
+			) * agent.MaxSpeed;
+			return desiredVelocity - agent.Velocity;
 		}
 	}
 }
