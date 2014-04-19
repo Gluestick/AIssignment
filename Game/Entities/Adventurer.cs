@@ -1,4 +1,4 @@
-﻿namespace ISGPAI.Game
+﻿namespace ISGPAI.Game.Entities
 {
 	internal class Adventurer : MovingEntity
 	{

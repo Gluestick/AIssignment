@@ -1,4 +1,6 @@
-﻿namespace ISGPAI.Game.SteeringBehavior
+﻿using ISGPAI.Game.Entities;
+
+namespace ISGPAI.Game.SteeringBehavior
 {
 	/// <summary>
 	/// Steering behavior that seeks a certain entity.

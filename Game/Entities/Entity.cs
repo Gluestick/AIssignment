@@ -1,4 +1,4 @@
-﻿namespace ISGPAI.Game
+﻿namespace ISGPAI.Game.Entities
 {
 	/// <summary>
 	/// Abstract class for entities within the game world.
