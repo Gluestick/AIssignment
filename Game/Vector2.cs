@@ -38,10 +38,10 @@ namespace ISGPAI.Game
 		/// Returns a vector that points in the same direction, but with
 		/// a length of 1.
 		/// </summary>
-		public Vector2 Normalize()
+		public static Vector2 Normalize(Vector2 v)
 		{
-			Vector2 result = new Vector2(_x, _y);
-			double vectorLength = Length;
+			Vector2 result = new Vector2(v.X, v.Y);
+			double vectorLength = v.Length;
 			if (vectorLength > Double.Epsilon)
 			{
 				result.X /= vectorLength;
