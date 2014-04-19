@@ -35,6 +35,22 @@ namespace ISGPAI.Game
 		}
 
 		/// <summary>
+		/// Returns a vector that points in the same direction, but with
+		/// a length of 1.
+		/// </summary>
+		public Vector2 Normalize()
+		{
+			Vector2 result = new Vector2(_x, _y);
+			double vectorLength = Length;
+			if (vectorLength > Double.Epsilon)
+			{
+				result.X /= vectorLength;
+				result.Y /= vectorLength;
+			}
+			return result;
+		}
+
+		/// <summary>
 		/// Multiply the components of two vectors with eachother.
 		/// </summary>
 		public static Vector2 operator *(Vector2 a, Vector2 b)
