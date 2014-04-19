@@ -33,5 +33,16 @@ namespace ISGPAI.Game
 			this._x = x;
 			this._y = y;
 		}
+
+		/// <summary>
+		/// Multiply the components of two vectors with eachother.
+		/// </summary>
+		public static Vector2 operator *(Vector2 a, Vector2 b)
+		{
+			return new Vector2(
+				a.X * b.X,
+				a.Y * b.Y
+			);
+		}
 	}
 }
