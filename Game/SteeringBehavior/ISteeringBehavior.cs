@@ -1,4 +1,4 @@
-﻿namespace ISGPAI.Game
+﻿namespace ISGPAI.Game.SteeringBehavior
 {
 	/// <summary>
 	/// Strategy for steering behavior.
