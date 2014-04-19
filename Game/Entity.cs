@@ -5,6 +5,9 @@
 	/// </summary>
 	abstract internal class Entity
 	{
+		private int _id;
+		private static int _nextValidId = 0;
+
 		/// <summary>
 		/// Gets the Id that uniquely identifies this entity.
 		/// </summary>
@@ -15,9 +18,6 @@
 				return _id;
 			}
 		}
-
-		private int _id;
-		private static int _nextValidId = 0;
 
 		// The BaseGameEntity constructor in the book takes an id as a parameter.
 		// This means that whoever is creating an entity object is responsible
