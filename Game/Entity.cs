@@ -8,6 +8,8 @@
 		private int _id;
 		private static int _nextValidId = 0;
 
+		protected Vector2 _position;
+
 		/// <summary>
 		/// Gets the Id that uniquely identifies this entity.
 		/// </summary>
