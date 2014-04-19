@@ -1,6 +1,6 @@
 ﻿namespace ISGPAI.Game
 {
-	class MovingEntity
+	abstract internal class MovingEntity
 	{
 		protected Vector2 _velocity;
 		protected Vector2 _heading;
