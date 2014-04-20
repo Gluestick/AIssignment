@@ -11,6 +11,14 @@ namespace ISGPAI.Game
 	{
 		ICollection<Entity> _entities;
 
+		/// <summary>
+		/// Get an enumerable with all the entities in this world.
+		/// </summary>
+		IEnumerable<Entity> Entities
+		{
+			get { return _entities; }
+		}
+
 		public World()
 		{
 			// We don't need to access individual elements of this collection,
