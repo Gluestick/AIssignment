@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using ISGPAI.Game.Entities;
 
 namespace ISGPAI.Game
@@ -44,6 +45,7 @@ namespace ISGPAI.Game
 
 		public void Paint(Graphics g)
 		{
+			g.SmoothingMode = SmoothingMode.AntiAlias;
 			foreach (Entity entity in _entities)
 			{
 				entity.Paint(g);
