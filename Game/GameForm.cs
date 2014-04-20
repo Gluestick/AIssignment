@@ -1,14 +1,15 @@
 ﻿using System;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ISGPAI.Game
 {
 	public partial class GameForm : Form
 	{
-		const int FrameRate = 60;
-
 		World _world;
-		Timer _loopTimer;
+		Thread _gameThread;
+		long _timeSinceLastUpdate;
+		bool _playing;
 
 		public GameForm()
 		{
@@ -23,20 +24,34 @@ namespace ISGPAI.Game
 		{
 			_world = TestWorldFactory.CreateWorld();
 			_gamePanel.World = _world;
-			_loopTimer = new Timer();
-			_loopTimer.Interval = 1000 / 60;
-			_loopTimer.Tick += GameTick;
-			_loopTimer.Start();
+			_timeSinceLastUpdate = 0;
+
+			_gameThread = new Thread(GameLoop);
+			_playing = true;
+			_gameThread.Start();
 		}
 
 		/// <summary>
 		/// The game loop. Updates and invalidates the game. Painting happens
 		/// in the OnPaint method of GamePanel.
 		/// </summary>
-		private void GameTick(object sender, EventArgs e)
+		private void GameLoop()
 		{
-			_world.Update();
-			_gamePanel.Invalidate();
+			while (_playing)
+			{
+				_world.Update(_timeSinceLastUpdate);
+				_timeSinceLastUpdate = DateTime.Now.Ticks;
+				_gamePanel.Invalidate();
+			}
+		}
+
+		/// <summary>
+		/// Stops the gameloop, so the program will close.
+		/// </summary>
+		protected override void OnFormClosing(FormClosingEventArgs e)
+		{
+			base.OnFormClosing(e);
+			_playing = false;
 		}
 	}
 }
