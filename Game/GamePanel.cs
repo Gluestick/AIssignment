@@ -25,6 +25,10 @@ namespace ISGPAI.Game
 		protected override void OnPaint(PaintEventArgs e)
 		{
 			base.OnPaint(e);
+			if (World != null)
+			{
+				World.Paint(e.Graphics);
+			}
 		}
 	}
 }
