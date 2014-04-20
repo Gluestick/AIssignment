@@ -26,6 +26,14 @@ namespace ISGPAI.Game
 			_entities = new LinkedList<Entity>();
 		}
 
+		/// <summary>
+		/// Add a new entity to keep track of.
+		/// </summary>
+		public void AddEntity(Entity newEntity)
+		{
+			_entities.Add(newEntity);
+		}
+
 		public void Update()
 		{
 			foreach (Entity entity in _entities)
