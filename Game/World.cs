@@ -28,11 +28,18 @@ namespace ISGPAI.Game
 
 		public void Update()
 		{
+			foreach (Entity entity in _entities)
+			{
+				entity.Update();
+			}
 		}
 
 		public void Paint(Graphics g)
 		{
-			throw new System.NotImplementedException();
+			foreach (Entity entity in _entities)
+			{
+				entity.Paint(g);
+			}
 		}
 	}
 }
