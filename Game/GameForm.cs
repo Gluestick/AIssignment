@@ -24,10 +24,10 @@ namespace ISGPAI.Game
 		{
 			_world = TestWorldFactory.CreateWorld();
 			_gamePanel.World = _world;
-			_timeSinceLastUpdate = 0;
 
 			_gameThread = new Thread(GameLoop);
 			_playing = true;
+			_timeSinceLastUpdate = DateTime.Now.Ticks;
 			_gameThread.Start();
 		}
 
@@ -39,7 +39,8 @@ namespace ISGPAI.Game
 		{
 			while (_playing)
 			{
-				_world.Update(_timeSinceLastUpdate);
+				long elapsedTicks = DateTime.Now.Ticks - _timeSinceLastUpdate;
+				_world.Update((double)elapsedTicks / TimeSpan.TicksPerSecond);
 				_timeSinceLastUpdate = DateTime.Now.Ticks;
 				_gamePanel.Invalidate();
 			}
