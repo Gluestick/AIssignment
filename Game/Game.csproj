@@ -78,6 +78,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SteeringBehaviors\Seek.cs" />
+    <Compile Include="TestWorldFactory.cs" />
     <Compile Include="Vector2.cs" />
     <Compile Include="World.cs" />
     <EmbeddedResource Include="GameForm.resx">
