@@ -35,11 +35,11 @@ namespace ISGPAI.Game
 			_entities.Add(newEntity);
 		}
 
-		public void Update()
+		public void Update(double elapsed)
 		{
 			foreach (Entity entity in _entities)
 			{
-				entity.Update();
+				entity.Update(elapsed);
 			}
 		}
 

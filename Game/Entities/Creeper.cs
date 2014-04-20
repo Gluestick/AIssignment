@@ -4,7 +4,7 @@ namespace ISGPAI.Game.Entities
 {
 	internal class Creeper : MovingEntity
 	{
-		public override void Update()
+		public override void Update(double elapsed)
 		{
 			throw new System.NotImplementedException();
 		}

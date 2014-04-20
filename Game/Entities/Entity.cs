@@ -41,7 +41,7 @@ namespace ISGPAI.Game.Entities
 			_nextValidId++;
 		}
 
-		public abstract void Update();
+		public abstract void Update(double elapsed);
 		public abstract void Paint(Graphics g); // From IPaintable.
 	}
 }
