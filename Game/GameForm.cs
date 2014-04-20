@@ -22,6 +22,7 @@ namespace ISGPAI.Game
 		private void InitializeGame()
 		{
 			_world = new World();
+			_gamePanel.World = _world;
 			_loopTimer = new Timer();
 			_loopTimer.Interval = 1000 / 60;
 			_loopTimer.Tick += GameTick;
@@ -30,12 +31,12 @@ namespace ISGPAI.Game
 
 		/// <summary>
 		/// The game loop. Updates and invalidates the game. Painting happens
-		/// in the OnPaint method.
+		/// in the OnPaint method of GamePanel.
 		/// </summary>
 		private void GameTick(object sender, EventArgs e)
 		{
 			_world.Update();
-			Invalidate();
+			_gamePanel.Invalidate();
 		}
 	}
 }
