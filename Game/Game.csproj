@@ -69,6 +69,9 @@
     <Compile Include="GameForm.Designer.cs">
       <DependentUpon>GameForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GamePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SteeringBehaviors\ISteeringBehavior.cs" />
     <Compile Include="Entities\MovingEntity.cs" />
     <Compile Include="Program.cs" />
