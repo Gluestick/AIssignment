@@ -6,7 +6,6 @@ namespace ISGPAI.Game.Entities
 	{
 		public override void Update()
 		{
-			throw new System.NotImplementedException();
 		}
 
 		public override void Paint(Graphics g)
