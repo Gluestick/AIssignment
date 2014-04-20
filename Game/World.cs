@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Drawing;
 using ISGPAI.Game.Entities;
 
 namespace ISGPAI.Game
@@ -21,7 +22,7 @@ namespace ISGPAI.Game
 		{
 		}
 
-		public void Paint(System.Drawing.Graphics g)
+		public void Paint(Graphics g)
 		{
 			throw new System.NotImplementedException();
 		}
