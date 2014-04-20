@@ -21,7 +21,7 @@ namespace ISGPAI.Game
 		/// </summary>
 		private void InitializeGame()
 		{
-			_world = new World();
+			_world = TestWorldFactory.CreateWorld();
 			_gamePanel.World = _world;
 			_loopTimer = new Timer();
 			_loopTimer.Interval = 1000 / 60;
