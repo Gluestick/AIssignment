@@ -1,4 +1,6 @@
-﻿namespace ISGPAI.Game.Entities
+﻿using System.Drawing;
+
+namespace ISGPAI.Game.Entities
 {
 	/// <summary>
 	/// Abstract class for entities within the game world.
@@ -40,5 +42,6 @@
 		}
 
 		public abstract void Update();
+		public abstract void Paint(Graphics g);
 	}
 }
