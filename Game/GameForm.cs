@@ -6,10 +6,10 @@ namespace ISGPAI.Game
 {
 	public partial class GameForm : Form
 	{
-		World _world;
-		Thread _gameThread;
-		long _timeSinceLastUpdate;
-		bool _playing;
+		private World _world;
+		private Thread _gameThread;
+		private long _timeSinceLastUpdate;
+		private bool _playing;
 
 		public GameForm()
 		{
