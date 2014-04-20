@@ -37,13 +37,5 @@ namespace ISGPAI.Game
 			_world.Update();
 			Invalidate();
 		}
-
-		/// <summary>
-		/// Paint the game.
-		/// </summary>
-		protected override void OnPaint(PaintEventArgs e)
-		{
-			base.OnPaint(e);
-		}
 	}
 }
