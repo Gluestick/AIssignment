@@ -5,7 +5,7 @@ namespace ISGPAI.Game.Entities
 	/// <summary>
 	/// Abstract class for entities within the game world.
 	/// </summary>
-	abstract internal class Entity
+	abstract internal class Entity : IPaintable
 	{
 		private int _id;
 		private static int _nextValidId = 0;
@@ -42,6 +42,6 @@ namespace ISGPAI.Game.Entities
 		}
 
 		public abstract void Update();
-		public abstract void Paint(Graphics g);
+		public abstract void Paint(Graphics g); // From IPaintable.
 	}
 }
