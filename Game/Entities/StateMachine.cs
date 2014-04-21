@@ -15,11 +15,21 @@
 		}
 
 		/// <summary>
-		/// Update the statemachine and change state if necessary.
+		/// Updates the statemachine and changes state if necessary.
 		/// </summary>
 		public void Update(double elapsed)
 		{
 			throw new System.NotImplementedException();
+		}
+
+		public void ChangeState(State<T> newState)
+		{
+			if (_currentState != null)
+			{
+				_currentState.Exit();
+			}
+			_currentState = newState;
+			_currentState.Enter();
 		}
 	}
 }
