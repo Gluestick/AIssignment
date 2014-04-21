@@ -40,6 +40,7 @@ namespace ISGPAI.Game
 			while (_playing)
 			{
 				long elapsedTicks = DateTime.Now.Ticks - _timeSinceLastUpdate;
+				_timeSinceLastUpdate = DateTime.Now.Ticks;
 				_world.Update((double)elapsedTicks / TimeSpan.TicksPerSecond);
 				_gamePanel.Invalidate();
 			}
