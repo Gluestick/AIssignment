@@ -5,6 +5,13 @@
 	/// </summary>
 	internal class CreeperSeeking : State<Creeper>
 	{
+		private Entity _target;
+
+		public CreeperSeeking(Creeper agent, Entity target)
+		{
+			this._target = target;
+		}
+
 		public override void Enter(Creeper entity)
 		{
 			throw new System.NotImplementedException();
