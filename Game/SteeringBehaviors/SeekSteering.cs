@@ -20,7 +20,7 @@ namespace ISGPAI.Game.SteeringBehaviors
 		/// <summary>
 		/// Calculate steering velocity for the agent.
 		/// </summary>
-		public Vector2 Steer(MovingEntity agent)
+		public Vector2 Steer(MovingEntity agent, double elapsed)
 		{
 			Vector2 desiredVelocity = Vector2.Normalize(
 				_target.Position - agent.Position

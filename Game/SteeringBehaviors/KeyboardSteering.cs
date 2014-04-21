@@ -15,7 +15,7 @@ namespace ISGPAI.Game.SteeringBehaviors
 			_steeringForce = steeringForce;
 		}
 
-		public Vector2 Steer(MovingEntity agent)
+		public Vector2 Steer(MovingEntity agent, double elapsed)
 		{
 			Vector2 force = new Vector2();
 			if (Keyboard.IsKeyDown(Keys.Left))
