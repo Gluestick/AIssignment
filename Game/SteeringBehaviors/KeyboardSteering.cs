@@ -26,11 +26,11 @@ namespace ISGPAI.Game.SteeringBehaviors
 			{
 				force.X += _steeringForce;
 			}
-			if (Keyboard.IsKeyDown(Keys.Down))
+			if (Keyboard.IsKeyDown(Keys.Up))
 			{
 				force.Y -= _steeringForce;
 			}
-			if (Keyboard.IsKeyDown(Keys.Up))
+			if (Keyboard.IsKeyDown(Keys.Down))
 			{
 				force.Y += _steeringForce;
 			}
