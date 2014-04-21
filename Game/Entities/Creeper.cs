@@ -15,7 +15,7 @@ namespace ISGPAI.Game.Entities
 
 		public override void Update(double elapsed)
 		{
-			throw new System.NotImplementedException();
+			_stateMachine.Update(elapsed);
 		}
 
 		public override void Paint(Graphics g)

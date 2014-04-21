@@ -15,7 +15,7 @@
 		/// <summary>
 		/// Update the statemachine and change state if necessary.
 		/// </summary>
-		public void Update()
+		public void Update(double elapsed)
 		{
 			throw new System.NotImplementedException();
 		}
