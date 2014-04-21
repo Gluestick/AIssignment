@@ -5,6 +5,11 @@
 	/// </summary>
 	internal class CreeperWandering : State<Creeper>
 	{
+		public CreeperWandering(Creeper agent)
+			: base(agent)
+		{
+		}
+
 		public override void Enter()
 		{
 			throw new System.NotImplementedException();

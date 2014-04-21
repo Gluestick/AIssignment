@@ -8,6 +8,7 @@
 		private Entity _target;
 
 		public CreeperSeeking(Creeper agent, Entity target)
+			: base(agent)
 		{
 			this._target = target;
 		}
