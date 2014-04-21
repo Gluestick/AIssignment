@@ -3,11 +3,10 @@
 	/// <summary>
 	/// Abstract class that provides methods for entity states.
 	/// </summary>
-	/// <typeparam name="T"></typeparam>
 	internal abstract class State<T>
 	{
-		public abstract void Enter(T entity);
-		public abstract void Update(T entity, double elapsed);
-		public abstract void Exit(T entity);
+		public abstract void Enter();
+		public abstract void Update(double elapsed);
+		public abstract void Exit();
 	}
 }

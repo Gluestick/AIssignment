@@ -5,17 +5,17 @@
 	/// </summary>
 	internal class CreeperWandering : State<Creeper>
 	{
-		public override void Enter(Creeper entity)
+		public override void Enter()
 		{
 			throw new System.NotImplementedException();
 		}
 
-		public override void Update(Creeper entity, double elapsed)
+		public override void Update(double elapsed)
 		{
 			throw new System.NotImplementedException();
 		}
 
-		public override void Exit(Creeper entity)
+		public override void Exit()
 		{
 			throw new System.NotImplementedException();
 		}
