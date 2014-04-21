@@ -102,5 +102,16 @@ namespace ISGPAI.Game
 			// Copy pasta kills kittens :(. Call other operator instead.
 			return v * d;
 		}
+
+		/// <summary>
+		/// Divide the two components of the vector with the double value.
+		/// </summary>
+		public static Vector2 operator /(Vector2 v, double d)
+		{
+			return new Vector2(
+				v.X / d,
+				v.Y / d
+			);
+		}
 	}
 }
