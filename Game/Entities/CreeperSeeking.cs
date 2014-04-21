@@ -1,5 +1,8 @@
 ﻿namespace ISGPAI.Game.Entities
 {
+	/// <summary>
+	/// Creeper state when the creeper is nearby the adventurer.
+	/// </summary>
 	internal class CreeperSeeking : State<Creeper>
 	{
 		public override void Enter(Creeper entity)

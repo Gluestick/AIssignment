@@ -1,5 +1,9 @@
 ﻿namespace ISGPAI.Game.Entities
 {
+	/// <summary>
+	/// Abstract class that provides methods for entity states.
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
 	internal abstract class State<T>
 		where T : Entity
 	{
