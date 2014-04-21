@@ -38,14 +38,16 @@ namespace ISGPAI.Game
 		/// Truncates the vector to the specified length. Does nothing if the
 		/// vector's length is shorter than the specified length.
 		/// </summary>
-		public void Truncate(double length)
+		public Vector2 Truncate(double length)
 		{
+			Vector2 result = new Vector2(_x, _y);
 			double factor = this.Length / length;
 			if (factor > 1)
 			{
-				X /= factor;
-				Y /= factor;
+				result.X /= factor;
+				result.Y /= factor;
 			}
+			return result;
 		}
 
 		/// <summary>
