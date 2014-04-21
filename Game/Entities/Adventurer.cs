@@ -9,7 +9,7 @@ namespace ISGPAI.Game.Entities
 
 		public Adventurer()
 		{
-			_steering = new KeyboardSteering();
+			_steering = new KeyboardSteering(100);
 			Mass = 75;
 			MaxSpeed = 100;
 		}
