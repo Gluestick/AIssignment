@@ -1,4 +1,4 @@
-﻿using System.Windows.Input;
+﻿using System.Windows.Forms;
 using ISGPAI.Game.Entities;
 
 namespace ISGPAI.Game.SteeringBehaviors
@@ -11,19 +11,19 @@ namespace ISGPAI.Game.SteeringBehaviors
 		public Vector2 Steer(MovingEntity agent)
 		{
 			Vector2 force = new Vector2();
-			if (Keyboard.IsKeyDown(Key.Left))
+			if (Keyboard.IsKeyDown(Keys.Left))
 			{
 				force.X -= 1;
 			}
-			if (Keyboard.IsKeyDown(Key.Right))
+			if (Keyboard.IsKeyDown(Keys.Right))
 			{
 				force.X += 1;
 			}
-			if (Keyboard.IsKeyDown(Key.Down))
+			if (Keyboard.IsKeyDown(Keys.Down))
 			{
 				force.Y -= 1;
 			}
-			if (Keyboard.IsKeyDown(Key.Up))
+			if (Keyboard.IsKeyDown(Keys.Up))
 			{
 				force.Y += 1;
 			}
