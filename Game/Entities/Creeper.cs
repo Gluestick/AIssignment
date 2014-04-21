@@ -15,6 +15,11 @@ namespace ISGPAI.Game.Entities
 			this._world = world;
 		}
 
+		public void ChangeState(State<Creeper> newState)
+		{
+			_stateMachine.ChangeState(newState);
+		}
+
 		public override void Update(double elapsed)
 		{
 			_stateMachine.Update(elapsed);
