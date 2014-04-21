@@ -9,7 +9,7 @@ namespace ISGPAI.Game.Entities
 
 		public Creeper(World world)
 		{
-			this._stateMachine = new StateMachine<Creeper>(this);
+			this._stateMachine = new StateMachine<Creeper>(this, null);
 			this._world = world;
 		}
 

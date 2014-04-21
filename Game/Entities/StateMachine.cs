@@ -6,10 +6,12 @@
 	internal class StateMachine<T>
 	{
 		private T _owner;
+		private State<T> _currentState;
 
-		public StateMachine(T owner)
+		public StateMachine(T owner, State<T> startState)
 		{
 			this._owner = owner;
+			this._currentState = startState;
 		}
 
 		/// <summary>
