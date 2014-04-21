@@ -10,12 +10,7 @@ namespace ISGPAI.Game
 		public static World CreateWorld()
 		{
 			World world = new World();
-			world.AddEntity(
-				new Adventurer()
-				{
-					Position = new Vector2(100, 100)
-				}
-			);
+			world.AddEntity(new Adventurer());
 			return world;
 		}
 	}
