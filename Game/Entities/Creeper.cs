@@ -9,7 +9,9 @@ namespace ISGPAI.Game.Entities
 
 		public Creeper(World world)
 		{
-			this._stateMachine = new StateMachine<Creeper>(this, null);
+			// Wandering is the default state.
+			this._stateMachine = new StateMachine<Creeper>(
+				this, new CreeperWandering(this, _world));
 			this._world = world;
 		}
 

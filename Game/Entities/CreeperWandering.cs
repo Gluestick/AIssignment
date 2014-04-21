@@ -5,9 +5,12 @@
 	/// </summary>
 	internal class CreeperWandering : State<Creeper>
 	{
-		public CreeperWandering(Creeper agent)
+		private World _world;
+
+		public CreeperWandering(Creeper agent, World world)
 			: base(agent)
 		{
+			this._world = world;
 		}
 
 		public override void Enter()
