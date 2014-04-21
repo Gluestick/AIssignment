@@ -78,7 +78,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SteeringBehaviors\KeyboardSteering.cs" />
-    <Compile Include="SteeringBehaviors\Seek.cs" />
+    <Compile Include="SteeringBehaviors\SeekSteering.cs" />
     <Compile Include="TestWorldFactory.cs" />
     <Compile Include="Vector2.cs" />
     <Compile Include="World.cs" />
