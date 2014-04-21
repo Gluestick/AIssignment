@@ -2,7 +2,7 @@
 
 namespace ISGPAI.Game.Entities
 {
-	internal class Creeper : MovingEntity
+	internal class Creeper : MovingEntity, IStateChangeable<Creeper>
 	{
 		private World _world;
 		private StateMachine<Creeper> _stateMachine;

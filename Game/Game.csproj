@@ -65,6 +65,7 @@
     <Compile Include="Entities\CreeperSeeking.cs" />
     <Compile Include="Entities\CreeperWandering.cs" />
     <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\IStateChangeable.cs" />
     <Compile Include="Entities\State.cs" />
     <Compile Include="Entities\StateMachine.cs" />
     <Compile Include="GameForm.cs">
