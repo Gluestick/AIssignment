@@ -9,9 +9,9 @@ namespace ISGPAI.Game.Entities
 
 		public Adventurer()
 		{
-			_steering = new KeyboardSteering(0.00001);
+			_steering = new KeyboardSteering(100000);
 			Mass = 75;
-			MaxSpeed = 0.0001;
+			MaxSpeed = 500;
 		}
 
 		public override void Update(double elapsed)
