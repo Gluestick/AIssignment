@@ -1,4 +1,5 @@
-﻿namespace ISGPAI.Game.Entities
+﻿using System.Diagnostics;
+namespace ISGPAI.Game.Entities
 {
 	/// <summary>
 	/// Creeper state when there is no adventurer nearby.
@@ -15,17 +16,17 @@
 
 		public override void Enter()
 		{
-			throw new System.NotImplementedException();
+			Debug.WriteLine("Creeper {0} starts wandering.", _agent.Id);
 		}
 
 		public override void Update(double elapsed)
 		{
-			throw new System.NotImplementedException();
 		}
 
 		public override void Exit()
 		{
-			throw new System.NotImplementedException();
+			Debug.WriteLine("Creeper {0} found target {1}. Start seeking.",
+				_agent.Id, "TODO");
 		}
 	}
 }
