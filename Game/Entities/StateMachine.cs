@@ -13,5 +13,13 @@
 		{
 			this._owner = owner;
 		}
+
+		/// <summary>
+		/// Update the statemachine and change state if necessary.
+		/// </summary>
+		public void Update()
+		{
+			throw new System.NotImplementedException();
+		}
 	}
 }
