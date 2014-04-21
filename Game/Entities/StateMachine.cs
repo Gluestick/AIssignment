@@ -1,15 +1,13 @@
 ﻿namespace ISGPAI.Game.Entities
 {
 	/// <summary>
-	/// State machine for entities.
+	/// Generic statemachine.
 	/// </summary>
-	/// <typeparam name="T">An implementation of the Entity class.</typeparam>
 	internal class StateMachine<T>
-		where T : Entity
 	{
-		private Entity _owner;
+		private T _owner;
 
-		public StateMachine(Entity owner)
+		public StateMachine(T owner)
 		{
 			this._owner = owner;
 		}
