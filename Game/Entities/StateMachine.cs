@@ -19,7 +19,10 @@
 		/// </summary>
 		public void Update(double elapsed)
 		{
-			throw new System.NotImplementedException();
+			if (_currentState != null)
+			{
+				_currentState.Update(elapsed);
+			}
 		}
 
 		public void ChangeState(State<T> newState)
