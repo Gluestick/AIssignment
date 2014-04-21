@@ -73,6 +73,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="IPaintable.cs" />
+    <Compile Include="Keyboard.cs" />
     <Compile Include="SteeringBehaviors\ISteeringBehavior.cs" />
     <Compile Include="Entities\MovingEntity.cs" />
     <Compile Include="Program.cs" />
