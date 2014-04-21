@@ -24,6 +24,7 @@ namespace ISGPAI.Game
 		/// </summary>
 		protected override void OnPaint(PaintEventArgs e)
 		{
+			e.Graphics.TranslateTransform(Width / 2, Height / 2);
 			base.OnPaint(e);
 			if (World != null)
 			{
