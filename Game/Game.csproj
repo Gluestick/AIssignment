@@ -72,6 +72,7 @@
     <Compile Include="GamePanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="IPaintable.cs" />
     <Compile Include="Keyboard.cs" />
     <Compile Include="SteeringBehaviors\ISteeringBehavior.cs" />
