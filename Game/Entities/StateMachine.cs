@@ -1,5 +1,9 @@
 ﻿namespace ISGPAI.Game.Entities
 {
+	/// <summary>
+	/// State machine for entities.
+	/// </summary>
+	/// <typeparam name="T">An implementation of the Entity class.</typeparam>
 	internal class StateMachine<T>
 		where T : Entity
 	{
