@@ -1,9 +1,17 @@
 ﻿using System.Drawing;
+using ISGPAI.Game.SteeringBehaviors;
 
 namespace ISGPAI.Game.Entities
 {
 	internal class Adventurer : MovingEntity
 	{
+		private ISteeringBehavior _steering;
+
+		public Adventurer()
+		{
+			_steering = new KeyboardSteering();
+		}
+
 		public override void Update(double elapsed)
 		{
 		}
