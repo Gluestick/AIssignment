@@ -10,12 +10,12 @@ namespace ISGPAI.Game
 	/// </summary>
 	internal class World : IPaintable
 	{
-		ICollection<Entity> _entities;
+		private ICollection<Entity> _entities;
 
 		/// <summary>
 		/// Get an enumerable with all the entities in this world.
 		/// </summary>
-		IEnumerable<Entity> Entities
+		public IEnumerable<Entity> Entities
 		{
 			get { return _entities; }
 		}
