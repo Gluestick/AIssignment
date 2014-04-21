@@ -5,7 +5,6 @@
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
 	internal abstract class State<T>
-		where T : Entity
 	{
 		public abstract void Enter(T entity);
 		public abstract void Update(T entity, double elapsed);
