@@ -63,6 +63,7 @@
     <Compile Include="Entities\Adventurer.cs" />
     <Compile Include="Entities\Creeper.cs" />
     <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\State.cs" />
     <Compile Include="Entities\StateMachine.cs" />
     <Compile Include="GameForm.cs">
       <SubType>Form</SubType>
