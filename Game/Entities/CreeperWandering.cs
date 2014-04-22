@@ -19,6 +19,7 @@ namespace ISGPAI.Game.Entities
 
 		public override void Enter()
 		{
+			_agent.MaxSpeed = 50;
 			Debug.WriteLine("Creeper {0} starts wandering.", _agent.Id);
 		}
 
@@ -37,7 +38,7 @@ namespace ISGPAI.Game.Entities
 				}
 			}
 			// Wander the creeper around.
-			Vector2 steeringForce = _steeringBehavior.Steer(_agent, elapsed) * 100000000;
+			Vector2 steeringForce = _steeringBehavior.Steer(_agent, elapsed) * 200;
 			Vector2 acceleration = steeringForce / _agent.Mass;
 			_agent.Velocity += acceleration * elapsed;
 			_agent.Velocity = _agent.Velocity.Truncate(_agent.MaxSpeed);
