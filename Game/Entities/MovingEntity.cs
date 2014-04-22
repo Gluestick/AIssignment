@@ -1,4 +1,6 @@
-﻿namespace ISGPAI.Game.Entities
+﻿using ISGPAI.Game.Maths;
+
+namespace ISGPAI.Game.Entities
 {
 	/// <summary>
 	/// Abstract entity that allows implementations to move around the game world.

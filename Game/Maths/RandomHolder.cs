@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ISGPAI.Game
+namespace ISGPAI.Game.Maths
 {
 	/// <summary>
 	/// Creates one Random instance to use throughout the entire program.

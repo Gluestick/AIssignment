@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using ISGPAI.Game.Maths;
 using ISGPAI.Game.SteeringBehaviors;
 namespace ISGPAI.Game.Entities
 {

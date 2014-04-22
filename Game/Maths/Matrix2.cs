@@ -1,4 +1,4 @@
-﻿namespace ISGPAI.Game
+﻿namespace ISGPAI.Game.Maths
 {
 	/// <summary>
 	/// I don't know what's happening here. Ask the book.

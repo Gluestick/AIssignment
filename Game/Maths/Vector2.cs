@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ISGPAI.Game
+namespace ISGPAI.Game.Maths
 {
 	/// <summary>
 	/// 2 Dimensional vector.

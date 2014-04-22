@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ISGPAI.Game
+namespace ISGPAI.Game.Maths
 {
 	internal class Matrix
 	{
