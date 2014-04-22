@@ -11,7 +11,7 @@ namespace ISGPAI.Game.Entities
 		/// <summary>
 		/// Sight in pixels.
 		/// </summary>
-		private const double Sight = 250;
+		public const double Sight = 250;
 
 		private Entity _target;
 		private World _world;
@@ -34,7 +34,7 @@ namespace ISGPAI.Game.Entities
 		public override void Update(double elapsed)
 		{
 			// Go back to wandering if our target is out of sight.
-			if ((_agent.Position - _target.Position).Length < Sight)
+			if ((_agent.Position - _target.Position).Length > Sight)
 			{
 				_agent.ChangeState(new CreeperWandering(_agent, _world));
 			}
