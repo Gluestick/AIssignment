@@ -14,6 +14,7 @@ namespace ISGPAI.Game.SteeringBehaviors
 
 		public Vector2 Steer(MovingEntity agent, double elapsed)
 		{
+			return new Vector2(1, 0);
 			throw new System.NotImplementedException();
 			double jitterThisTimeSlice = _jitter * elapsed;
 			_wanderTarget += new Vector2(
