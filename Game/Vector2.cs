@@ -35,6 +35,15 @@ namespace ISGPAI.Game
 		}
 
 		/// <summary>
+		/// Copies a vector to a new instance.
+		/// </summary>
+		public Vector2(Vector2 vector)
+		{
+			this._x = vector._x;
+			this._y = vector._y;
+		}
+
+		/// <summary>
 		/// Truncates the vector to the specified length. Does nothing if the
 		/// vector's length is shorter than the specified length.
 		/// </summary>
