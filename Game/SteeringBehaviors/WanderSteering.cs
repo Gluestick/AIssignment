@@ -14,7 +14,6 @@ namespace ISGPAI.Game.SteeringBehaviors
 
 		public Vector2 Steer(MovingEntity agent, double elapsed)
 		{
-			return new Vector2(1, 0);
 			throw new System.NotImplementedException();
 			double jitterThisTimeSlice = _jitter * elapsed;
 			_wanderTarget += new Vector2(
@@ -24,8 +23,7 @@ namespace ISGPAI.Game.SteeringBehaviors
 			_wanderTarget = Vector2.Normalize(_wanderTarget);
 			_wanderTarget *= _radius;
 			Vector2 target = _wanderTarget + new Vector2(_distance, 0);
-
-
+			//Vector2 worldSpaceTarget = 
 		}
 
 		/// <summary>

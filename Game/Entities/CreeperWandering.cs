@@ -36,6 +36,7 @@ namespace ISGPAI.Game.Entities
 					}
 				}
 			}
+			// Wander the creeper around.
 			Vector2 steeringForce = _steeringBehavior.Steer(_agent, elapsed) * 8;
 			Vector2 acceleration = steeringForce / _agent.Mass;
 			_agent.Velocity += acceleration * elapsed;
