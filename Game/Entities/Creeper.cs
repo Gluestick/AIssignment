@@ -15,7 +15,7 @@ namespace ISGPAI.Game.Entities
 			// Wandering is the default state.
 			this._world = world;
 			this._stateMachine = new StateMachine<Creeper>(
-				this, new CreeperSeeking(this, _world.Entities.First()));
+				this, new CreeperSeeking(this, _world.Entities.First(), _world));
 		}
 
 		public void ChangeState(State<Creeper> newState)

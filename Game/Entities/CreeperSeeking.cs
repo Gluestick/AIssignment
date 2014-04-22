@@ -8,13 +8,20 @@ namespace ISGPAI.Game.Entities
 	/// </summary>
 	internal class CreeperSeeking : State<Creeper>
 	{
+		/// <summary>
+		/// Sight in pixels.
+		/// </summary>
+		private const double Sight = 250;
+
 		private Entity _target;
+		private World _world;
 		private ISteeringBehavior _steeringBehavior;
 
-		public CreeperSeeking(Creeper agent, Entity target)
+		public CreeperSeeking(Creeper agent, Entity target, World world)
 			: base(agent)
 		{
 			this._target = target;
+			this._world = world;
 			_steeringBehavior = new SeekSteering(target);
 		}
 
@@ -26,6 +33,12 @@ namespace ISGPAI.Game.Entities
 
 		public override void Update(double elapsed)
 		{
+			// Go back to wandering if our target is out of sight.
+			if ((_agent.Position - _target.Position).Length < Sight)
+			{
+				_agent.ChangeState(new CreeperWandering(_agent, _world));
+			}
+
 			Vector2 steeringForce = _steeringBehavior.Steer(_agent, elapsed) * 8;
 			Vector2 acceleration = steeringForce / _agent.Mass;
 			_agent.Velocity += acceleration * elapsed;
