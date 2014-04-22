@@ -5,6 +5,8 @@
 	/// </summary>
 	internal class Matrix2
 	{
+		private Matrix _matrix;
+
 		private double _11;
 		private double _12;
 		private double _13;
@@ -19,6 +21,8 @@
 
 		public Matrix2()
 		{
+			_matrix = new Matrix();
+
 			_11 = 1;
 			_12 = 0;
 			_13 = 0;
