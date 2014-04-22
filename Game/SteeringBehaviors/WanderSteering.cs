@@ -21,7 +21,7 @@ namespace ISGPAI.Game.SteeringBehaviors
 				_radius * Math.Cos(theta),
 				_radius * Math.Sin(theta)
 			);
-			_radius = 0.97;
+			_radius = 0.50;
 			_distance = 5;
 			_jitter = 80;
 		}
