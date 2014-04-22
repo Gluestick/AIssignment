@@ -53,9 +53,23 @@
 			MatrixMultiply(mat);
 		}
 
-		public Vector2 Translate(double x, double y)
+		public void Translate(double x, double y)
 		{
-			throw new System.NotImplementedException();
+			Matrix mat = new Matrix();
+
+			mat._11 = 1;
+			mat._12 = 0;
+			mat._13 = 0;
+
+			mat._21 = 0;
+			mat._22 = 1;
+			mat._23 = 0;
+
+			mat._31 = x;
+			mat._32 = y;
+			mat._33 = 1;
+
+			MatrixMultiply(mat);
 		}
 
 		public Vector2 Transform(Vector2 transformPoint)
