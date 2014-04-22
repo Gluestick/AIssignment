@@ -74,7 +74,16 @@
 
 		public Vector2 Transform(Vector2 transformPoint)
 		{
-			throw new System.NotImplementedException();
+			double x =
+				(_matrix._11 * transformPoint.X) +
+				(_matrix._21 * transformPoint.Y) +
+				_matrix._31;
+			double y =
+				(_matrix._12 * transformPoint.X) +
+				(_matrix._22 * transformPoint.Y) +
+				_matrix._32;
+
+			return new Vector2(x, y);
 		}
 
 		private void MatrixMultiply(Matrix mat)
