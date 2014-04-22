@@ -30,7 +30,7 @@ namespace ISGPAI.Game.Entities
 			{
 				if (entity is Adventurer)
 				{
-					if ((_agent.Position - entity.Position).Length <= CreeperSeeking.Sight)
+					if ((_agent.Position - entity.Position).Length <= Creeper.Sight)
 					{
 						_agent.ChangeState(new CreeperSeeking(_agent, entity, _world));
 						return;

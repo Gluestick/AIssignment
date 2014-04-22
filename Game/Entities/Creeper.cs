@@ -5,6 +5,8 @@ namespace ISGPAI.Game.Entities
 {
 	internal class Creeper : MovingEntity, IStateChangeable<Creeper>
 	{
+		public const int Sight = 250;
+
 		private World _world;
 		private StateMachine<Creeper> _stateMachine;
 
