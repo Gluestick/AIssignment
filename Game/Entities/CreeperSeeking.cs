@@ -27,6 +27,7 @@ namespace ISGPAI.Game.Entities
 
 		public override void Enter()
 		{
+			_agent.MaxSpeed = 200;
 			Debug.WriteLine("Creeper {0} starts seeking {1}.",
 				_agent.Id, _target.Id);
 		}

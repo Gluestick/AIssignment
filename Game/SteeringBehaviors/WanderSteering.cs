@@ -22,8 +22,8 @@ namespace ISGPAI.Game.SteeringBehaviors
 				_radius * Math.Sin(theta)
 			);
 			_radius = 0.97;
-			_distance = 1.77;
-			_jitter = 40;
+			_distance = 5;
+			_jitter = 80;
 		}
 
 		public Vector2 Steer(MovingEntity agent, double elapsed)
