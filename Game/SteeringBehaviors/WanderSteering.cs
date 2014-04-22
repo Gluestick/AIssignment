@@ -23,7 +23,9 @@ namespace ISGPAI.Game.SteeringBehaviors
 			_wanderTarget = Vector2.Normalize(_wanderTarget);
 			_wanderTarget *= _radius;
 			Vector2 target = _wanderTarget + new Vector2(_distance, 0);
-			//Vector2 worldSpaceTarget = 
+			Vector2 worldSpaceTarget = Transformation.PointToWorldSpace(
+				target, agent.Heading, agent.Side, agent.Position);
+			return worldSpaceTarget - agent.Position;
 		}
 
 		/// <summary>

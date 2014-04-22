@@ -41,5 +41,10 @@
 		{
 			throw new System.NotImplementedException();
 		}
+
+		public Vector2 Transform(Vector2 transformPoint)
+		{
+			throw new System.NotImplementedException();
+		}
 	}
 }

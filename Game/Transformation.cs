@@ -13,6 +13,11 @@
 		{
 			throw new System.NotImplementedException();
 			Vector2 transformPoint = new Vector2(point);
+			Matrix2 matrix;
+			matrix.Rotate(agentHeading, agentSide);
+			matrix.Translate(agentPosition.X, agentPosition.Y);
+			Vector2 result = matrix.Transform(transformPoint);
+			return result;
 		}
 	}
 }
