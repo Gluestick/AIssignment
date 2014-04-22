@@ -15,19 +15,19 @@ namespace ISGPAI.Game.SteeringBehaviors
 		public Vector2 Steer(MovingEntity agent, double elapsed)
 		{
 			Vector2 force = new Vector2();
-			if (Keyboard.IsKeyDown(Keys.Left))
+			if (Keyboard.IsKeyDown(Keys.Left) || Keyboard.IsKeyDown(Keys.A))
 			{
 				force.X -= 1;
 			}
-			if (Keyboard.IsKeyDown(Keys.Right))
+			if (Keyboard.IsKeyDown(Keys.Right) || Keyboard.IsKeyDown(Keys.D))
 			{
 				force.X += 1;
 			}
-			if (Keyboard.IsKeyDown(Keys.Up))
+			if (Keyboard.IsKeyDown(Keys.Up) || Keyboard.IsKeyDown(Keys.W))
 			{
 				force.Y -= 1;
 			}
-			if (Keyboard.IsKeyDown(Keys.Down))
+			if (Keyboard.IsKeyDown(Keys.Down) || Keyboard.IsKeyDown(Keys.S))
 			{
 				force.Y += 1;
 			}
