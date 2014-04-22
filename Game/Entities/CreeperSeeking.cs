@@ -11,7 +11,7 @@ namespace ISGPAI.Game.Entities
 		/// <summary>
 		/// Sight in pixels.
 		/// </summary>
-		public const double Sight = 250;
+		public const double Sight = 0;
 
 		private Entity _target;
 		private World _world;

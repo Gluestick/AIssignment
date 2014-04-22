@@ -11,9 +11,8 @@
 			Vector2 agentSide,
 			Vector2 agentPosition)
 		{
-			throw new System.NotImplementedException();
 			Vector2 transformPoint = new Vector2(point);
-			Matrix2 matrix;
+			Matrix2 matrix = new Matrix2();
 			matrix.Rotate(agentHeading, agentSide);
 			matrix.Translate(agentPosition.X, agentPosition.Y);
 			Vector2 result = matrix.Transform(transformPoint);
