@@ -138,5 +138,13 @@ namespace ISGPAI.Game
 				v.Y / d
 			);
 		}
+
+		/// <summary>
+		/// Returns a new vector perpendicular to this vector.
+		/// </summary>
+		public Vector2 Perpendicular()
+		{
+			return new Vector2(-_y, _x);
+		}
 	}
 }

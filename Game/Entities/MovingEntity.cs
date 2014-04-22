@@ -16,7 +16,16 @@
 		public Vector2 Velocity
 		{
 			get { return _velocity; }
-			set { _velocity = value; }
+			set
+			{
+				_velocity = value;
+				// Update heading and side with non zero velocity.
+				if (_velocity.Length >= double.Epsilon)
+				{
+					_heading = Vector2.Normalize(_velocity);
+					_side = _heading.Perpendicular();
+				}
+			}
 		}
 
 		public Vector2 Heading
