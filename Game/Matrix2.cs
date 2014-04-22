@@ -7,33 +7,21 @@
 	{
 		private Matrix _matrix;
 
-		private double _11;
-		private double _12;
-		private double _13;
-
-		private double _21;
-		private double _22;
-		private double _23;
-
-		private double _31;
-		private double _32;
-		private double _33;
-
 		public Matrix2()
 		{
 			_matrix = new Matrix();
 
-			_11 = 1;
-			_12 = 0;
-			_13 = 0;
+			_matrix._11 = 1;
+			_matrix._12 = 0;
+			_matrix._13 = 0;
 
-			_21 = 0;
-			_22 = 1;
-			_23 = 0;
+			_matrix._21 = 0;
+			_matrix._22 = 1;
+			_matrix._23 = 0;
 
-			_31 = 0;
-			_32 = 0;
-			_33 = 1;
+			_matrix._31 = 0;
+			_matrix._32 = 0;
+			_matrix._33 = 1;
 		}
 
 		public void Rotate(Vector2 forward, Vector2 side)

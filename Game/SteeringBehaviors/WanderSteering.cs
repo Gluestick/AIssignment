@@ -1,4 +1,5 @@
-﻿using ISGPAI.Game.Entities;
+﻿using System;
+using ISGPAI.Game.Entities;
 
 namespace ISGPAI.Game.SteeringBehaviors
 {
@@ -14,6 +15,12 @@ namespace ISGPAI.Game.SteeringBehaviors
 
 		public WanderSteering()
 		{
+			double theta = RandomHolder.Instance.NextDouble() * 2 * Math.PI;
+
+			_wanderTarget = new Vector2(
+				_radius * Math.Cos(theta),
+				_radius * Math.Sin(theta)
+			);
 			_radius = 0.97;
 			_distance = 1.77;
 			_jitter = 40;
