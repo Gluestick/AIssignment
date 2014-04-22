@@ -10,8 +10,8 @@ namespace ISGPAI.Game.Entities
 
 		public Creeper(World world)
 		{
-			Mass = 0.5;
-			MaxSpeed = 400;
+			Mass = 1;
+			MaxSpeed = 200;
 			// Wandering is the default state.
 			this._world = world;
 			this._stateMachine = new StateMachine<Creeper>(

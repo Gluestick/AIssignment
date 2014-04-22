@@ -9,14 +9,14 @@ namespace ISGPAI.Game.Entities
 
 		public Adventurer()
 		{
-			_steering = new KeyboardSteering(100000);
-			Mass = 75;
-			MaxSpeed = 500;
+			_steering = new KeyboardSteering();
+			Mass = 1;
+			MaxSpeed = 400;
 		}
 
 		public override void Update(double elapsed)
 		{
-			Vector2 steeringForce = _steering.Steer(this, elapsed);
+			Vector2 steeringForce = _steering.Steer(this, elapsed) * 1000;
 			Vector2 acceleration = steeringForce / Mass;
 			Velocity += acceleration * elapsed;
 			Velocity = Velocity.Truncate(MaxSpeed);

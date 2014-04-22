@@ -8,11 +8,8 @@ namespace ISGPAI.Game.SteeringBehaviors
 	/// </summary>
 	internal class KeyboardSteering : ISteeringBehavior
 	{
-		private double _steeringForce;
-
-		public KeyboardSteering(double steeringForce)
+		public KeyboardSteering()
 		{
-			_steeringForce = steeringForce;
 		}
 
 		public Vector2 Steer(MovingEntity agent, double elapsed)
@@ -20,19 +17,19 @@ namespace ISGPAI.Game.SteeringBehaviors
 			Vector2 force = new Vector2();
 			if (Keyboard.IsKeyDown(Keys.Left))
 			{
-				force.X -= _steeringForce;
+				force.X -= 1;
 			}
 			if (Keyboard.IsKeyDown(Keys.Right))
 			{
-				force.X += _steeringForce;
+				force.X += 1;
 			}
 			if (Keyboard.IsKeyDown(Keys.Up))
 			{
-				force.Y -= _steeringForce;
+				force.Y -= 1;
 			}
 			if (Keyboard.IsKeyDown(Keys.Down))
 			{
-				force.Y += _steeringForce;
+				force.Y += 1;
 			}
 			return force;
 		}
