@@ -36,9 +36,21 @@
 			_33 = 1;
 		}
 
-		public Vector2 Rotate(Vector2 agentHeading, Vector2 agentSide)
+		public void Rotate(Vector2 forward, Vector2 side)
 		{
-			throw new System.NotImplementedException();
+			Matrix mat = new Matrix();
+			mat._11 = forward.X;
+			mat._12 = forward.Y;
+			mat._13 = 0;
+
+			mat._21 = side.X;
+			mat._22 = side.Y;
+			mat._23 = 0;
+
+			mat._31 = 0;
+			mat._32 = 0;
+			mat._33 = 1;
+			MatrixMultiply(mat);
 		}
 
 		public Vector2 Translate(double x, double y)
@@ -49,6 +61,10 @@
 		public Vector2 Transform(Vector2 transformPoint)
 		{
 			throw new System.NotImplementedException();
+		}
+
+		private void MatrixMultiply(Matrix mat)
+		{
 		}
 	}
 }

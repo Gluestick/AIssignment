@@ -8,17 +8,17 @@ namespace ISGPAI.Game
 {
 	internal class Matrix
 	{
-		private double _11;
-		private double _12;
-		private double _13;
+		public double _11;
+		public double _12;
+		public double _13;
 
-		private double _21;
-		private double _22;
-		private double _23;
+		public double _21;
+		public double _22;
+		public double _23;
 
-		private double _31;
-		private double _32;
-		private double _33;
+		public double _31;
+		public double _32;
+		public double _33;
 
 		public Matrix()
 		{
