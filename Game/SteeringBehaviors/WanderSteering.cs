@@ -12,6 +12,13 @@ namespace ISGPAI.Game.SteeringBehaviors
 		private double _jitter;
 		private Vector2 _wanderTarget;
 
+		public WanderSteering()
+		{
+			_radius = 0.97;
+			_distance = 1.77;
+			_jitter = 40;
+		}
+
 		public Vector2 Steer(MovingEntity agent, double elapsed)
 		{
 			double jitterThisTimeSlice = _jitter * elapsed;
@@ -24,7 +31,8 @@ namespace ISGPAI.Game.SteeringBehaviors
 			Vector2 target = _wanderTarget + new Vector2(_distance, 0);
 			Vector2 worldSpaceTarget = Transformation.PointToWorldSpace(
 				target, agent.Heading, agent.Side, agent.Position);
-			return worldSpaceTarget - agent.Position;
+			Vector2 result = worldSpaceTarget - agent.Position;
+			return result;
 		}
 
 		/// <summary>
