@@ -20,6 +20,8 @@ namespace ISGPAI.Game
 			get { return _entities; }
 		}
 
+		public double Elapsed { get; set; }
+
 		public World()
 		{
 			// We don't need to access individual elements of this collection,
@@ -37,6 +39,7 @@ namespace ISGPAI.Game
 
 		public void Update(double elapsed)
 		{
+			this.Elapsed = elapsed;
 			foreach (Entity entity in _entities)
 			{
 				entity.Update(elapsed);

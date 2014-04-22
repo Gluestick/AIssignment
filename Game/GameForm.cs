@@ -8,7 +8,7 @@ namespace ISGPAI.Game
 	{
 		private World _world;
 		private Thread _gameThread;
-		private long _timeSinceLastUpdate;
+		private DateTime _timeSinceLastUpdate;
 		private bool _playing;
 
 		public GameForm()
@@ -27,7 +27,7 @@ namespace ISGPAI.Game
 
 			_gameThread = new Thread(GameLoop);
 			_playing = true;
-			_timeSinceLastUpdate = DateTime.Now.Ticks;
+			_timeSinceLastUpdate = DateTime.Now;
 			_gameThread.Start();
 		}
 
@@ -37,13 +37,17 @@ namespace ISGPAI.Game
 		/// </summary>
 		private void GameLoop()
 		{
+			double elapsed;
 			while (_playing)
 			{
-				long elapsedTicks = DateTime.Now.Ticks - _timeSinceLastUpdate;
-				_timeSinceLastUpdate = DateTime.Now.Ticks;
-				_world.Update((double)elapsedTicks / TimeSpan.TicksPerSecond);
+				do
+				{
+					elapsed = (DateTime.Now - _timeSinceLastUpdate).TotalSeconds;
+				}
+				while (elapsed < double.Epsilon);
+				_timeSinceLastUpdate = DateTime.Now;
+				_world.Update(elapsed);
 				_gamePanel.Invalidate();
-				Thread.Sleep(1);
 			}
 		}
 

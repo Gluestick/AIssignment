@@ -26,7 +26,7 @@ namespace ISGPAI.Game.Entities
 
 		public override void Update(double elapsed)
 		{
-			Vector2 steeringForce = _steeringBehavior.Steer(_agent);
+			Vector2 steeringForce = _steeringBehavior.Steer(_agent, elapsed);
 			Vector2 acceleration = steeringForce / _agent.Mass;
 			_agent.Velocity += acceleration * elapsed;
 			_agent.Velocity = _agent.Velocity.Truncate(_agent.MaxSpeed);
