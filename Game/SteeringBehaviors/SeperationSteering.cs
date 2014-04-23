@@ -8,6 +8,13 @@ namespace ISGPAI.Game.SteeringBehaviors
 	/// </summary>
 	internal class SeperationSteering : ISteeringBehavior
 	{
+		private World _world;
+
+		public SeperationSteering(World world)
+		{
+			this._world = world;
+		}
+
 		public Vector2 Steer(MovingEntity agent, double elapsed)
 		{
 			throw new System.NotImplementedException();
