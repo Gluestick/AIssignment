@@ -64,6 +64,7 @@
     <Compile Include="Entities\Creeper\Creeper.cs" />
     <Compile Include="Entities\Creeper\CreeperSeeking.cs" />
     <Compile Include="Entities\Creeper\CreeperWandering.cs" />
+    <Compile Include="Entities\Follower.cs" />
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\IStateChangeable.cs" />
     <Compile Include="Entities\State.cs" />
