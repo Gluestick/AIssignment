@@ -10,14 +10,16 @@ namespace ISGPAI.Game
 	{
 		public static World CreateWorld()
 		{
+			Adventurer adventurer = new Adventurer();
 			World world = new World();
-			world.AddEntity(new Adventurer());
+			world.AddEntity(adventurer);
 			world.AddEntity(
 				new Creeper(world)
 				{
 					Position = new Vector2(300, -200)
 				}
 			);
+			world.AddEntity(new Follower(adventurer));
 			return world;
 		}
 	}
