@@ -4,14 +4,27 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ISGPAI.Game.Maths;
+using ISGPAI.Game.SteeringBehaviors;
 
 namespace ISGPAI.Game.Entities
 {
 	internal class Follower : MovingEntity
 	{
+		private ISteeringBehavior _steering;
+
+		public Follower(Entity target)
+		{
+			_steering = new ArriveSteering(target);
+		}
+
 		public override void Update(double elapsed)
 		{
-			throw new NotImplementedException();
+			Vector2 steeringForce = _steering.Steer(this, elapsed) * 1000;
+			Vector2 acceleration = steeringForce / Mass;
+			Velocity += acceleration * elapsed;
+			Velocity = Velocity.Truncate(MaxSpeed);
+			Position += Velocity * elapsed;
 		}
 
 		public override void Paint(System.Drawing.Graphics g)
