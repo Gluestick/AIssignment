@@ -4,6 +4,9 @@ using ISGPAI.Game.SteeringBehaviors;
 
 namespace ISGPAI.Game.Entities
 {
+	/// <summary>
+	/// Entity that arrives the specified target.
+	/// </summary>
 	internal class Follower : MovingEntity
 	{
 		private ISteeringBehavior _steering;
