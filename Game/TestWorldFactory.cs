@@ -20,6 +20,16 @@ namespace ISGPAI.Game
 				}
 			);
 			world.AddEntity(new Follower(adventurer));
+
+
+			// Conga conga conga conga!
+			const int CongaSize = 5;
+			Entity lastInConga = adventurer;
+			for (int i = 0; i < CongaSize; i++)
+			{
+				lastInConga = new Follower(lastInConga);
+				world.AddEntity(lastInConga);
+			}
 			return world;
 		}
 	}
