@@ -22,11 +22,11 @@ namespace ISGPAI.Game
 
 
 			// Conga conga conga conga!
-			const int CongaSize = 5;
+			const int CongaSize = 15;
 			MovingEntity lastInConga = adventurer;
 			for (int i = 0; i < CongaSize; i++)
 			{
-				lastInConga = new Follower(lastInConga, 50);
+				lastInConga = new Follower(lastInConga, 20);
 				world.AddEntity(lastInConga);
 			}
 			return world;
