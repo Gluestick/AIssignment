@@ -19,15 +19,14 @@ namespace ISGPAI.Game
 					Position = new Vector2(300, -200)
 				}
 			);
-			world.AddEntity(new Follower(adventurer));
 
 
 			// Conga conga conga conga!
 			const int CongaSize = 5;
-			Entity lastInConga = adventurer;
+			MovingEntity lastInConga = adventurer;
 			for (int i = 0; i < CongaSize; i++)
 			{
-				lastInConga = new Follower(lastInConga);
+				lastInConga = new Follower(lastInConga, 50);
 				world.AddEntity(lastInConga);
 			}
 			return world;

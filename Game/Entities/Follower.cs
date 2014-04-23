@@ -11,11 +11,11 @@ namespace ISGPAI.Game.Entities
 	{
 		private ISteeringBehavior _steering;
 
-		public Follower(Entity target)
+		public Follower(MovingEntity target, double distance)
 		{
 			MaxSpeed = 200;
 			Mass = 0.5;
-			_steering = new ArriveSteering(target);
+			_steering = new ArriveInFrontOf(target, distance);
 		}
 
 		public override void Update(double elapsed)
