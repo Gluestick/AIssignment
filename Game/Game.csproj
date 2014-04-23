@@ -83,6 +83,7 @@
     <Compile Include="Maths\Matrix.cs" />
     <Compile Include="Maths\Matrix2.cs" />
     <Compile Include="Maths\RandomHolder.cs" />
+    <Compile Include="SteeringBehaviors\ArriveSteering.cs" />
     <Compile Include="SteeringBehaviors\ISteeringBehavior.cs" />
     <Compile Include="Entities\MovingEntity.cs" />
     <Compile Include="Program.cs" />
