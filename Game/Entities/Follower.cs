@@ -13,6 +13,8 @@ namespace ISGPAI.Game.Entities
 
 		public Follower(Entity target)
 		{
+			MaxSpeed = 200;
+			Mass = 0.5;
 			_steering = new ArriveSteering(target);
 		}
 
