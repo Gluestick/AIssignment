@@ -18,7 +18,7 @@ namespace ISGPAI.Game.SteeringBehaviors
 
 		public Vector2 Steer(MovingEntity agent, double elapsed)
 		{
-			const double Deceleration = 1;
+			const double Deceleration = 0.5;
 
 			Vector2 toTarget = _target.Position - agent.Position;
 			double distance = toTarget.Length;
