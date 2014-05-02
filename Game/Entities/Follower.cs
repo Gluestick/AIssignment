@@ -9,17 +9,20 @@ namespace ISGPAI.Game.Entities
 	/// </summary>
 	internal class Follower : MovingEntity
 	{
-		private ISteeringBehavior _steering;
+		private ArriveAtSteering _steering;
+		private MovingEntity _target;
 
 		public Follower(MovingEntity target, double distance)
 		{
 			MaxSpeed = 200;
-			Mass = 0.5;
-			_steering = new ArriveInFrontOf(target, distance);
+			Mass = 1;
+			this._target = target;
+			this._steering = new ArriveAtSteering(target.Position);
 		}
 
 		public override void Update(double elapsed)
 		{
+			_steering.Location = _target.Position;
 			Vector2 steeringForce = _steering.Steer(this, elapsed) * 1000;
 			Vector2 acceleration = steeringForce / Mass;
 			Velocity += acceleration * elapsed;
