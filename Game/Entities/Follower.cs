@@ -12,12 +12,12 @@ namespace ISGPAI.Game.Entities
 		private ArriveAtSteering _steering;
 		private MovingEntity _target;
 
-		public Follower(MovingEntity target, double distance)
+		public Follower(MovingEntity target, float distance)
 		{
 			MaxSpeed = 200;
 			Mass = 1;
 			this._target = target;
-			this._steering = new ArriveAtSteering(target.Position);
+			this._steering = new ArriveAtSteering(target.Position, distance);
 		}
 
 		public override void Update(double elapsed)

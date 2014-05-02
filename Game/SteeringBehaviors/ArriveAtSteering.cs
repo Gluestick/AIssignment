@@ -10,10 +10,12 @@ namespace ISGPAI.Game.SteeringBehaviors
 	internal class ArriveAtSteering : ISteeringBehavior
 	{
 		public Vector2 Location { get; set; }
+		public float Distance { get; set; }
 
-		public ArriveAtSteering(Vector2 location)
+		public ArriveAtSteering(Vector2 location, float distance = 0)
 		{
 			this.Location = location;
+			this.Distance = distance;
 		}
 
 		public Vector2 Steer(MovingEntity agent, double elapsed)
@@ -22,7 +24,7 @@ namespace ISGPAI.Game.SteeringBehaviors
 
 			Vector2 toTarget = Location - agent.Position;
 			double distance = toTarget.Length;
-			if (distance > 0)
+			if (distance > Distance)
 			{
 				double speed = distance / Deceleration;
 				speed = Math.Min(speed, agent.MaxSpeed);
