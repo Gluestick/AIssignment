@@ -13,16 +13,9 @@ namespace ISGPAI.Game
 			Adventurer adventurer = new Adventurer();
 			World world = new World();
 			world.AddEntity(adventurer);
-			world.AddEntity(
-				new Creeper(world)
-				{
-					Position = new Vector2(300, -200)
-				}
-			);
-
 
 			// Conga conga conga conga!
-			const int CongaSize = 4;
+			const int CongaSize = 1;
 			MovingEntity lastInConga = adventurer;
 			for (int i = 0; i < CongaSize; i++)
 			{

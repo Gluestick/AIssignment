@@ -14,7 +14,7 @@ namespace ISGPAI.Game.Entities
 
 		public Follower(MovingEntity target, float distance)
 		{
-			MaxSpeed = 200;
+			MaxSpeed = 250;
 			Mass = 1;
 			this._target = target;
 			this._steering = new ArriveAtSteering(target.Position, distance);

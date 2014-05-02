@@ -20,15 +20,17 @@ namespace ISGPAI.Game.SteeringBehaviors
 
 		public Vector2 Steer(MovingEntity agent, double elapsed)
 		{
-			const double Deceleration = 0.5;
+			const double Deceleration = 1;
 
 			Vector2 toTarget = Location - agent.Position;
-			double distance = toTarget.Length;
-			if (distance > Distance)
+			Vector2 toTargetDistance = Vector2.Normalize(toTarget);
+			toTargetDistance *= toTarget.Length - Distance;
+			double distance = toTargetDistance.Length;
+			if (distance > 0)
 			{
 				double speed = distance / Deceleration;
 				speed = Math.Min(speed, agent.MaxSpeed);
-				Vector2 desiredVelocity = toTarget * speed / distance;
+				Vector2 desiredVelocity = toTargetDistance * speed / distance;
 				return desiredVelocity - agent.Velocity;
 			}
 			else
