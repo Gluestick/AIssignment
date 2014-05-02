@@ -31,9 +31,11 @@ namespace ISGPAI.Game.SteeringBehaviors
 				Vector2 desiredVelocity = toTarget * speed / distance;
 				return desiredVelocity - agent.Velocity;
 			}
-
-			// We're ON our target... Don't move.
-			return new Vector2(0, 0);
+			else
+			{
+				// We're ON our target... Don't move.
+				return new Vector2(0, 0);
+			}
 		}
 	}
 }
