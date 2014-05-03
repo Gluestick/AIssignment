@@ -10,14 +10,14 @@ namespace ISGPAI.Game.Entities
 	internal class Follower : MovingEntity
 	{
 		private ArriveAtSteering _arrive;
-		private SeperationSteering _seperate;
+		private SeparationSteering _separate;
 		private MovingEntity _target;
 
 		public Follower(World world, MovingEntity target, float distance)
 		{
 			MaxSpeed = 250;
 			Mass = 1;
-			this._seperate = new SeperationSteering(world, distance);
+			this._separate = new SeparationSteering(world, distance);
 			this._target = target;
 			this._arrive = new ArriveAtSteering(target.Position, distance);
 		}

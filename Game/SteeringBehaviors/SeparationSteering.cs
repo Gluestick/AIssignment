@@ -6,7 +6,7 @@ namespace ISGPAI.Game.SteeringBehaviors
 	/// <summary>
 	/// Makes the agent move away from any nearby entities.
 	/// </summary>
-	internal class SeperationSteering : ISteeringBehavior
+	internal class SeparationSteering : ISteeringBehavior
 	{
 		private World _world;
 
@@ -16,7 +16,7 @@ namespace ISGPAI.Game.SteeringBehaviors
 		/// </summary>
 		public double Radius { get; set; }
 
-		public SeperationSteering(World world, double radius)
+		public SeparationSteering(World world, double radius)
 		{
 			this._world = world;
 			this.Radius = radius;
