@@ -35,7 +35,7 @@ namespace ISGPAI.Game.SteeringBehaviors
 				Vector2 distance = entity.Position - agent.Position;
 
 				// Add seperating force to steering force for the current entity.
-				if (distance.Length > Radius)
+				if (distance.Length > 0 && distance.Length < Radius)
 				{
 					distance = Vector2.Normalize(distance) / distance.Length;
 					steeringForce += distance;
