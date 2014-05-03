@@ -19,7 +19,7 @@ namespace ISGPAI.Game
 			MovingEntity lastInConga = adventurer;
 			for (int i = 0; i < CongaSize; i++)
 			{
-				lastInConga = new Follower(lastInConga, 15);
+				lastInConga = new Follower(world, lastInConga, 15);
 				world.AddEntity(lastInConga);
 			}
 			return world;
