@@ -5,14 +5,14 @@ namespace ISGPAI.Game
 	internal static class WorldGraphFactory
 	{
 		public static Graph CreateGraph(
-			float x, float y,
+			int x, int y,
 			int columns, int rows,
 			float sizePerEdge)
 		{
 			Graph graph = new Graph();
-			for (int i = 0; i < columns; i++)
+			for (int i = x; i < columns; i++)
 			{
-				for (int j = 0; j < rows; j++)
+				for (int j = y; j < rows; j++)
 				{
 					AddEdgesToGraphAt(graph, i, j, sizePerEdge);
 				}

@@ -30,7 +30,7 @@ namespace ISGPAI.Game
 			// We don't need to access individual elements of this collection,
 			// so a linked list makes sense here.
 			_entities = new LinkedList<Entity>();
-			_graph = WorldGraphFactory.CreateGraph(0, 0, 10, 10, 32);
+			_graph = WorldGraphFactory.CreateGraph(-20, -20, 40, 40, 32);
 		}
 
 		/// <summary>
