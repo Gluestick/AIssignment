@@ -10,5 +10,10 @@ namespace ISGPAI.Game
 		{
 			_edges = new LinkedList<GraphEdge>();
 		}
+
+		public void AddEdge(GraphEdge edge)
+		{
+			_edges.Add(edge);
+		}
 	}
 }
