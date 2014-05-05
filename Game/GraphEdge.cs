@@ -1,0 +1,32 @@
+﻿namespace ISGPAI.Game
+{
+	internal class GraphEdge
+	{
+		private GraphNode _source;
+		private GraphNode _destination;
+
+		public GraphNode Source
+		{
+			get
+			{
+				return _source;
+			}
+		}
+
+		public GraphNode Destination
+		{
+			get
+			{
+				return _destination;
+			}
+		}
+
+		public float Cost
+		{
+			get
+			{
+				return 0f;
+			}
+		}
+	}
+}

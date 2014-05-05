@@ -79,6 +79,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Graph.cs" />
+    <Compile Include="GraphEdge.cs" />
+    <Compile Include="GraphNode.cs" />
     <Compile Include="IPaintable.cs" />
     <Compile Include="Keyboard.cs" />
     <Compile Include="Maths\Matrix.cs" />
