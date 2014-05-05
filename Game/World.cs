@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using ISGPAI.Game.Entities;
@@ -12,6 +13,7 @@ namespace ISGPAI.Game
 	{
 		private Pen _graphPen = new Pen(Color.FromArgb(230, 230, 230), 1);
 
+		private DateTime _timeSinceLastPaint;
 		private ICollection<Entity> _entities;
 		private Graph _graph;
 

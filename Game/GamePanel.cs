@@ -9,6 +9,8 @@ namespace ISGPAI.Game
 	/// </summary>
 	internal class GamePanel : Panel
 	{
+		private DateTime _timeSinceLastPaint;
+
 		/// <summary>
 		/// Game world that will be drawn on this panel.
 		/// </summary>
@@ -16,6 +18,7 @@ namespace ISGPAI.Game
 
 		public GamePanel()
 		{
+			_timeSinceLastPaint = DateTime.Now;
 			DoubleBuffered = true;
 			BackColor = Color.White;
 		}
@@ -25,7 +28,8 @@ namespace ISGPAI.Game
 		/// </summary>
 		protected override void OnPaint(PaintEventArgs e)
 		{
-			int fps = (int)Math.Round(1 / World.Elapsed, 0, MidpointRounding.AwayFromZero);
+			int fps = (int)Math.Round(1 / (DateTime.Now - _timeSinceLastPaint).TotalSeconds, 0, MidpointRounding.AwayFromZero);
+			_timeSinceLastPaint = DateTime.Now;
 			e.Graphics.DrawString(
 				string.Format("{0} FPS", fps),
 				SystemFonts.DefaultFont,
