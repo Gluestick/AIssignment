@@ -28,5 +28,11 @@
 				return 0f;
 			}
 		}
+
+		public GraphEdge(GraphNode source, GraphNode destination)
+		{
+			this._source = source;
+			this._source = destination;
+		}
 	}
 }
