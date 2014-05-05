@@ -6,6 +6,11 @@ namespace ISGPAI.Game
 	{
 		private ICollection<GraphEdge> _edges;
 
+		public IEnumerable<GraphEdge> Edges
+		{
+			get { return _edges; }
+		}
+
 		public Graph()
 		{
 			_edges = new LinkedList<GraphEdge>();
