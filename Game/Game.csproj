@@ -101,6 +101,7 @@
     <Compile Include="Maths\Transformation.cs" />
     <Compile Include="Maths\Vector2.cs" />
     <Compile Include="World.cs" />
+    <Compile Include="WorldGraphFactory.cs" />
     <EmbeddedResource Include="GameForm.resx">
       <DependentUpon>GameForm.cs</DependentUpon>
     </EmbeddedResource>

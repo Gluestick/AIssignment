@@ -32,7 +32,7 @@
 		public GraphEdge(GraphNode source, GraphNode destination)
 		{
 			this._source = source;
-			this._source = destination;
+			this._destination = destination;
 		}
 	}
 }
