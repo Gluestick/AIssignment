@@ -1,6 +1,6 @@
 ﻿namespace ISGPAI.Game.Collections
 {
-	internal interface AStarHeuristic
+	internal interface IAStarHeuristic
 	{
 		int Calculate(GraphEdge edge);
 	}
