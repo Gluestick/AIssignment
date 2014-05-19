@@ -22,6 +22,7 @@ namespace ISGPAI.Game
 				lastInConga = new Follower(world, lastInConga, 25);
 				world.AddEntity(lastInConga);
 			}
+			world.DrawGraph = true;
 			return world;
 		}
 	}

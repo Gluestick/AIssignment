@@ -11,11 +11,21 @@ namespace ISGPAI.Game
 	/// </summary>
 	internal class World : IPaintable
 	{
-		private Pen _graphPen = new Pen(Color.FromArgb(230, 230, 230), 1);
+		private const int GraphEdgeSize = 32;
+		private const int GraphWidth = 80;
+		private const int GraphHeight = 60;
 
+		private Pen _graphPen = new Pen(Color.FromArgb(230, 230, 230), 1);
+		private Bitmap _graphCache;
 		private DateTime _timeSinceLastPaint;
 		private ICollection<Entity> _entities;
 		private Graph _graph;
+
+		public bool DrawGraph
+		{
+			get;
+			set;
+		}
 
 		/// <summary>
 		/// Get an enumerable with all the entities in this world.
@@ -32,7 +42,10 @@ namespace ISGPAI.Game
 			// We don't need to access individual elements of this collection,
 			// so a linked list makes sense here.
 			_entities = new LinkedList<Entity>();
-			_graph = WorldGraphFactory.CreateGraph(-20, -20, 40, 40, 32);
+			_graph = WorldGraphFactory.CreateGraph(
+				GraphWidth / -2, GraphHeight / -2,
+				GraphWidth, GraphHeight,
+				GraphEdgeSize);
 		}
 
 		/// <summary>
@@ -56,19 +69,34 @@ namespace ISGPAI.Game
 		{
 			g.SmoothingMode = SmoothingMode.AntiAlias;
 
-			foreach (GraphEdge edge in _graph.Edges)
+			if (DrawGraph)
 			{
-				g.DrawLine(
-					_graphPen,
-					(int)edge.Source.Position.X, (int)edge.Source.Position.Y,
-					(int)edge.Destination.Position.X, (int)edge.Destination.Position.Y
-				);
+				PaintGraph(g);
 			}
 
 			foreach (Entity entity in _entities)
 			{
 				entity.Paint(g);
 			}
+		}
+
+		private void PaintGraph(Graphics g)
+		{
+			if (_graphCache == null)
+			{
+				_graphCache = new Bitmap(GraphEdgeSize * GraphWidth, GraphEdgeSize * GraphHeight);
+				Graphics cache = Graphics.FromImage(_graphCache);
+				foreach (GraphEdge edge in _graph.Edges)
+				{
+					cache.DrawLine(
+						_graphPen,
+						(int)edge.Source.Position.X, (int)edge.Source.Position.Y,
+						(int)edge.Destination.Position.X, (int)edge.Destination.Position.Y
+					);
+				}
+			}
+			g.DrawImage(_graphCache,
+				new Point(_graphCache.Width / -2, _graphCache.Height / -2));
 		}
 	}
 }
