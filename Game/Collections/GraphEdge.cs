@@ -33,6 +33,8 @@
 		{
 			this._source = source;
 			this._destination = destination;
+
+			source.AdjecentEdges.Add(this);
 		}
 	}
 }
