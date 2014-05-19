@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using ISGPAI.Game.Collections;
 using ISGPAI.Game.Entities;
 
 namespace ISGPAI.Game

@@ -36,7 +36,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -79,9 +79,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Graph.cs" />
-    <Compile Include="GraphEdge.cs" />
-    <Compile Include="GraphNode.cs" />
+    <Compile Include="Collections\Graph.cs" />
+    <Compile Include="Collections\GraphEdge.cs" />
+    <Compile Include="Collections\GraphNode.cs" />
     <Compile Include="IPaintable.cs" />
     <Compile Include="Keyboard.cs" />
     <Compile Include="Maths\Matrix.cs" />

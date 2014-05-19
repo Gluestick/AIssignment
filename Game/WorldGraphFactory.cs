@@ -1,4 +1,5 @@
-﻿using ISGPAI.Game.Maths;
+﻿using ISGPAI.Game.Collections;
+using ISGPAI.Game.Maths;
 
 namespace ISGPAI.Game
 {

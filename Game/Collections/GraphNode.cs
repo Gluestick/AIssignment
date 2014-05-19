@@ -1,6 +1,6 @@
 ﻿using ISGPAI.Game.Maths;
 
-namespace ISGPAI.Game
+namespace ISGPAI.Game.Collections
 {
 	internal class GraphNode
 	{

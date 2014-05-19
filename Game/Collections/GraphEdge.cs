@@ -1,4 +1,4 @@
-﻿namespace ISGPAI.Game
+﻿namespace ISGPAI.Game.Collections
 {
 	internal class GraphEdge
 	{

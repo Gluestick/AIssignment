@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ISGPAI.Game
+namespace ISGPAI.Game.Collections
 {
 	internal class Graph
 	{
