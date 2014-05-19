@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace ISGPAI.Game.Collections
 {
 	internal class AStarAlgorithm : IShortestPathAlgorithm
 	{
-		public IEnumerable<GraphNode> GetShortestPath(Graph graph)
+		public IEnumerable<GraphNode> GetShortestPath(GraphNode start, GraphNode destination)
 		{
-			throw new NotImplementedException();
+			throw new System.NotImplementedException();
 		}
 	}
 }
