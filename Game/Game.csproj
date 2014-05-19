@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Collections\AStarAlgorithm.cs" />
     <Compile Include="Collections\AStarHeuristic.cs" />
+    <Compile Include="Collections\EuclideanDistanceHeuristic.cs" />
     <Compile Include="Collections\IShortestPathAlgorithm.cs" />
     <Compile Include="Entities\Adventurer.cs" />
     <Compile Include="Entities\Creeper\Creeper.cs" />
