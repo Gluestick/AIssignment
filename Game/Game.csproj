@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Collections\AStarAlgorithm.cs" />
+    <Compile Include="Collections\AStarGraphNode.cs" />
     <Compile Include="Collections\IAStarHeuristic.cs" />
     <Compile Include="Collections\EuclideanDistanceHeuristic.cs" />
     <Compile Include="Collections\IShortestPathAlgorithm.cs" />

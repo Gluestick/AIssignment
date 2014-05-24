@@ -2,7 +2,7 @@
 
 namespace ISGPAI.Game.Collections
 {
-	internal class AStarAlgorithm : IShortestPathAlgorithm
+	internal partial class AStarAlgorithm : IShortestPathAlgorithm
 	{
 		private Graph _graph;
 		private ICollection<GraphNode> _visitedNodes;
@@ -24,6 +24,7 @@ namespace ISGPAI.Game.Collections
 				{
 				}
 			}
+			return null;
 		}
 
 		private void Initialize()
