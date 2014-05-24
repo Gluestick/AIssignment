@@ -2,6 +2,6 @@
 {
 	internal interface IAStarHeuristic
 	{
-		int Calculate(GraphEdge edge);
+		int Calculate(GraphNode node);
 	}
 }

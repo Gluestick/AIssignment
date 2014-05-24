@@ -4,8 +4,7 @@ namespace ISGPAI.Game.Collections
 {
 	/// <summary>
 	/// AStar heuristic that calculates the euclidean distance between the
-	/// destination node of the given edge in Calculate() and the destination
-	/// specified in the constructor.
+	/// node specified in Calculate(0 and the destination specified in the constructor.
 	/// </summary>
 	internal class EuclideanDistanceHeuristic : IAStarHeuristic
 	{
@@ -16,9 +15,9 @@ namespace ISGPAI.Game.Collections
 			this._destination = destination;
 		}
 
-		public int Calculate(GraphEdge edge)
+		public int Calculate(GraphNode node)
 		{
-			Vector2 distance = edge.Destination.Position - _destination.Position;
+			Vector2 distance = node.Position - _destination.Position;
 			return (int)distance.Length;
 		}
 	}
