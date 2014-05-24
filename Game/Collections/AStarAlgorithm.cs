@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ISGPAI.Game.Collections
 {
@@ -15,16 +16,20 @@ namespace ISGPAI.Game.Collections
 		public IEnumerable<GraphNode> GetShortestPath(GraphNode start, GraphNode destination)
 		{
 			Initialize();
-			ICollection<GraphNode> path = new LinkedList<GraphNode>();
-			path.Add(start);
-			GraphNode current = start;
-			while (current != destination)
+			if (GetShortestPathRecursive(start, destination))
 			{
-				foreach (GraphEdge edge in current.AdjecentEdges)
-				{
-				}
+				return null;
 			}
-			return null;
+			throw new InvalidOperationException("Startnode is not connected to destination node.");
+		}
+
+		/// <summary>
+		/// Recursive call for calculating the shortest path.
+		/// </summary>
+		/// <returns>Whether the current node is connected to the destination.</returns>
+		private bool GetShortestPathRecursive(GraphNode current, GraphNode destination)
+		{
+			return false;
 		}
 
 		private void Initialize()
