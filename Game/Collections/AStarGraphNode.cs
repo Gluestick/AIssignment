@@ -2,11 +2,11 @@
 {
 	partial class AStarAlgorithm
 	{
-		private class AStarNode
+		private class AStarGraphNode
 		{
 			public GraphNode GraphNode { get; set; }
 
-			public AStarNode(GraphNode node)
+			public AStarGraphNode(GraphNode node)
 			{
 				this.GraphNode = node;
 			}
