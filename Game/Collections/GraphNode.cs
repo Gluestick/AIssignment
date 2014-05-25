@@ -28,5 +28,27 @@ namespace ISGPAI.Game.Collections
 		{
 			this._adjecentEdges = new LinkedList<GraphEdge>();
 		}
+
+		#region AStar
+		/// <summary>
+		/// Parent in the path calculated by A*.
+		/// </summary>
+		public GraphNode Parent { get; set; }
+
+		/// <summary>
+		/// Sum of the best distance and estimated distance.
+		/// </summary>
+		public float Score { get { return BestDistance + EstimatedDistance; } }
+
+		/// <summary>
+		/// The best distance that has been calculated for this node so far.
+		/// </summary>
+		public float BestDistance { get; set; }
+
+		/// <summary>
+		/// Estimated distance to the destination.
+		/// </summary>
+		public float EstimatedDistance { get; set; }
+		#endregion
 	}
 }
