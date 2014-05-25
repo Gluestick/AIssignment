@@ -1,6 +1,6 @@
 ﻿namespace ISGPAI.Game.Collections
 {
-	internal class GraphEdge
+	public class GraphEdge
 	{
 		private GraphNode _source;
 		private GraphNode _destination;

@@ -3,7 +3,7 @@ using ISGPAI.Game.Maths;
 
 namespace ISGPAI.Game.Collections
 {
-	internal class GraphNode
+	public class GraphNode
 	{
 		private Vector2 _position;
 		private ICollection<GraphEdge> _adjecentEdges;
@@ -21,12 +21,12 @@ namespace ISGPAI.Game.Collections
 		public GraphNode(Vector2 position)
 		{
 			this._position = position;
+			this._adjecentEdges = new LinkedList<GraphEdge>();
 		}
 
 		public GraphNode(float positionX, float positionY)
 			: this(new Vector2(positionX, positionY))
 		{
-			this._adjecentEdges = new LinkedList<GraphEdge>();
 		}
 
 		#region AStar

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace ISGPAI.Game.Collections
 {
-	internal partial class AStarAlgorithm : IShortestPathAlgorithm
+	public class AStarAlgorithm : IShortestPathAlgorithm
 	{
 		private Graph _graph;
 		private ICollection<GraphNode> _openList;

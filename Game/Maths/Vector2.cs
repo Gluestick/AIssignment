@@ -5,7 +5,7 @@ namespace ISGPAI.Game.Maths
 	/// <summary>
 	/// 2 Dimensional vector.
 	/// </summary>
-	internal struct Vector2
+	public struct Vector2
 	{
 		private double _x;
 		private double _y;

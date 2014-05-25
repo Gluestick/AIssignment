@@ -2,7 +2,7 @@
 
 namespace ISGPAI.Game.Collections
 {
-	internal class Graph
+	public class Graph
 	{
 		private ICollection<GraphEdge> _edges;
 
