@@ -1,7 +1,8 @@
 ﻿namespace ISGPAI.Game.Maths
 {
 	/// <summary>
-	/// I don't know what's happening here. Ask the book.
+	/// I had no idea what matrices were when I made this. Now I know about
+	/// them I am too lazy to refactor this, so excuse the shitty code.
 	/// </summary>
 	internal class Matrix2
 	{
