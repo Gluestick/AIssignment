@@ -42,6 +42,11 @@ namespace ISGPAI.Game.Collections
 		/// <returns>Whether the current node is connected to the destination.</returns>
 		private bool GetShortestPathRecursive(GraphNode current, GraphNode destination)
 		{
+			// Backtrack if we have found a path.
+			if (current == destination)
+			{
+				return true;
+			}
 			foreach (GraphEdge edge in current.AdjecentEdges)
 			{
 				// If our current node is in the open list...
@@ -53,6 +58,7 @@ namespace ISGPAI.Game.Collections
 					{
 						edge.Destination.BestDistance =
 							current.BestDistance + edge.Cost;
+						edge.Destination.Parent = current;
 					}
 				}
 				else // Update best distance and add node to open list.
@@ -61,6 +67,7 @@ namespace ISGPAI.Game.Collections
 						current.BestDistance + edge.Cost;
 					edge.Destination.EstimatedDistance =
 						_heuristic.Calculate(edge.Destination);
+					edge.Destination.Parent = current;
 					_openList.Add(edge.Destination);
 				}
 			}
