@@ -18,7 +18,6 @@ namespace ISGPAI.Game
 
 		private Pen _graphPen = new Pen(Color.FromArgb(230, 230, 230), 1);
 		private Bitmap _graphCache;
-		private DateTime _timeSinceLastPaint;
 		private ICollection<Entity> _entities;
 		private Graph _graph;
 
