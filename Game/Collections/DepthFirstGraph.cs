@@ -35,6 +35,7 @@ namespace ISGPAI.Game.Collections
 		{
 			private Graph _graph;
 			private ICollection<GraphNode> _visited;
+			private Stack<GraphNode> _stack;
 			private GraphNode _current;
 			private GraphNode _startNode;
 
@@ -49,6 +50,7 @@ namespace ISGPAI.Game.Collections
 			{
 				this._current = this._startNode;
 				this._visited = new LinkedList<GraphNode>();
+				this._stack = new Stack<GraphNode>();
 			}
 
 			public GraphNode Current
