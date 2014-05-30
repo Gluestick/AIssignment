@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Windows.Forms;
 using ISGPAI.Game.Collections;
 using ISGPAI.Game.Entities;
 
@@ -12,8 +13,8 @@ namespace ISGPAI.Game
 	internal class World : IPaintable
 	{
 		private const int GraphEdgeSize = 32;
-		private const int GraphWidth = 80;
-		private const int GraphHeight = 60;
+		private const int GraphWidth = 58;
+		private const int GraphHeight = 30;
 
 		private Pen _graphPen = new Pen(Color.FromArgb(230, 230, 230), 1);
 		private Bitmap _graphCache;
@@ -60,12 +61,22 @@ namespace ISGPAI.Game
 			_entities.Add(newEntity);
 		}
 
+		private bool _gPressed = false;
 		public void Update(double elapsed)
 		{
 			this.Elapsed = elapsed;
 			foreach (Entity entity in _entities)
 			{
 				entity.Update(elapsed);
+			}
+			if (!_gPressed && Keyboard.IsKeyDown(Keys.G))
+			{
+				_gPressed = true;
+				DrawGraph = !DrawGraph;
+			}
+			else if (!Keyboard.IsKeyDown(Keys.G))
+			{
+				_gPressed = false;
 			}
 		}
 
