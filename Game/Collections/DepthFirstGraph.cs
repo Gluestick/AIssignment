@@ -69,7 +69,27 @@ namespace ISGPAI.Game.Collections
 
 			public bool MoveNext()
 			{
-				throw new NotImplementedException();
+				foreach (GraphEdge potentialEdge in _current.AdjecentEdges)
+				{
+					if (!_visited.Contains(potentialEdge.Destination))
+					{
+						// Found our next graphnode.
+						_stack.Push(_current);
+						_current = potentialEdge.Destination;
+						return true;
+					}
+				}
+				if (_stack.Count > 0)
+				{
+					// We can backtrack and try to find an adjecent node again.
+					_current = _stack.Pop();
+					return MoveNext();
+				}
+				else
+				{
+					// We can't backtrack, there's nothing left to traverse.
+					return false;
+				}
 			}
 
 			public void Reset()
