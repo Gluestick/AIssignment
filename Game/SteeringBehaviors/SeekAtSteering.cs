@@ -12,6 +12,11 @@ namespace ISGPAI.Game.SteeringBehaviors
 			this.Location = location;
 		}
 
+		public SeekAtSteering()
+			: this(new Vector2())
+		{
+		}
+
 		public Vector2 Steer(MovingEntity agent, double elapsed)
 		{
 			Vector2 desiredVelocity = Vector2.Normalize(
