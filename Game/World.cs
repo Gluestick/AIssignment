@@ -21,6 +21,11 @@ namespace ISGPAI.Game
 		private ICollection<Entity> _entities;
 		private Graph _graph;
 
+		public Graph Graph
+		{
+			get { return _graph; }
+		}
+
 		public bool DrawGraph
 		{
 			get;
