@@ -64,7 +64,12 @@ namespace ISGPAI.Game.Entities
 
 		public override void Paint(Graphics g)
 		{
-			throw new NotImplementedException();
+			const int Size = 25;
+			g.FillEllipse(Brushes.Black,
+				(int)Position.X - Size / 2,
+				(int)Position.Y - Size / 2,
+				Size, Size
+			);
 		}
 	}
 }
