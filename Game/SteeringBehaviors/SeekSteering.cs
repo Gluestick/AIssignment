@@ -9,6 +9,7 @@ namespace ISGPAI.Game.SteeringBehaviors
 	internal class SeekSteering : ISteeringBehavior
 	{
 		private Entity _target;
+		private SeekAtSteering _seekAtSteering;
 
 		/// <summary>
 		/// Construct a steering behavior that seeks the specified target.
@@ -16,6 +17,7 @@ namespace ISGPAI.Game.SteeringBehaviors
 		public SeekSteering(Entity target)
 		{
 			this._target = target;
+			this._seekAtSteering = new SeekAtSteering();
 		}
 
 		/// <summary>
@@ -23,10 +25,8 @@ namespace ISGPAI.Game.SteeringBehaviors
 		/// </summary>
 		public Vector2 Steer(MovingEntity agent, double elapsed)
 		{
-			Vector2 desiredVelocity = Vector2.Normalize(
-				_target.Position - agent.Position
-			) * agent.MaxSpeed;
-			return desiredVelocity - agent.Velocity;
+			_seekAtSteering.Location = _target.Position;
+			return _seekAtSteering.Steer(agent, elapsed);
 		}
 	}
 }
