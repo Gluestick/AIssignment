@@ -34,6 +34,7 @@ namespace ISGPAI.Game.Collections
 		public class DepthFirstGraphEnumerator : IEnumerator<GraphNode>
 		{
 			private Graph _graph;
+			private ICollection<GraphNode> _visited;
 			private GraphNode _current;
 			private GraphNode _startNode;
 
@@ -41,7 +42,13 @@ namespace ISGPAI.Game.Collections
 			{
 				this._graph = graph;
 				this._startNode = startNode;
+				Initialize();
+			}
+
+			private void Initialize()
+			{
 				this._current = this._startNode;
+				this._visited = new LinkedList<GraphNode>();
 			}
 
 			public GraphNode Current
@@ -66,7 +73,7 @@ namespace ISGPAI.Game.Collections
 
 			public void Reset()
 			{
-				throw new NotImplementedException();
+				Initialize();
 			}
 		}
 	}
