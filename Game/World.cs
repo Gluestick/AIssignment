@@ -71,8 +71,6 @@ namespace ISGPAI.Game
 
 		public void Paint(Graphics g)
 		{
-			g.SmoothingMode = SmoothingMode.AntiAlias;
-
 			if (DrawGraph)
 			{
 				PaintGraph(g);
