@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace ISGPAI.Game.Collections
 {
@@ -8,20 +10,22 @@ namespace ISGPAI.Game.Collections
 	public class DepthFirstGraph : IEnumerable<GraphNode>
 	{
 		private Graph _graph;
+		private GraphNode _startNode;
 
-		public DepthFirstGraph(Graph graph)
+		public DepthFirstGraph(Graph graph, GraphNode startNode)
 		{
 			this._graph = graph;
+			this._startNode = startNode;
 		}
 
 		public IEnumerator<GraphNode> GetEnumerator()
 		{
-			return new DepthFirstGraphEnumerator(_graph);
+			return new DepthFirstGraphEnumerator(_graph, _startNode);
 		}
 
-		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+		IEnumerator IEnumerable.GetEnumerator()
 		{
-			throw new System.NotImplementedException();
+			throw new NotImplementedException();
 		}
 
 		/// <summary>
@@ -30,35 +34,37 @@ namespace ISGPAI.Game.Collections
 		public class DepthFirstGraphEnumerator : IEnumerator<GraphNode>
 		{
 			private Graph _graph;
+			private GraphNode _current;
 
-			public DepthFirstGraphEnumerator(Graph graph)
+			public DepthFirstGraphEnumerator(Graph graph, GraphNode startNode)
 			{
 				this._graph = graph;
+				this._current = startNode;
 			}
 
 			public GraphNode Current
 			{
-				get { throw new System.NotImplementedException(); }
+				get { return _current; }
 			}
 
 			public void Dispose()
 			{
-				throw new System.NotImplementedException();
+				throw new NotImplementedException();
 			}
 
-			object System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				get { throw new System.NotImplementedException(); }
+				get { throw new NotImplementedException(); }
 			}
 
 			public bool MoveNext()
 			{
-				throw new System.NotImplementedException();
+				throw new NotImplementedException();
 			}
 
 			public void Reset()
 			{
-				throw new System.NotImplementedException();
+				throw new NotImplementedException();
 			}
 		}
 	}
