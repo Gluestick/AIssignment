@@ -16,7 +16,7 @@ namespace ISGPAI.Game.Collections
 
 		public IEnumerator<GraphNode> GetEnumerator()
 		{
-			throw new System.NotImplementedException();
+			return new DepthFirstGraphEnumerator(_graph);
 		}
 
 		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
@@ -24,8 +24,18 @@ namespace ISGPAI.Game.Collections
 			throw new System.NotImplementedException();
 		}
 
+		/// <summary>
+		/// Enumerator type for depth first search in a graph.
+		/// </summary>
 		public class DepthFirstGraphEnumerator : IEnumerator<GraphNode>
 		{
+			private Graph _graph;
+
+			public DepthFirstGraphEnumerator(Graph graph)
+			{
+				this._graph = graph;
+			}
+
 			public GraphNode Current
 			{
 				get { throw new System.NotImplementedException(); }
