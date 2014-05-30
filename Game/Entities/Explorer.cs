@@ -37,6 +37,7 @@ namespace ISGPAI.Game.Entities
 		{
 			GraphNode nearestNode = _graph.NearestNode(this.Position);
 			_enumerator = _graph.GetDepthFirstEnumerable(nearestNode).GetEnumerator();
+			_current = _enumerator.Current;
 		}
 
 		public override void Update(double elapsed)
