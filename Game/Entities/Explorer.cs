@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
+using ISGPAI.Game.Collections;
+using ISGPAI.Game.SteeringBehaviors;
 
 namespace ISGPAI.Game.Entities
 {
@@ -9,11 +12,15 @@ namespace ISGPAI.Game.Entities
 	/// </summary>
 	internal class Explorer : MovingEntity
 	{
-		private World _world;
+		private Graph _graph;
+		private IEnumerator<GraphNode> _enumerator;
+		private GraphNode _current;
+		private SeekAtSteering _steering;
 
 		public Explorer(World world)
 		{
-			this._world = world;
+			this._graph = world.Graph;
+			this._steering = new SeekAtSteering();
 		}
 
 		public override void Update(double elapsed)
