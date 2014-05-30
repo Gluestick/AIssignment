@@ -75,6 +75,7 @@ namespace ISGPAI.Game.Collections
 						// Found our next graphnode.
 						_stack.Push(_current);
 						_current = potentialEdge.Destination;
+						_visited.Add(_current);
 						return true;
 					}
 				}

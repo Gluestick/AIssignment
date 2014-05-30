@@ -20,15 +20,15 @@ namespace Game.Tests
 		}
 
 		[TestMethod]
-		[Timeout(1000)]
 		public void ConnectedGraph_GetDepthFirstEnumerable_TraversesCorrectAmountOfNodes()
 		{
-			const int NodeCount = 5;
+			const int EdgeCount = 4;
+			const int NodeCount = EdgeCount + 1;
 			Graph graph = new Graph();
 			GraphNode start = new GraphNode(new Vector2());
 			GraphNode currentSource = start;
 			GraphNode currentDestination;
-			for (int i = 0; i < NodeCount; i++)
+			for (int i = 0; i < EdgeCount; i++)
 			{
 				currentDestination = new GraphNode(new Vector2());
 				graph.AddEdge(new GraphEdge(currentSource, currentDestination));
