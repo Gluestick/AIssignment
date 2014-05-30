@@ -44,5 +44,14 @@ namespace ISGPAI.Game.Collections
 			}
 			return nearest;
 		}
+
+		/// <summary>
+		/// Returns an enumerator that uses the depth first algorithm to traverse
+		/// this tree, starting at the specified start node.
+		/// </summary>
+		public IEnumerable<GraphNode> GetDepthFirstEnumerable(GraphNode startNode)
+		{
+			return new DepthFirstGraph(this, startNode);
+		}
 	}
 }
