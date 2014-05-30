@@ -25,7 +25,7 @@ namespace ISGPAI.Game.Collections
 
 		IEnumerator IEnumerable.GetEnumerator()
 		{
-			throw new NotImplementedException();
+			return GetEnumerator();
 		}
 
 		/// <summary>
