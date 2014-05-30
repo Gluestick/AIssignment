@@ -11,57 +11,44 @@ namespace ISGPAI.Game
 			float sizePerEdge)
 		{
 			Graph graph = new Graph();
-			for (int i = x; i < columns; i++)
+			GraphNode[,] nodes = new GraphNode[columns, rows];
+
+			// Create all GraphNodes.
+			for (int i = 0; i < columns; i++)
 			{
-				for (int j = y; j < rows; j++)
+				for (int j = 0; j < rows; j++)
 				{
-					AddEdgesToGraphAt(graph, i, j, sizePerEdge);
+					double xPos = x * sizePerEdge + i * sizePerEdge;
+					double yPos = y * sizePerEdge + j * sizePerEdge;
+					nodes[i, j] = new GraphNode(new Vector2(xPos, yPos));
+				}
+			}
+
+			// Create all GraphEdges and add them to the graph.
+			for (int i = 0; i < columns; i++)
+			{
+				for (int j = 0; j < rows; j++)
+				{
+					CreateEdges(graph, nodes, i, j, columns, rows);
 				}
 			}
 			return graph;
 		}
 
-		/// <summary>
-		/// Adds edges to all horizontal, vertical and diagonal
-		/// nodes in both directions.
-		/// </summary>
-		private static void AddEdgesToGraphAt(Graph graph, int i, int j, float sizePerEdge)
+		private static void CreateEdges(Graph graph, GraphNode[,] nodes, int x, int y,
+			int columns, int rows)
 		{
-			Vector2 source = new Vector2(i * sizePerEdge, j * sizePerEdge);
-
-			// Horizontal
-			graph.AddEdge(CreateEdge(source, source + new Vector2(sizePerEdge, 0)));
-			graph.AddEdge(CreateEdge(source + new Vector2(sizePerEdge, 0), source));
-			graph.AddEdge(CreateEdge(source, source + new Vector2(-sizePerEdge, 0)));
-			graph.AddEdge(CreateEdge(source + new Vector2(-sizePerEdge, 0), source));
-
-			// Vertical
-			graph.AddEdge(CreateEdge(source, source + new Vector2(0, sizePerEdge)));
-			graph.AddEdge(CreateEdge(source + new Vector2(0, sizePerEdge), source));
-			graph.AddEdge(CreateEdge(source, source + new Vector2(0, -sizePerEdge)));
-			graph.AddEdge(CreateEdge(source + new Vector2(0, -sizePerEdge), source));
-
-			// Diagonal top
-			graph.AddEdge(CreateEdge(source, source + new Vector2(-sizePerEdge, sizePerEdge)));
-			graph.AddEdge(CreateEdge(source + new Vector2(-sizePerEdge, sizePerEdge), source));
-			graph.AddEdge(CreateEdge(source, source + new Vector2(sizePerEdge, sizePerEdge)));
-			graph.AddEdge(CreateEdge(source + new Vector2(sizePerEdge, sizePerEdge), source));
-
-			// Diagonal bottom
-			graph.AddEdge(CreateEdge(source, source + new Vector2(-sizePerEdge, -sizePerEdge)));
-			graph.AddEdge(CreateEdge(source + new Vector2(-sizePerEdge, -sizePerEdge), source));
-			graph.AddEdge(CreateEdge(source, source + new Vector2(sizePerEdge, -sizePerEdge)));
-			graph.AddEdge(CreateEdge(source + new Vector2(sizePerEdge, -sizePerEdge), source));
-		}
-
-		/// <summary>
-		/// Creates an edge with the specified source and destination node.
-		/// </summary>
-		private static GraphEdge CreateEdge(Vector2 source, Vector2 destination)
-		{
-			return new GraphEdge(
-				new GraphNode(source), new GraphNode(destination)
-			);
+			for (int i = x - 1; i < x + 2; i++)
+			{
+				for (int j = y - 1; j < y + 2; j++)
+				{
+					if (i > 0 && i < columns && j > 0 && j < rows &&
+						!(i == x && j == y))
+					{
+						graph.AddEdge(new GraphEdge(nodes[x, y], nodes[i, j]));
+					}
+				}
+			}
 		}
 	}
 }
