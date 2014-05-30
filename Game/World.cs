@@ -90,12 +90,16 @@ namespace ISGPAI.Game
 			{
 				_graphCache = new Bitmap(GraphEdgeSize * GraphWidth, GraphEdgeSize * GraphHeight);
 				Graphics cache = Graphics.FromImage(_graphCache);
+				double xOffset = GraphWidth * GraphEdgeSize / 2;
+				double yOffset = GraphHeight * GraphEdgeSize / 2;
 				foreach (GraphEdge edge in _graph.Edges)
 				{
 					cache.DrawLine(
 						_graphPen,
-						(int)edge.Source.Position.X, (int)edge.Source.Position.Y,
-						(int)edge.Destination.Position.X, (int)edge.Destination.Position.Y
+						(int)(xOffset + edge.Source.Position.X),
+						(int)(yOffset + edge.Source.Position.Y),
+						(int)(xOffset + edge.Destination.Position.X),
+						(int)(yOffset + edge.Destination.Position.Y)
 					);
 				}
 			}
