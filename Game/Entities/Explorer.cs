@@ -23,6 +23,12 @@ namespace ISGPAI.Game.Entities
 			this._steering = new SeekAtSteering();
 		}
 
+		private void Initialize()
+		{
+			GraphNode nearestNode = _graph.NearestNode(this.Position);
+			_enumerator = _graph.GetDepthFirstEnumerable(nearestNode).GetEnumerator();
+		}
+
 		public override void Update(double elapsed)
 		{
 			throw new NotImplementedException();
