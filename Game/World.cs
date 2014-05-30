@@ -12,8 +12,8 @@ namespace ISGPAI.Game
 	internal class World : IPaintable
 	{
 		private const int GraphEdgeSize = 32;
-		private const int GraphWidth = 80;
-		private const int GraphHeight = 60;
+		private const int GraphWidth = 40;
+		private const int GraphHeight = 30;
 
 		private Pen _graphPen = new Pen(Color.FromArgb(230, 230, 230), 1);
 		private Bitmap _graphCache;
