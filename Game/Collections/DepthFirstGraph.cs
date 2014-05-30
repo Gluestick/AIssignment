@@ -35,11 +35,13 @@ namespace ISGPAI.Game.Collections
 		{
 			private Graph _graph;
 			private GraphNode _current;
+			private GraphNode _startNode;
 
 			public DepthFirstGraphEnumerator(Graph graph, GraphNode startNode)
 			{
 				this._graph = graph;
-				this._current = startNode;
+				this._startNode = startNode;
+				this._current = this._startNode;
 			}
 
 			public GraphNode Current
