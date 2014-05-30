@@ -55,6 +55,7 @@ namespace ISGPAI.Game.Entities
 			}
 			else
 			{
+				_steering.Location = _current.Position;
 				Vector2 steeringForce = _steering.Steer(this, elapsed);
 				Vector2 acceleration = steeringForce / Mass;
 				Velocity += acceleration * elapsed;
