@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using ISGPAI.Game.Collections;
+using ISGPAI.Game.Maths;
 using ISGPAI.Game.SteeringBehaviors;
 
 namespace ISGPAI.Game.Entities
@@ -12,6 +13,12 @@ namespace ISGPAI.Game.Entities
 	/// </summary>
 	internal class Explorer : MovingEntity
 	{
+		/// <summary>
+		/// When the explorer comes this close to its target node, it will
+		/// advance to the next node.
+		/// </summary>
+		private const double TargetDistance = 10;
+
 		private Graph _graph;
 		private IEnumerator<GraphNode> _enumerator;
 		private GraphNode _current;
@@ -19,8 +26,11 @@ namespace ISGPAI.Game.Entities
 
 		public Explorer(World world)
 		{
+			this.Mass = 1;
+			this.MaxSpeed = 400;
 			this._graph = world.Graph;
 			this._steering = new SeekAtSteering();
+			Initialize();
 		}
 
 		private void Initialize()
@@ -31,7 +41,25 @@ namespace ISGPAI.Game.Entities
 
 		public override void Update(double elapsed)
 		{
-			throw new NotImplementedException();
+			double distance = (Position - _current.Position).Length;
+			if (distance < TargetDistance)
+			{
+				if (_enumerator.MoveNext())
+				{
+					_current = _enumerator.Current;
+					// Recursion stops when we have a target that's far enough
+					// to move towards.
+					Update(elapsed);
+				}
+			}
+			else
+			{
+				Vector2 steeringForce = _steering.Steer(this, elapsed);
+				Vector2 acceleration = steeringForce / Mass;
+				Velocity += acceleration * elapsed;
+				Velocity = Velocity.Truncate(MaxSpeed);
+				Position += Velocity * elapsed;
+			}
 		}
 
 		public override void Paint(Graphics g)
