@@ -60,12 +60,11 @@ namespace ISGPAI.Game.Collections
 
 			public void Dispose()
 			{
-				throw new NotImplementedException();
 			}
 
 			object IEnumerator.Current
 			{
-				get { throw new NotImplementedException(); }
+				get { return _current; }
 			}
 
 			public bool MoveNext()
