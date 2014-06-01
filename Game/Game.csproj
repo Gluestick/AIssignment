@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Artwork\AnimatedBitmap.cs" />
     <Compile Include="Collections\AStarAlgorithm.cs" />
     <Compile Include="Collections\DepthFirstGraph.cs" />
     <Compile Include="Collections\IAStarHeuristic.cs" />
@@ -147,9 +148,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Artwork\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
