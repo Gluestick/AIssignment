@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using ISGPAI.Game.Artwork;
 using ISGPAI.Game.Maths;
 using ISGPAI.Game.SteeringBehaviors;
 
@@ -7,10 +8,12 @@ namespace ISGPAI.Game.Entities
 	internal class Adventurer : MovingEntity
 	{
 		private ISteeringBehavior _steering;
+		private AnimatedSpriteSet _spriteSet;
 
 		public Adventurer()
 		{
 			_steering = new KeyboardSteering();
+			_spriteSet = new AnimatedSpriteSet("adventurer.png", 16, 32);
 			Mass = 1;
 			MaxSpeed = 400;
 		}
@@ -26,12 +29,7 @@ namespace ISGPAI.Game.Entities
 
 		public override void Paint(Graphics g)
 		{
-			const int Size = 20;
-			g.FillEllipse(Brushes.Black,
-				(int)Position.X - Size / 2,
-				(int)Position.Y - Size / 2,
-				Size, Size
-			);
+			_spriteSet.PaintAt(g, this.Position);
 		}
 	}
 }
