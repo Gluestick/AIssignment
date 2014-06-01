@@ -60,7 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Artwork\AnimatedBitmap.cs" />
+    <Compile Include="Artwork\AnimatedSpriteSet.cs" />
     <Compile Include="Collections\AStarAlgorithm.cs" />
     <Compile Include="Collections\DepthFirstGraph.cs" />
     <Compile Include="Collections\IAStarHeuristic.cs" />
