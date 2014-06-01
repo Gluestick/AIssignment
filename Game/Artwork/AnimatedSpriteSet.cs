@@ -10,6 +10,9 @@ namespace ISGPAI.Game.Artwork
 		private int _spriteHeight;
 		private int _columns;
 
+		private int _currentColumn;
+		private int _currentRow;
+
 		private Rectangle _srcRectangle;
 
 		public AnimatedSpriteSet(string fileName,
@@ -20,12 +23,22 @@ namespace ISGPAI.Game.Artwork
 
 			_spriteSet = Image.FromFile(fileName);
 			this._columns = _spriteSet.Width / _spriteWidth;
+			AdvanceAnimation();
+		}
+
+		public void AdvanceAnimation()
+		{
+			_currentColumn = (_currentColumn + 1) % _columns;
 		}
 
 		public void PaintAt(Graphics g, Vector2 position)
 		{
-			_srcRectangle = new Rectangle(0 * _spriteWidth, 0 * _spriteHeight,
-				1 * _spriteWidth, 1 * _spriteHeight);
+			_srcRectangle = new Rectangle(
+				_currentColumn * _spriteWidth,
+				_currentRow * _spriteHeight,
+				_spriteWidth,
+				_spriteHeight
+			);
 			Rectangle destRectangle = new Rectangle((int)position.X, (int)position.Y,
 				_spriteWidth, _spriteHeight);
 			g.DrawImage(_spriteSet, destRectangle, _srcRectangle, GraphicsUnit.Pixel);
