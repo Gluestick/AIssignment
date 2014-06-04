@@ -15,6 +15,8 @@ namespace ISGPAI.Game.Entities
 		// (instead of showing the walking animation.
 		private const double AnimationSpeedThreshold = 25;
 
+		private const double Drag = 1;
+
 		private ISteeringBehavior _steering;
 		private AnimatedSpriteSet _spriteSet;
 
@@ -36,6 +38,17 @@ namespace ISGPAI.Game.Entities
 			Velocity += acceleration * elapsed;
 			Velocity = Velocity.Truncate(MaxSpeed);
 			Position += Velocity * elapsed;
+			if (acceleration.Length == 0)
+			{
+				if (Velocity.Length - Drag > 0)
+				{
+					Velocity = Velocity.Truncate(Velocity.Length - Drag);
+				}
+				else
+				{
+					Velocity = new Vector2();
+				}
+			}
 
 			UpdateSpriteDirection();
 			UpdateSpriteAnimation(elapsed);
