@@ -36,10 +36,11 @@
 			this._gamePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this._gamePanel.BackColor = System.Drawing.Color.White;
-			this._gamePanel.Location = new System.Drawing.Point(12, 12);
+			this._gamePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(70)))), ((int)(((byte)(28)))));
+			this._gamePanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this._gamePanel.Location = new System.Drawing.Point(2, 1);
 			this._gamePanel.Name = "_gamePanel";
-			this._gamePanel.Size = new System.Drawing.Size(928, 545);
+			this._gamePanel.Size = new System.Drawing.Size(949, 568);
 			this._gamePanel.TabIndex = 0;
 			this._gamePanel.World = null;
 			// 

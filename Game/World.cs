@@ -17,7 +17,7 @@ namespace ISGPAI.Game
 		private const int GraphHeight = 30;
 
 		private bool _drawGraph;
-		private Pen _graphPen = new Pen(Color.FromArgb(230, 230, 230), 1);
+		private Pen _graphPen = new Pen(Color.FromArgb(5, 60, 5), 1);
 		private Bitmap _graphCache;
 		private ICollection<Entity> _entities;
 		private Graph _graph;

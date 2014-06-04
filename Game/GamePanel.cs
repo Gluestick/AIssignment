@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace ISGPAI.Game
@@ -20,7 +21,6 @@ namespace ISGPAI.Game
 		{
 			_timeSinceLastPaint = DateTime.Now;
 			DoubleBuffered = true;
-			BackColor = Color.White;
 		}
 
 		/// <summary>
@@ -28,6 +28,8 @@ namespace ISGPAI.Game
 		/// </summary>
 		protected override void OnPaint(PaintEventArgs e)
 		{
+			e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+			BackColor = Color.FromArgb(24, 70, 28);
 			int fps = (int)Math.Round(1 / (DateTime.Now - _timeSinceLastPaint).TotalSeconds, 0, MidpointRounding.AwayFromZero);
 			_timeSinceLastPaint = DateTime.Now;
 			e.Graphics.DrawString(

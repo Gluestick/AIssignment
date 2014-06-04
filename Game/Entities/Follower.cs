@@ -37,7 +37,7 @@ namespace ISGPAI.Game.Entities
 		public override void Paint(System.Drawing.Graphics g)
 		{
 			const int Size = 10;
-			g.FillEllipse(Brushes.Red,
+			g.FillEllipse(Brushes.White,
 				(int)Position.X - Size / 2,
 				(int)Position.Y - Size / 2,
 				Size, Size
