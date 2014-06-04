@@ -49,7 +49,9 @@ namespace ISGPAI.Game.Artwork
 				_spriteWidth,
 				_spriteHeight
 			);
-			Rectangle destRectangle = new Rectangle((int)position.X, (int)position.Y,
+			Rectangle destRectangle = new Rectangle(
+				(int)position.X - _spriteWidth / 2,
+				(int)position.Y - _spriteHeight / 2,
 				_spriteWidth, _spriteHeight);
 			g.DrawImage(_spriteSet, destRectangle, _srcRectangle, GraphicsUnit.Pixel);
 		}
