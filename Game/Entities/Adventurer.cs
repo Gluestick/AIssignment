@@ -8,18 +8,23 @@ namespace ISGPAI.Game.Entities
 {
 	internal class Adventurer : MovingEntity
 	{
-		// In milliseconds.
-		private const int AnimationInterval = 500;
+		// In seconds.
+		private const double AnimationInterval = 0.05;
+
+		// If this entity's speed is below this value, it will stand still
+		// (instead of showing the walking animation.
+		private const double AnimationSpeedThreshold = 25;
 
 		private ISteeringBehavior _steering;
 		private AnimatedSpriteSet _spriteSet;
 
-		private TimeSpan _timeSinceLastAnimation;
+		// In seconds.
+		private double _timeSinceLastAnimation;
 
 		public Adventurer()
 		{
 			_steering = new KeyboardSteering();
-			_spriteSet = new AnimatedSpriteSet("adventurer.png", 16, 32);
+			_spriteSet = new AnimatedSpriteSet("adventurer.png", 32, 64);
 			Mass = 1;
 			MaxSpeed = 400;
 		}
@@ -32,11 +37,14 @@ namespace ISGPAI.Game.Entities
 			Velocity = Velocity.Truncate(MaxSpeed);
 			Position += Velocity * elapsed;
 
-			UpdateSprite();
+			UpdateSpriteDirection();
+			UpdateSpriteAnimation(elapsed);
 		}
 
-		private void UpdateSprite()
+		private void UpdateSpriteDirection()
 		{
+			// Change the direction the sprite is facing depending on
+			// the current velocity.
 			if (Math.Abs(Velocity.X) > Math.Abs(Velocity.Y))
 			{
 				if (Velocity.X < 0)
@@ -58,6 +66,27 @@ namespace ISGPAI.Game.Entities
 				{
 					_spriteSet.ChangeRow(1);
 				}
+			}
+		}
+
+		private void UpdateSpriteAnimation(double elapsed)
+		{
+			if (Velocity.Length > AnimationSpeedThreshold)
+			{
+				double timeFactor = Velocity.Length / MaxSpeed;
+				if (_timeSinceLastAnimation * timeFactor > AnimationInterval)
+				{
+					_timeSinceLastAnimation = 0;
+					_spriteSet.AdvanceAnimation();
+				}
+				else
+				{
+					_timeSinceLastAnimation += elapsed;
+				}
+			}
+			else
+			{
+				_spriteSet.ChangeColumn(1);
 			}
 		}
 
