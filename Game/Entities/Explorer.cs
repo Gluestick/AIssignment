@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
 using ISGPAI.Game.Collections;
 using ISGPAI.Game.Maths;
