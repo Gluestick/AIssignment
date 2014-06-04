@@ -16,6 +16,7 @@ namespace ISGPAI.Game
 		private const int GraphWidth = 58;
 		private const int GraphHeight = 30;
 
+		private bool _drawGraph;
 		private Pen _graphPen = new Pen(Color.FromArgb(230, 230, 230), 1);
 		private Bitmap _graphCache;
 		private ICollection<Entity> _entities;
@@ -24,12 +25,6 @@ namespace ISGPAI.Game
 		public Graph Graph
 		{
 			get { return _graph; }
-		}
-
-		public bool DrawGraph
-		{
-			get;
-			set;
 		}
 
 		/// <summary>
@@ -72,7 +67,7 @@ namespace ISGPAI.Game
 			if (!_gPressed && Keyboard.IsKeyDown(Keys.G))
 			{
 				_gPressed = true;
-				DrawGraph = !DrawGraph;
+				_drawGraph = !_drawGraph;
 			}
 			else if (!Keyboard.IsKeyDown(Keys.G))
 			{
@@ -82,7 +77,7 @@ namespace ISGPAI.Game
 
 		public void Paint(Graphics g)
 		{
-			if (DrawGraph)
+			if (_drawGraph)
 			{
 				PaintGraph(g);
 			}
