@@ -73,6 +73,7 @@
     <Compile Include="Entities\Explorer.cs" />
     <Compile Include="Entities\Follower.cs" />
     <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\House.cs" />
     <Compile Include="Entities\IStateChangeable.cs" />
     <Compile Include="Entities\State.cs" />
     <Compile Include="Entities\StateMachine.cs" />
