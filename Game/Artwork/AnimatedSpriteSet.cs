@@ -31,6 +31,16 @@ namespace ISGPAI.Game.Artwork
 			_currentColumn = (_currentColumn + 1) % _columns;
 		}
 
+		public void ChangeRow(int row)
+		{
+			this._currentRow = row;
+		}
+
+		public void ChangeColumn(int column)
+		{
+			this._currentColumn = column;
+		}
+
 		public void PaintAt(Graphics g, Vector2 position)
 		{
 			_srcRectangle = new Rectangle(

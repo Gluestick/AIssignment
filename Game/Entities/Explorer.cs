@@ -27,7 +27,7 @@ namespace ISGPAI.Game.Entities
 		public Explorer(World world)
 		{
 			this.Mass = 1;
-			this.MaxSpeed = 100;
+			this.MaxSpeed = 10000;
 			this._graph = world.Graph;
 			this._steering = new SeekAtSteering();
 			Initialize();
@@ -56,7 +56,7 @@ namespace ISGPAI.Game.Entities
 			else
 			{
 				_steering.Location = _current.Position;
-				Vector2 steeringForce = _steering.Steer(this, elapsed) * 3;
+				Vector2 steeringForce = _steering.Steer(this, elapsed) * 30000;
 				Vector2 acceleration = steeringForce / Mass;
 				Velocity += acceleration * elapsed;
 				Velocity = Velocity.Truncate(MaxSpeed);
