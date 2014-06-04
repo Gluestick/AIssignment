@@ -76,7 +76,6 @@
     <Compile Include="Entities\IStateChangeable.cs" />
     <Compile Include="Entities\State.cs" />
     <Compile Include="Entities\StateMachine.cs" />
-    <Compile Include="Entities\StaticEntity.cs" />
     <Compile Include="GameForm.cs">
       <SubType>Form</SubType>
     </Compile>
