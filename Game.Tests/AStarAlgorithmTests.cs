@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
+using ISGPAI.Game;
 using ISGPAI.Game.Collections;
 using ISGPAI.Game.Maths;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ISGPAI.Game;
 
 namespace Game.Tests
 {
