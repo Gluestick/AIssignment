@@ -10,8 +10,8 @@ namespace ISGPAI.Game
 	{
 		public static World CreateWorld()
 		{
-			Adventurer adventurer = new Adventurer();
 			World world = new World();
+			Adventurer adventurer = new Adventurer(world);
 			world.AddEntity(adventurer);
 
 			// Conga conga conga conga!
