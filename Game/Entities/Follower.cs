@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using ISGPAI.Game.Maths;
 using ISGPAI.Game.SteeringBehaviors;
 
@@ -12,6 +13,8 @@ namespace ISGPAI.Game.Entities
 		private ArriveAtSteering _arrive;
 		private SeparationSteering _separate;
 		private MovingEntity _target;
+		private double _rotation;
+		private double _rotationSpeed;
 
 		public Follower(World world, MovingEntity target, float distance)
 		{
@@ -20,6 +23,7 @@ namespace ISGPAI.Game.Entities
 			this._separate = new SeparationSteering(world, distance);
 			this._target = target;
 			this._arrive = new ArriveAtSteering(target.Position, distance);
+			_rotationSpeed = 0.15;
 		}
 
 		public override void Update(double elapsed)
@@ -32,16 +36,25 @@ namespace ISGPAI.Game.Entities
 			Velocity += acceleration * elapsed;
 			Velocity = Velocity.Truncate(MaxSpeed);
 			Position += Velocity * elapsed;
+			_rotation += _rotationSpeed;
 		}
 
 		public override void Paint(System.Drawing.Graphics g)
 		{
-			const int Size = 10;
-			g.FillEllipse(Brushes.White,
-				(int)Position.X - Size / 2,
-				(int)Position.Y - Size / 2,
-				Size, Size
-			);
+			const int Size = 3;
+			const double Radius = 5;
+			const int Count = 3;
+			for (int i = 0; i < Count; i++)
+			{
+				double rotation = _rotation + 2 * Math.PI / Count * i;
+				int xRotation = (int)(Math.Cos(rotation) * Radius);
+				int yRotation = (int)(Math.Sin(rotation) * Radius);
+				g.FillEllipse(Brushes.AntiqueWhite,
+					(int)Position.X - Size / 2 + xRotation,
+					(int)Position.Y - Size / 2 + yRotation,
+					Size, Size
+				);
+			}
 		}
 	}
 }
