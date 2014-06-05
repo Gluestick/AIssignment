@@ -32,7 +32,7 @@ namespace ISGPAI.Game.SteeringBehaviors
 			{
 				force.Y += 1;
 			}
-			return force;
+			return force * agent.MaxSpeed;
 		}
 	}
 }

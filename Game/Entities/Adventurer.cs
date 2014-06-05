@@ -19,7 +19,7 @@ namespace ISGPAI.Game.Entities
 		private const double AnimationSpeedThreshold = 25;
 
 		private const double Drag = 2000;
-		private const double NavigationDistance = 10;
+		private const double NavigationDistance = 12;
 
 		private World _world;
 		private ISteeringBehavior _keyboardSteering;
@@ -85,7 +85,7 @@ namespace ISGPAI.Game.Entities
 
 		private void SteerWithKeyboard(double elapsed)
 		{
-			Vector2 steeringForce = _keyboardSteering.Steer(this, elapsed) * 2000;
+			Vector2 steeringForce = _keyboardSteering.Steer(this, elapsed) * 10;
 			Vector2 acceleration = steeringForce / Mass;
 			Velocity += acceleration * elapsed;
 			Velocity = Velocity.Truncate(MaxSpeed);
@@ -118,7 +118,7 @@ namespace ISGPAI.Game.Entities
 			if (_path != null)
 			{
 				_seekAtSteering.Location = _path.Current.Position;
-				Vector2 steeringForce = _seekAtSteering.Steer(this, elapsed) * 2000;
+				Vector2 steeringForce = _seekAtSteering.Steer(this, elapsed) * 10;
 				Vector2 acceleration = steeringForce / Mass;
 				Velocity += acceleration * elapsed;
 				Velocity = Velocity.Truncate(MaxSpeed);
