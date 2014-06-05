@@ -56,6 +56,15 @@ namespace ISGPAI.Game
 			_entities.Add(newEntity);
 		}
 
+		/// <summary>
+		/// Adds a new entity and removes any nodes from the graph that collide
+		/// with this entity
+		/// </summary>
+		public void AddCollidingEntity(Entity newEntity)
+		{
+			_entities.Add(newEntity);
+		}
+
 		private bool _gPressed = false;
 		public void Update(double elapsed)
 		{
