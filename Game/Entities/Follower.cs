@@ -23,7 +23,7 @@ namespace ISGPAI.Game.Entities
 			this._separate = new SeparationSteering(world, distance);
 			this._target = target;
 			this._arrive = new ArriveAtSteering(target.Position, distance);
-			_rotationSpeed = 0.15;
+			_rotationSpeed = 10;
 		}
 
 		public override void Update(double elapsed)
@@ -36,7 +36,7 @@ namespace ISGPAI.Game.Entities
 			Velocity += acceleration * elapsed;
 			Velocity = Velocity.Truncate(MaxSpeed);
 			Position += Velocity * elapsed;
-			_rotation += _rotationSpeed;
+			_rotation += _rotationSpeed * elapsed;
 		}
 
 		public override void Paint(System.Drawing.Graphics g)
