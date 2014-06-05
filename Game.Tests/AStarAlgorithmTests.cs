@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using ISGPAI.Game.Collections;
 using ISGPAI.Game.Maths;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ISGPAI.Game;
 
 namespace Game.Tests
 {
@@ -50,6 +51,18 @@ namespace Game.Tests
 			IEnumerable<GraphNode> path = astar.GetShortestPath(start, destination);
 			Assert.IsTrue(path.Count() == NodeCount,
 				"Path has an invalid amount of nodes");
+		}
+
+		[TestMethod]
+		[Timeout(1500)]
+		public void BigConnectedGraph_GetShortestPath_NoInfiniteLoop()
+		{
+			Graph graph = WorldGraphFactory.CreateGraph(-5, -5, 10, 10, 10);
+			GraphNode startNode = graph.NearestNode(new Vector2(-50, -50));
+			GraphNode endNode = graph.NearestNode(new Vector2(50, 50));
+
+			// Should not take forever.
+			new AStarAlgorithm(graph).GetShortestPath(startNode, endNode);
 		}
 	}
 }

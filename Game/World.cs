@@ -10,7 +10,7 @@ namespace ISGPAI.Game
 	/// <summary>
 	/// Represents the game world with all entities.
 	/// </summary>
-	internal class World : IPaintable
+	public class World : IPaintable
 	{
 		private const int GraphEdgeSize = 32;
 		private const int GraphWidth = 58;

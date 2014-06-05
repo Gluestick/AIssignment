@@ -3,7 +3,7 @@ using ISGPAI.Game.Maths;
 
 namespace ISGPAI.Game
 {
-	internal static class WorldGraphFactory
+	public static class WorldGraphFactory
 	{
 		public static Graph CreateGraph(
 			int x, int y,
