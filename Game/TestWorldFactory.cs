@@ -13,7 +13,6 @@ namespace ISGPAI.Game
 			Adventurer adventurer = new Adventurer();
 			World world = new World();
 			world.AddEntity(adventurer);
-			world.AddEntity(new Explorer(world));
 
 			// Conga conga conga conga!
 			const int CongaSize = 4;
@@ -24,6 +23,8 @@ namespace ISGPAI.Game
 				world.AddEntity(lastInConga);
 			}
 			world.AddCollidingEntity(new House(new Vector2()));
+			world.AddCollidingEntity(new Tree(new Vector2(-900, 200)));
+			world.AddEntity(new Explorer(world));
 			return world;
 		}
 	}
