@@ -23,6 +23,7 @@ namespace ISGPAI.Game
 				lastInConga = new Follower(world, lastInConga, 25);
 				world.AddEntity(lastInConga);
 			}
+			world.AddCollidingEntity(new House(new Vector2()));
 			return world;
 		}
 	}
