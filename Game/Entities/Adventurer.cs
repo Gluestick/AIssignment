@@ -18,7 +18,7 @@ namespace ISGPAI.Game.Entities
 		// (instead of showing the walking animation.
 		private const double AnimationSpeedThreshold = 25;
 
-		private const double Drag = 20;
+		private const double Drag = 2000;
 		private const double NavigationDistance = 10;
 
 		private World _world;
@@ -92,9 +92,9 @@ namespace ISGPAI.Game.Entities
 			Position += Velocity * elapsed;
 			if (acceleration.Length == 0)
 			{
-				if (Velocity.Length - Drag > 0)
+				if (Velocity.Length - Drag * elapsed > 0)
 				{
-					Velocity = Velocity.Truncate(Velocity.Length - Drag);
+					Velocity = Velocity.Truncate(Velocity.Length - Drag * elapsed);
 				}
 				else
 				{
