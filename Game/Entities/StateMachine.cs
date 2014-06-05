@@ -3,7 +3,7 @@
 	/// <summary>
 	/// Generic statemachine.
 	/// </summary>
-	internal class StateMachine<T> : IStateChangeable<T>
+	public class StateMachine<T> : IStateChangeable<T>
 	{
 		private T _owner;
 		private State<T> _currentState;

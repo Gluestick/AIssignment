@@ -6,7 +6,7 @@ namespace ISGPAI.Game.SteeringBehaviors
 	/// <summary>
 	/// Steering behavior that seeks a certain entity.
 	/// </summary>
-	internal class SeekSteering : ISteeringBehavior
+	public class SeekSteering : ISteeringBehavior
 	{
 		private Entity _target;
 		private SeekAtSteering _seekAtSteering;

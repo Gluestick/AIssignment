@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace ISGPAI.Game.Entities
 {
-	internal class Creeper : MovingEntity, IStateChangeable<Creeper>
+	public class Creeper : MovingEntity, IStateChangeable<Creeper>
 	{
 		public const int Sight = 250;
 

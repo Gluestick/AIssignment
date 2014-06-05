@@ -8,7 +8,7 @@ namespace ISGPAI.Game.Entities
 	/// <summary>
 	/// Entity that arrives the specified target.
 	/// </summary>
-	internal class Follower : MovingEntity
+	public class Follower : MovingEntity
 	{
 		private ArriveAtSteering _arrive;
 		private SeparationSteering _separate;

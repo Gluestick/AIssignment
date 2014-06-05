@@ -9,7 +9,7 @@ namespace ISGPAI.Game
 	/// <summary>
 	/// Panel used to draw the game world in.
 	/// </summary>
-	internal class GamePanel : Panel
+	public class GamePanel : Panel
 	{
 		private DateTime _timeSinceLastPaint;
 

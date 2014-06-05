@@ -3,7 +3,7 @@ using ISGPAI.Game.Maths;
 
 namespace ISGPAI.Game.Artwork
 {
-	internal class AnimatedSpriteSet
+	public class AnimatedSpriteSet
 	{
 		private Image _spriteSet;
 		private int _spriteWidth;

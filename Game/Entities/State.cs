@@ -3,7 +3,7 @@
 	/// <summary>
 	/// Abstract class that provides methods for entity states.
 	/// </summary>
-	internal abstract class State<T>
+	public abstract class State<T>
 	{
 		protected T _agent;
 

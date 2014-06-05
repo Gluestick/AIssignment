@@ -4,7 +4,7 @@ using ISGPAI.Game.Maths;
 
 namespace ISGPAI.Game.Entities
 {
-	internal class House : Entity
+	public class House : Entity
 	{
 		private AnimatedSpriteSet _spriteSet;
 

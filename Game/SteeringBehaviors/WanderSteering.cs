@@ -7,7 +7,7 @@ namespace ISGPAI.Game.SteeringBehaviors
 	/// <summary>
 	/// Returns a force that makes an entity wander randomly around the world.
 	/// </summary>
-	internal class WanderSteering : ISteeringBehavior
+	public class WanderSteering : ISteeringBehavior
 	{
 		private double _radius;
 		private double _distance;

@@ -4,7 +4,7 @@
 	/// I had no idea what matrices were when I made this. Now I know about
 	/// them I am too lazy to refactor this, so excuse the shitty code.
 	/// </summary>
-	internal class Matrix2
+	public class Matrix2
 	{
 		private Matrix _matrix;
 

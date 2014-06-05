@@ -6,7 +6,7 @@ namespace ISGPAI.Game.Entities
 	/// <summary>
 	/// Creeper state when there is no adventurer nearby.
 	/// </summary>
-	internal class CreeperWandering : State<Creeper>
+	public class CreeperWandering : State<Creeper>
 	{
 		private World _world;
 		private ISteeringBehavior _steeringBehavior;

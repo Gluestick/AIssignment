@@ -9,7 +9,7 @@ using ISGPAI.Game.SteeringBehaviors;
 
 namespace ISGPAI.Game.Entities
 {
-	internal class Adventurer : MovingEntity
+	public class Adventurer : MovingEntity
 	{
 		// In seconds.
 		private const double AnimationInterval = 0.05;

@@ -4,7 +4,7 @@ using ISGPAI.Game.Maths;
 
 namespace ISGPAI.Game.SteeringBehaviors
 {
-	internal class ExploreSteering : ISteeringBehavior
+	public class ExploreSteering : ISteeringBehavior
 	{
 		public Vector2 Steer(MovingEntity agent, double elapsed)
 		{

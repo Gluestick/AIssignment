@@ -1,6 +1,6 @@
 ﻿namespace ISGPAI.Game.Maths
 {
-	internal static class Transformation
+	public static class Transformation
 	{
 		/// <summary>
 		/// Transforms a point from the agent's local space into world space.

@@ -3,7 +3,7 @@ using ISGPAI.Game.Maths;
 
 namespace ISGPAI.Game.SteeringBehaviors
 {
-	internal class SeekAtSteering : ISteeringBehavior
+	public class SeekAtSteering : ISteeringBehavior
 	{
 		public Vector2 Location { get; set; }
 

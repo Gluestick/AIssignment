@@ -5,7 +5,7 @@ namespace ISGPAI.Game.Maths
 	/// <summary>
 	/// Creates one Random instance to use throughout the entire program.
 	/// </summary>
-	internal static class RandomHolder
+	public static class RandomHolder
 	{
 		private static Random _instance;
 

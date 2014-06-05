@@ -7,7 +7,7 @@ namespace ISGPAI.Game.SteeringBehaviors
 	/// <summary>
 	/// Steering behavior that steers towards a target, but slows down when close.
 	/// </summary>
-	internal class ArriveAtSteering : ISteeringBehavior
+	public class ArriveAtSteering : ISteeringBehavior
 	{
 		public Vector2 Location { get; set; }
 		public float Distance { get; set; }

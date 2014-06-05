@@ -1,6 +1,6 @@
 ﻿namespace ISGPAI.Game.Collections
 {
-	internal interface IAStarHeuristic
+	public interface IAStarHeuristic
 	{
 		int Calculate(GraphNode node);
 	}

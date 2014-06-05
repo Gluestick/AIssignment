@@ -3,7 +3,7 @@
 	/// <summary>
 	/// Implementations will have a ChangeState method.
 	/// </summary>
-	internal interface IStateChangeable<T>
+	public interface IStateChangeable<T>
 	{
 		void ChangeState(State<T> newState);
 	}

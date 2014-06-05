@@ -5,7 +5,7 @@ namespace ISGPAI.Game.Entities
 	/// <summary>
 	/// Abstract entity that allows implementations to move around the game world.
 	/// </summary>
-	internal abstract class MovingEntity : Entity
+	public abstract class MovingEntity : Entity
 	{
 		private Vector2 _velocity;
 		private Vector2 _heading;

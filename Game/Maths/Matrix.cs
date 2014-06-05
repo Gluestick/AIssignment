@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ISGPAI.Game.Maths
 {
-	internal class Matrix
+	public class Matrix
 	{
 		public double _11;
 		public double _12;

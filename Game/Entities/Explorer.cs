@@ -11,7 +11,7 @@ namespace ISGPAI.Game.Entities
 	/// Moving entity that explorers the world graph. When the explorer is
 	/// done exploring, it will start over, beginning at his current position.
 	/// </summary>
-	internal class Explorer : MovingEntity
+	public class Explorer : MovingEntity
 	{
 		/// <summary>
 		/// When the explorer comes this close to its target node, it will

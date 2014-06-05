@@ -5,7 +5,7 @@ namespace ISGPAI.Game
 	/// <summary>
 	/// Implementations will be able to paint on a GDI+ canvas.
 	/// </summary>
-	internal interface IPaintable
+	public interface IPaintable
 	{
 		void Paint(Graphics g);
 	}

@@ -6,7 +6,7 @@ namespace ISGPAI.Game.SteeringBehaviors
 	/// <summary>
 	/// Strategy for steering behavior.
 	/// </summary>
-	internal interface ISteeringBehavior
+	public interface ISteeringBehavior
 	{
 		/// <summary>
 		/// Calculates a force for the agent.

@@ -6,7 +6,7 @@ namespace ISGPAI.Game
 	/// <summary>
 	/// Static class with methods to inspect the keyboard's state.
 	/// </summary>
-	internal static class Keyboard
+	public static class Keyboard
 	{
 		[DllImport("user32.dll")]
 		private static extern short GetAsyncKeyState(Keys key);

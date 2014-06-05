@@ -7,7 +7,7 @@ namespace ISGPAI.Game.Entities
 	/// <summary>
 	/// Creeper state when the creeper is nearby the adventurer.
 	/// </summary>
-	internal class CreeperSeeking : State<Creeper>
+	public class CreeperSeeking : State<Creeper>
 	{
 		private Entity _target;
 		private World _world;

@@ -2,7 +2,7 @@
 
 namespace ISGPAI.Game.Collections
 {
-	internal interface IShortestPathAlgorithm
+	public interface IShortestPathAlgorithm
 	{
 		IEnumerable<GraphNode> GetShortestPath(GraphNode start, GraphNode destination);
 	}

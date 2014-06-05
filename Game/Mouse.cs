@@ -4,7 +4,7 @@ using ISGPAI.Game.Maths;
 
 namespace ISGPAI.Game
 {
-	static internal class Mouse
+	static public class Mouse
 	{
 		private static Dictionary<MouseButtons, bool> _buttonStates =
 			new Dictionary<MouseButtons, bool>();

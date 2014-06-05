@@ -6,7 +6,7 @@ namespace ISGPAI.Game.Collections
 	/// AStar heuristic that calculates the euclidean distance between the
 	/// node specified in Calculate(0 and the destination specified in the constructor.
 	/// </summary>
-	internal class EuclideanDistanceHeuristic : IAStarHeuristic
+	public class EuclideanDistanceHeuristic : IAStarHeuristic
 	{
 		private GraphNode _destination;
 
