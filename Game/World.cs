@@ -63,6 +63,7 @@ namespace ISGPAI.Game
 		public void AddCollidingEntity(Entity newEntity)
 		{
 			_entities.Add(newEntity);
+			_graph.RemoveEdgesFor(newEntity);
 		}
 
 		private bool _gPressed = false;

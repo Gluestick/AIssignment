@@ -61,10 +61,10 @@ namespace ISGPAI.Game.Entities
 		/// </summary>
 		public bool IsInside(Vector2 position)
 		{
-			return (position.X > Position.X &&
-				position.X < Position.X + Size.X) &&
-				(position.Y > Position.Y &&
-				position.Y < Position.Y + Size.Y);
+			return (position.X > Position.X - Size.X / 2 &&
+				position.X < Position.X + Size.X / 2) &&
+				(position.Y > Position.Y - Size.Y / 2 &&
+				position.Y < Position.Y + Size.Y / 2);
 		}
 
 		public abstract void Update(double elapsed);

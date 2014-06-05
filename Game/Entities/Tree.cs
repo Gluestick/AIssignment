@@ -4,16 +4,16 @@ using ISGPAI.Game.Maths;
 
 namespace ISGPAI.Game.Entities
 {
-	internal class House : Entity
+	internal class Tree : Entity
 	{
 		private AnimatedSpriteSet _spriteSet;
 
-		public House(Vector2 position)
+		public Tree(Vector2 position)
 		{
 			this.Position = position;
-			this._size = new Vector2(224, 144);
+			this._size = new Vector2(64, 80);
 			this._drawOrder = -1;
-			_spriteSet = new AnimatedSpriteSet("house.png", (int)_size.X, (int)_size.Y);
+			_spriteSet = new AnimatedSpriteSet("tree.png", (int)_size.X, (int)_size.Y);
 		}
 
 		public override void Update(double elapsed)
