@@ -63,8 +63,9 @@ namespace ISGPAI.Game.Collections
 						edge.Destination.Parent = current;
 					}
 				}
-				else // Update best distance and add node to open list.
+				else if (!_closedList.Any(n => n == edge.Destination))
 				{
+					// Update best distance and add node to open list.
 					edge.Destination.BestDistance =
 						current.BestDistance + edge.Cost;
 					edge.Destination.EstimatedDistance =

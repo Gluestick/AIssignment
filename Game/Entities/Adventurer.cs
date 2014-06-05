@@ -46,32 +46,77 @@ namespace ISGPAI.Game.Entities
 			{
 				if (_path == null)
 				{
-					// Calculate shortest path from current position to
-					// the current mouse position and store the IEnumerator
-					// of that path for future navigation.
-					GraphNode nearestCurrent =
-						_world.Graph.NearestNode(Position);
-					GraphNode nearestDestination =
-						_world.Graph.NearestNode(Mouse.Position);
-					IEnumerable<GraphNode> path = new AStarAlgorithm(_world.Graph)
-						.GetShortestPath(nearestCurrent, nearestDestination);
-					_path = path.GetEnumerator();
+					CreatePath();
 				}
 			}
 
 			// Navigate to the previously clicked location.
 			if (_path != null)
 			{
-				// Move to the next node in our path if we are close enough to
-				// our current target node.
-				if ((Position - _path.Current.Position).Length < NavigationDistance)
+				FollowPath(elapsed);
+			}
+			else // Use keyboard steering to naviate the adventurer.
+			{
+				SteerWithKeyboard(elapsed);
+			}
+
+			UpdateSpriteDirection();
+			UpdateSpriteAnimation(elapsed);
+		}
+
+		private void CreatePath()
+		{
+			// Calculate shortest path from current position to
+			// the current mouse position and store the IEnumerator
+			// of that path for future navigation.
+			GraphNode nearestCurrent =
+				_world.Graph.NearestNode(Position);
+			GraphNode nearestDestination =
+				_world.Graph.NearestNode(Mouse.Position);
+			IEnumerable<GraphNode> path = new AStarAlgorithm(_world.Graph)
+				.GetShortestPath(nearestCurrent, nearestDestination);
+			_path = path.GetEnumerator();
+			if (!_path.MoveNext())
+			{
+				// Delete path if we're already at the destination.
+				_path = null;
+			}
+		}
+
+		private void SteerWithKeyboard(double elapsed)
+		{
+			Vector2 steeringForce = _keyboardSteering.Steer(this, elapsed) * 2000;
+			Vector2 acceleration = steeringForce / Mass;
+			Velocity += acceleration * elapsed;
+			Velocity = Velocity.Truncate(MaxSpeed);
+			Position += Velocity * elapsed;
+			if (acceleration.Length == 0)
+			{
+				if (Velocity.Length - Drag > 0)
 				{
-					// Set path to null if we have reached our destination.
-					if (!_path.MoveNext())
-					{
-						_path = null;
-					}
+					Velocity = Velocity.Truncate(Velocity.Length - Drag);
 				}
+				else
+				{
+					Velocity = new Vector2();
+				}
+			}
+		}
+
+		private void FollowPath(double elapsed)
+		{
+			// Move to the next node in our path if we are close enough to
+			// our current target node.
+			if ((Position - _path.Current.Position).Length < NavigationDistance)
+			{
+				// Set path to null if we have reached our destination.
+				if (!_path.MoveNext())
+				{
+					_path = null;
+				}
+			}
+			if (_path != null)
+			{
 				_seekAtSteering.Location = _path.Current.Position;
 				Vector2 steeringForce = _seekAtSteering.Steer(this, elapsed) * 2000;
 				Vector2 acceleration = steeringForce / Mass;
@@ -79,28 +124,6 @@ namespace ISGPAI.Game.Entities
 				Velocity = Velocity.Truncate(MaxSpeed);
 				Position += Velocity * elapsed;
 			}
-			else // Use keyboard steering to naviate the adventurer.
-			{
-				Vector2 steeringForce = _keyboardSteering.Steer(this, elapsed) * 2000;
-				Vector2 acceleration = steeringForce / Mass;
-				Velocity += acceleration * elapsed;
-				Velocity = Velocity.Truncate(MaxSpeed);
-				Position += Velocity * elapsed;
-				if (acceleration.Length == 0)
-				{
-					if (Velocity.Length - Drag > 0)
-					{
-						Velocity = Velocity.Truncate(Velocity.Length - Drag);
-					}
-					else
-					{
-						Velocity = new Vector2();
-					}
-				}
-			}
-
-			UpdateSpriteDirection();
-			UpdateSpriteAnimation(elapsed);
 		}
 
 		private void UpdateSpriteDirection()
