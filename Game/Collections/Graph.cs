@@ -73,6 +73,8 @@ namespace ISGPAI.Game.Collections
 			// remove anything in the collection you're iterating through.
 			foreach (GraphEdge removable in removableEdges)
 			{
+				removable.Source.AdjecentEdges.Remove(removable);
+				removable.Destination.AdjecentEdges.Remove(removable);
 				_edges.Remove(removable);
 			}
 		}
