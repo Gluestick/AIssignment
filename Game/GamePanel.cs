@@ -22,6 +22,7 @@ namespace ISGPAI.Game
 		{
 			_timeSinceLastPaint = DateTime.Now;
 			DoubleBuffered = true;
+			InitializeComponent();
 		}
 
 		/// <summary>
