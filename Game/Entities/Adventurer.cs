@@ -15,7 +15,7 @@ namespace ISGPAI.Game.Entities
 		// (instead of showing the walking animation.
 		private const double AnimationSpeedThreshold = 25;
 
-		private const double Drag = 1;
+		private const double Drag = 20;
 
 		private ISteeringBehavior _steering;
 		private AnimatedSpriteSet _spriteSet;
@@ -33,7 +33,7 @@ namespace ISGPAI.Game.Entities
 
 		public override void Update(double elapsed)
 		{
-			Vector2 steeringForce = _steering.Steer(this, elapsed) * 1000;
+			Vector2 steeringForce = _steering.Steer(this, elapsed) * 2000;
 			Vector2 acceleration = steeringForce / Mass;
 			Velocity += acceleration * elapsed;
 			Velocity = Velocity.Truncate(MaxSpeed);
