@@ -12,6 +12,7 @@ namespace ISGPAI.Game.Entities
 		private static int _nextValidId = 0;
 
 		protected Vector2 _position;
+		protected int _drawOrder;
 
 		/// <summary>
 		/// Gets the Id that uniquely identifies this entity.
@@ -29,6 +30,12 @@ namespace ISGPAI.Game.Entities
 			get { return _position; }
 			set { _position = value; }
 		}
+
+		/// <summary>
+		/// The order at which entities are drawn. Entities with a high
+		/// draw order are drawn before other entities.
+		/// </summary>
+		public int DrawOrder { get { return _drawOrder; } }
 
 		// The BaseGameEntity constructor in the book takes an id as a parameter.
 		// This means that whoever is creating an entity object is responsible
