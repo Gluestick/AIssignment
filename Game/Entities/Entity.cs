@@ -6,12 +6,13 @@ namespace ISGPAI.Game.Entities
 	/// <summary>
 	/// Abstract class for entities within the game world.
 	/// </summary>
-	abstract internal class Entity : IPaintable
+	public abstract class Entity : IPaintable
 	{
 		private int _id;
 		private static int _nextValidId = 0;
 
 		protected Vector2 _position;
+		protected Vector2 _size;
 		protected int _drawOrder;
 
 		/// <summary>
@@ -31,6 +32,12 @@ namespace ISGPAI.Game.Entities
 			set { _position = value; }
 		}
 
+		public Vector2 Size
+		{
+			get { return _size; }
+			set { _size = value; }
+		}
+
 		/// <summary>
 		/// The order at which entities are drawn. Entities with a high
 		/// draw order are drawn before other entities.
@@ -47,6 +54,17 @@ namespace ISGPAI.Game.Entities
 		{
 			_id = _nextValidId;
 			_nextValidId++;
+		}
+
+		/// <summary>
+		/// Check if the given coordinate is inside this entity.
+		/// </summary>
+		public bool IsInside(Vector2 position)
+		{
+			return (position.X > Position.X &&
+				position.X < Position.X + Size.X) &&
+				(position.Y > Position.Y &&
+				position.Y < Position.Y + Size.Y);
 		}
 
 		public abstract void Update(double elapsed);

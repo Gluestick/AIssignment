@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ISGPAI.Game.Entities;
 using ISGPAI.Game.Maths;
 
 namespace ISGPAI.Game.Collections
@@ -52,6 +53,28 @@ namespace ISGPAI.Game.Collections
 		public IEnumerable<GraphNode> GetDepthFirstEnumerable(GraphNode startNode)
 		{
 			return new DepthFirstGraph(this, startNode);
+		}
+
+		public void RemoveEdgesFor(Entity entity)
+		{
+			var removableEdges = new LinkedList<GraphEdge>();
+
+			// Check what edges to remove.
+			foreach (GraphEdge edge in _edges)
+			{
+				if (entity.IsInside(edge.Source.Position) ||
+					entity.IsInside(edge.Destination.Position))
+				{
+					removableEdges.AddLast(edge);
+				}
+			}
+
+			// Remove the edges. Seperate loop required, becuase you can't
+			// remove anything in the collection you're iterating through.
+			foreach (GraphEdge removable in removableEdges)
+			{
+				_edges.Remove(removable);
+			}
 		}
 	}
 }
