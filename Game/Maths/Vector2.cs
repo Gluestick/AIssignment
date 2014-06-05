@@ -146,5 +146,10 @@ namespace ISGPAI.Game.Maths
 		{
 			return new Vector2(-_y, _x);
 		}
+
+		public override string ToString()
+		{
+			return string.Format("({0}, {1})", X, Y);
+		}
 	}
 }
