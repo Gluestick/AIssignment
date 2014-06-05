@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Drawing2D;
+using System.Linq;
 using System.Windows.Forms;
 using ISGPAI.Game.Collections;
 using ISGPAI.Game.Entities;
@@ -91,7 +91,7 @@ namespace ISGPAI.Game
 				PaintGraph(g);
 			}
 
-			foreach (Entity entity in _entities)
+			foreach (Entity entity in _entities.OrderBy(e => e.DrawOrder))
 			{
 				entity.Paint(g);
 			}

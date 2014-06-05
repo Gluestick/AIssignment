@@ -11,6 +11,7 @@ namespace ISGPAI.Game.Entities
 		public House(Vector2 position)
 		{
 			this.Position = position;
+			this._drawOrder = -1;
 			_spriteSet = new AnimatedSpriteSet("house.png", 224, 144);
 		}
 
