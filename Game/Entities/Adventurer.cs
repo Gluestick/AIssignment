@@ -15,7 +15,7 @@ namespace ISGPAI.Game.Entities
 		// (instead of showing the walking animation.
 		private const double AnimationSpeedThreshold = 25;
 
-		private const double Drag = 20;
+		private const double Drag = 2;
 
 		private ISteeringBehavior _steering;
 		private AnimatedSpriteSet _spriteSet;
