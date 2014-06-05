@@ -63,7 +63,7 @@ namespace ISGPAI.Game
 
 		private void GamePanel_MouseMove(object sender, MouseEventArgs e)
 		{
-			Mouse.Position = new Vector2(e.X, e.Y);
+			Mouse.Position = new Vector2(e.X - Width / 2, e.Y - Height / 2);
 		}
 
 		private void GamePanel_MouseDown(object sender, MouseEventArgs e)
