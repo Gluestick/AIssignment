@@ -29,7 +29,7 @@ namespace ISGPAI.Game
 		protected override void OnPaint(PaintEventArgs e)
 		{
 			e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-			BackColor = Color.FromArgb(24, 70, 28);
+			BackColor = Color.FromArgb(56, 144, 88);
 			int fps = (int)Math.Round(1 / (DateTime.Now - _timeSinceLastPaint).TotalSeconds, 0, MidpointRounding.AwayFromZero);
 			_timeSinceLastPaint = DateTime.Now;
 			e.Graphics.DrawString(
