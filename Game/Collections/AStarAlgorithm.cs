@@ -58,6 +58,8 @@ namespace ISGPAI.Game.Collections
 					{
 						edge.Destination.BestDistance =
 							current.BestDistance + edge.Cost;
+						edge.Destination.EstimatedDistance =
+							_heuristic.Calculate(edge.Destination);
 						edge.Destination.Parent = current;
 					}
 				}
