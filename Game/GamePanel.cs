@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using ISGPAI.Game.Maths;
 
 namespace ISGPAI.Game
 {
@@ -44,6 +45,34 @@ namespace ISGPAI.Game
 			{
 				World.Paint(e.Graphics);
 			}
+		}
+
+		private void InitializeComponent()
+		{
+			this.SuspendLayout();
+			// 
+			// GamePanel
+			// 
+			this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GamePanel_MouseDown);
+			this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GamePanel_MouseMove);
+			this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.GamePanel_MouseUp);
+			this.ResumeLayout(false);
+
+		}
+
+		private void GamePanel_MouseMove(object sender, MouseEventArgs e)
+		{
+			Mouse.Position = new Vector2(e.X, e.Y);
+		}
+
+		private void GamePanel_MouseDown(object sender, MouseEventArgs e)
+		{
+			Mouse.ChangeButtonState(e.Button, true);
+		}
+
+		private void GamePanel_MouseUp(object sender, MouseEventArgs e)
+		{
+			Mouse.ChangeButtonState(e.Button, false);
 		}
 	}
 }
