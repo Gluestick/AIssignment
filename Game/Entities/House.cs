@@ -1,22 +1,26 @@
-﻿using ISGPAI.Game.Maths;
+﻿using System.Drawing;
+using ISGPAI.Game.Artwork;
+using ISGPAI.Game.Maths;
 
 namespace ISGPAI.Game.Entities
 {
 	internal class House : Entity
 	{
+		private AnimatedSpriteSet _spriteSet;
+
 		public House(Vector2 position)
 		{
 			this.Position = position;
+			_spriteSet = new AnimatedSpriteSet("house.png", 224, 144);
 		}
 
 		public override void Update(double elapsed)
 		{
-			throw new System.NotImplementedException();
 		}
 
-		public override void Paint(System.Drawing.Graphics g)
+		public override void Paint(Graphics g)
 		{
-			throw new System.NotImplementedException();
+			_spriteSet.PaintAt(g, Position);
 		}
 	}
 }
