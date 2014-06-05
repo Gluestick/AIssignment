@@ -36,11 +36,11 @@
 			this._gamePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this._gamePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(70)))), ((int)(((byte)(28)))));
+			this._gamePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(144)))), ((int)(((byte)(88)))));
 			this._gamePanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this._gamePanel.Location = new System.Drawing.Point(2, 1);
 			this._gamePanel.Name = "_gamePanel";
-			this._gamePanel.Size = new System.Drawing.Size(949, 568);
+			this._gamePanel.Size = new System.Drawing.Size(1269, 688);
 			this._gamePanel.TabIndex = 0;
 			this._gamePanel.World = null;
 			// 
@@ -48,10 +48,11 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(952, 569);
+			this.ClientSize = new System.Drawing.Size(1272, 689);
 			this.Controls.Add(this._gamePanel);
 			this.Name = "GameForm";
-			this.Text = "GameForm";
+			this.ShowIcon = false;
+			this.Text = "AIssignment";
 			this.ResumeLayout(false);
 
 		}
