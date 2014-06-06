@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace FuzzyLogic
 {
@@ -55,6 +52,29 @@ namespace FuzzyLogic
 		public double Peak
 		{
 			get
+			{
+				throw new NotImplementedException();
+			}
+		}
+
+		public void ORWithValue(double p)
+		{
+			throw new NotImplementedException();
+		}
+
+		public void ClearValue()
+		{
+			throw new NotImplementedException();
+		}
+
+
+		public double RepresentativeValue
+		{
+			get
+			{
+				throw new NotImplementedException();
+			}
+			set
 			{
 				throw new NotImplementedException();
 			}

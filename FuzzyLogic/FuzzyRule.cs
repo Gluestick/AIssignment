@@ -1,24 +1,24 @@
 ﻿namespace FuzzyLogic
 {
-	public class FuzzyRule
+	public class FuzzyRule : IFuzzyRule
 	{
-		private FuzzyTerm _condition;
-		private FuzzyTerm _consequence;
+		private IFuzzyTerm _condition;
+		private IFuzzyTerm _consequence;
 
-		public FuzzyRule(FuzzyTerm condition, FuzzyTerm consequence)
+		public FuzzyRule(IFuzzyTerm condition, IFuzzyTerm consequence)
 		{
 			this._condition = condition;
 			this._consequence = consequence;
 		}
 
-		internal void ResetConfidenceOfConsequence()
+		public void ResetConfidenceOfConsequence()
 		{
-			throw new System.NotImplementedException();
+			_consequence.ORWithValue(_condition.Value);
 		}
 
-		internal void Calculate()
+		public void Calculate()
 		{
-			throw new System.NotImplementedException();
+			_consequence.ClearValue();
 		}
 	}
 }

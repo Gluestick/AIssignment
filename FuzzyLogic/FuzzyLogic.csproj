@@ -42,8 +42,10 @@
     <Compile Include="DefuzzifyType.cs" />
     <Compile Include="FuzzyModule.cs" />
     <Compile Include="FuzzyRule.cs" />
+    <Compile Include="FuzzySet.cs" />
+    <Compile Include="IFuzzyRule.cs" />
     <Compile Include="IFuzzySet.cs" />
-    <Compile Include="FuzzyTerm.cs" />
+    <Compile Include="IFuzzyTerm.cs" />
     <Compile Include="FuzzyVariable.cs" />
     <Compile Include="LeftShoulder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

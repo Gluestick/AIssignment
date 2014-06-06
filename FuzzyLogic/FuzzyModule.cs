@@ -19,7 +19,7 @@ namespace FuzzyLogic
 			return _variables[name];
 		}
 
-		public void AddRule(FuzzyTerm condition, FuzzyTerm consequence)
+		public void AddRule(IFuzzyTerm condition, IFuzzyTerm consequence)
 		{
 			_rules.Add(new FuzzyRule(condition, consequence));
 		}

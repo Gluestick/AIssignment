@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace FuzzyLogic
 {
@@ -13,7 +10,6 @@ namespace FuzzyLogic
 
 		public LeftShoulder(float peak, float p1, float p2)
 		{
-			// TODO: Complete member initialization
 			this.peak = peak;
 			this.p1 = p1;
 			this.p2 = p2;
@@ -55,6 +51,30 @@ namespace FuzzyLogic
 		public double Peak
 		{
 			get
+			{
+				throw new NotImplementedException();
+			}
+		}
+
+
+		public void ORWithValue(double p)
+		{
+			throw new NotImplementedException();
+		}
+
+		public void ClearValue()
+		{
+			throw new NotImplementedException();
+		}
+
+
+		public double RepresentativeValue
+		{
+			get
+			{
+				throw new NotImplementedException();
+			}
+			set
 			{
 				throw new NotImplementedException();
 			}
