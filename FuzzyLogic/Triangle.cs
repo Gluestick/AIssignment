@@ -2,81 +2,32 @@
 
 namespace FuzzyLogic
 {
-	class Triangle : IFuzzySet
+	class Triangle : FuzzySet
 	{
-		private double peak;
-		private double p1;
-		private double p2;
-
-		public Triangle(double peak, double p1, double p2)
+		public Triangle(double peak, double minOffset, double maxOffset)
+			: base(peak, peak, minOffset, maxOffset)
 		{
-			// TODO: Complete member initialization
-			this.peak = peak;
-			this.p1 = p1;
-			this.p2 = p2;
 		}
 
-		public double Min
+		public override double CalculateValue(double value)
 		{
-			get
+			if ((_minOffset == 0.0 && _peakPoint == value) ||
+				(_maxOffset == 0.0 && _peakPoint == value))
 			{
-				throw new NotImplementedException();
+				return 1.0;
 			}
-		}
-
-		public double Max
-		{
-			get
+			else if (value >= _peakPoint && value < (_peakPoint + _maxOffset))
 			{
-				throw new NotImplementedException();
+				double grad = 1.0 / -_maxOffset;
+				return grad * (value - _peakPoint) + 1.0;
 			}
-		}
-
-		public double CalculateValue(double value)
-		{
-			throw new NotImplementedException();
-		}
-
-		public double Value
-		{
-			get
+			else if (value < _peakPoint && value >= (_peakPoint - _minOffset))
 			{
-				throw new NotImplementedException();
+				return 1.0;
 			}
-			set
+			else
 			{
-				throw new NotImplementedException();
-			}
-		}
-
-		public double Peak
-		{
-			get
-			{
-				throw new NotImplementedException();
-			}
-		}
-
-		public void ORWithValue(double p)
-		{
-			throw new NotImplementedException();
-		}
-
-		public void ClearValue()
-		{
-			throw new NotImplementedException();
-		}
-
-
-		public double RepresentativeValue
-		{
-			get
-			{
-				throw new NotImplementedException();
-			}
-			set
-			{
-				throw new NotImplementedException();
+				return 0.0;
 			}
 		}
 	}
