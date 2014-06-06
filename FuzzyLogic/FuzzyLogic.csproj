@@ -42,10 +42,13 @@
     <Compile Include="DefuzzifyType.cs" />
     <Compile Include="FuzzyModule.cs" />
     <Compile Include="FuzzyRule.cs" />
-    <Compile Include="FuzzySet.cs" />
+    <Compile Include="IFuzzySet.cs" />
     <Compile Include="FuzzyTerm.cs" />
     <Compile Include="FuzzyVariable.cs" />
+    <Compile Include="LeftShoulder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RightShoulder.cs" />
+    <Compile Include="Triangle.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
