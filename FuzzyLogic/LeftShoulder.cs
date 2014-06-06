@@ -1,82 +1,31 @@
-﻿using System;
-
-namespace FuzzyLogic
+﻿namespace FuzzyLogic
 {
-	public class LeftShoulder : IFuzzySet
+	public class LeftShoulder : FuzzySet
 	{
-		private float peak;
-		private float p1;
-		private float p2;
-
-		public LeftShoulder(float peak, float p1, float p2)
+		public LeftShoulder(double peak, double minOffset, double maxOffset)
+			: base(((peak - minOffset) + peak) / 2, peak, minOffset, maxOffset)
 		{
-			this.peak = peak;
-			this.p1 = p1;
-			this.p2 = p2;
 		}
 
-		public double Min
+		public override double CalculateValue(double value)
 		{
-			get
+			if ((_minOffset == 0f && _peakPoint == value) ||
+				(_maxOffset == 0f && _peakPoint == value))
 			{
-				throw new NotImplementedException();
+				return 1f;
 			}
-		}
-
-		public double Max
-		{
-			get
+			else if (value >= _peakPoint && value < (_peakPoint + _maxOffset))
 			{
-				throw new NotImplementedException();
+				double grad = 1.0f / -_maxOffset;
+				return grad * (value - _peakPoint) + 1.0f;
 			}
-		}
-
-		public double CalculateValue(double value)
-		{
-			throw new NotImplementedException();
-		}
-
-		public double Value
-		{
-			get
+			else if (value < _peakPoint && value >= (_peakPoint - _minOffset))
 			{
-				throw new NotImplementedException();
+				return 1.0f;
 			}
-			set
+			else
 			{
-				throw new NotImplementedException();
-			}
-		}
-
-		public double Peak
-		{
-			get
-			{
-				throw new NotImplementedException();
-			}
-		}
-
-
-		public void ORWithValue(double p)
-		{
-			throw new NotImplementedException();
-		}
-
-		public void ClearValue()
-		{
-			throw new NotImplementedException();
-		}
-
-
-		public double RepresentativeValue
-		{
-			get
-			{
-				throw new NotImplementedException();
-			}
-			set
-			{
-				throw new NotImplementedException();
+				return 0.0f;
 			}
 		}
 	}
