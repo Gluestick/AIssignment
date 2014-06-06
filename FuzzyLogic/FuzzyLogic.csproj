@@ -39,8 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IFuzzyAction.cs" />
-    <Compile Include="IFuzzySet.cs" />
+    <Compile Include="DefuzzifyType.cs" />
+    <Compile Include="FuzzyModule.cs" />
+    <Compile Include="FuzzyRule.cs" />
+    <Compile Include="FuzzySet.cs" />
+    <Compile Include="FuzzyTerm.cs" />
+    <Compile Include="FuzzyVariable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
