@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace FuzzyLogic
+﻿namespace FuzzyLogic
 {
 	class Triangle : FuzzySet
 	{
