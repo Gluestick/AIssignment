@@ -8,7 +8,7 @@ namespace FuzzyLogic
 		protected double _minOffset;
 		protected double _maxOffset;
 		protected double _value;
-		private double _repValue;
+		private double _repVal;
 
 		public FuzzySet(
 			double repVal, double peak, double minOffset, double maxOffset)
@@ -17,7 +17,7 @@ namespace FuzzyLogic
 			_peakPoint = peak;
 			_minOffset = minOffset;
 			_maxOffset = maxOffset;
-			_repValue = repVal;
+			_repVal = repVal;
 		}
 
 		public double Min
@@ -62,7 +62,7 @@ namespace FuzzyLogic
 		{
 			get
 			{
-				return this._repValue;
+				return this._repVal;
 			}
 		}
 	}
