@@ -67,13 +67,13 @@ namespace FuzzyLogic
 			return set;
 		}
 
-		public IFuzzySet addLeftShoulderSet(string name, float min, float peak, float max) {
+		public IFuzzySet AddLeftShoulderSet(string name, float min, float peak, float max) {
 			IFuzzySet set = new LeftShoulder(peak, peak - min, max - peak);
 			AddSet(name, set);
 			return set;
 		}
 
-		public IFuzzySet addRightShoulderSet(string name, float min, float peak, float max) {
+		public IFuzzySet AddRightShoulderSet(string name, float min, float peak, float max) {
 			IFuzzySet set = new RightShoulder(peak, peak - min, max - peak);
 			AddSet(name, set);
 			return set;
