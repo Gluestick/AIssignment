@@ -5,7 +5,7 @@
 		double Min { get; }
 		double Max { get; }
 		double CalculateValue(double value);
-		double RepresentativeValue { get; set; }
+		double RepresentativeValue { get; }
 		double Peak { get; }
 	}
 }

@@ -54,7 +54,7 @@ namespace FuzzyLogic
 
 		public void ClearValue()
 		{
-			throw new NotImplementedException();
+			this._value = 0;
 		}
 
 
@@ -62,11 +62,7 @@ namespace FuzzyLogic
 		{
 			get
 			{
-				throw new NotImplementedException();
-			}
-			set
-			{
-				throw new NotImplementedException();
+				return this._repValue;
 			}
 		}
 	}
