@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace FuzzyLogic.Hedges
 {
 	public class FuzzyFairly : IFuzzyTerm
@@ -10,10 +11,6 @@ namespace FuzzyLogic.Hedges
 			get
 			{
 				return Math.Sqrt(_set.Value);
-			}
-			set
-			{
-				// Do nothing
 			}
 		}
 
