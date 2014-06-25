@@ -2,7 +2,7 @@
 {
 	public interface IFuzzyTerm
 	{
-		double Value { get; set; }
+		double Value { get; }
 		void ORWithValue(double p);
 		void ClearValue();
 	}
