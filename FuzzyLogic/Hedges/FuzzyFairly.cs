@@ -1,27 +1,35 @@
-﻿namespace FuzzyLogic.Hedges
+﻿using System;
+namespace FuzzyLogic.Hedges
 {
 	public class FuzzyFairly : IFuzzyTerm
 	{
+		private IFuzzySet _set;
+
 		public double Value
 		{
 			get
 			{
-				throw new System.NotImplementedException();
+				return Math.Sqrt(_set.Value);
 			}
 			set
 			{
-				throw new System.NotImplementedException();
+				// Do nothing
 			}
+		}
+
+		public FuzzyFairly(IFuzzySet set)
+		{
+			this._set = set;
 		}
 
 		public void ORWithValue(double p)
 		{
-			throw new System.NotImplementedException();
+			_set.ORWithValue(Value);
 		}
 
 		public void ClearValue()
 		{
-			throw new System.NotImplementedException();
+			_set.ClearValue();
 		}
 	}
 }
