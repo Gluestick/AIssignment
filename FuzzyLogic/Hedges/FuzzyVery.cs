@@ -1,24 +1,22 @@
-﻿using System;
-
-namespace FuzzyLogic.Hedges
+﻿namespace FuzzyLogic.Hedges
 {
-	public class FuzzyFairly : IFuzzyTerm
+	public class FuzzyVery : IFuzzyTerm
 	{
 		private IFuzzySet _set;
 
 		public double Value
 		{
-			get { return Math.Sqrt(_set.Value); }
+			get { return _set.Value * _set.Value; }
 		}
 
-		public FuzzyFairly(IFuzzySet set)
+		public FuzzyVery(IFuzzySet set)
 		{
 			this._set = set;
 		}
 
 		public void ORWithValue(double p)
 		{
-			_set.ORWithValue(Value);
+			_set.ORWithValue(p * p);
 		}
 
 		public void ClearValue()

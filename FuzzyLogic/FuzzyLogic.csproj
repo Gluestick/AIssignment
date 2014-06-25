@@ -44,6 +44,7 @@
     <Compile Include="FuzzyRule.cs" />
     <Compile Include="FuzzySet.cs" />
     <Compile Include="Hedges\FuzzyFairly.cs" />
+    <Compile Include="Hedges\FuzzyVery.cs" />
     <Compile Include="IFuzzyRule.cs" />
     <Compile Include="IFuzzySet.cs" />
     <Compile Include="IFuzzyTerm.cs" />
