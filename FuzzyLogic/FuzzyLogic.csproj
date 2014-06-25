@@ -52,6 +52,7 @@
     <Compile Include="LeftShoulder.cs" />
     <Compile Include="Operators\FuzzyAnd.cs" />
     <Compile Include="Operators\FuzzyOperator.cs" />
+    <Compile Include="Operators\FuzzyOr.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RightShoulder.cs" />
     <Compile Include="Triangle.cs" />
