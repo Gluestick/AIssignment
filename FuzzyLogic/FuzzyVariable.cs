@@ -59,21 +59,25 @@ namespace FuzzyLogic
 			return top / bottom;
 		}
 
-		public IFuzzySet AddTriangularSet(
-			string name, double min, double peak, double max)
+		public IFuzzySet AddTriangularSet(string name,
+			double min, double peak, double max)
 		{
 			IFuzzySet set = new Triangle(peak, peak - min, max - peak);
 			AddSet(name, set);
 			return set;
 		}
 
-		public IFuzzySet addLeftShoulderSet(string name, float min, float peak, float max) {
+		public IFuzzySet AddLeftShoulderSet(string name,
+			double min, double peak, double max)
+		{
 			IFuzzySet set = new LeftShoulder(peak, peak - min, max - peak);
 			AddSet(name, set);
 			return set;
 		}
 
-		public IFuzzySet addRightShoulderSet(string name, float min, float peak, float max) {
+		public IFuzzySet AddRightShoulderSet(string name,
+			double min, double peak, double max)
+		{
 			IFuzzySet set = new RightShoulder(peak, peak - min, max - peak);
 			AddSet(name, set);
 			return set;
