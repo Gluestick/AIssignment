@@ -6,10 +6,7 @@ namespace FuzzyLogic.Operators
 	{
 		protected ICollection<IFuzzyTerm> _terms;
 
-		public double Value
-		{
-			get { throw new System.NotImplementedException(); }
-		}
+		public abstract double Value { get; }
 
 		public FuzzyOperator()
 		{

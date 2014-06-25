@@ -50,6 +50,7 @@
     <Compile Include="IFuzzyTerm.cs" />
     <Compile Include="FuzzyVariable.cs" />
     <Compile Include="LeftShoulder.cs" />
+    <Compile Include="Operators\FuzzyAnd.cs" />
     <Compile Include="Operators\FuzzyOperator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RightShoulder.cs" />
