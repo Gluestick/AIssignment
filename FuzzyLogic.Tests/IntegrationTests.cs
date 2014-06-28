@@ -31,7 +31,7 @@ namespace FuzzyLogic.Tests
 		[TestMethod]
 		public void LowAmmo_DeFuzzify_HighDesirability()
 		{
-			_module.Fuzzify("ammo", 20);
+			_module.Fuzzify("ammo", 30);
 			double value = _module.DeFuzzify("desirability", DefuzzifyType.MaxAv);
 		}
 	}
