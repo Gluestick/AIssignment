@@ -13,12 +13,12 @@
 
 		public void ResetConfidenceOfConsequence()
 		{
-			_consequence.ORWithValue(_condition.Value);
+			_consequence.ClearValue();
 		}
 
 		public void Calculate()
 		{
-			_consequence.ClearValue();
+			_consequence.ORWithValue(_condition.Value);
 		}
 	}
 }
