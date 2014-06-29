@@ -19,6 +19,7 @@ namespace ISGPAI.Game.Entities
 			this._steeringBehavior = new WanderSteering();
 		}
 
+
 		public override void Enter()
 		{
 			_agent.MaxSpeed = 50;

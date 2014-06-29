@@ -2,12 +2,15 @@
 using System.Drawing;
 using System.Linq;
 using ISGPAI.Game.Artwork;
+using ISGPAI.Game.Maths;
 
 namespace ISGPAI.Game.Entities
 {
 	public class Creeper : MovingEntity, IStateChangeable<Creeper>
 	{
 		public const int Sight = 250;
+
+		public int Health;
 
 		// In seconds.
 		private const double AnimationInterval = 0.05;
@@ -23,11 +26,14 @@ namespace ISGPAI.Game.Entities
 		// In seconds.
 		private double _timeSinceLastAnimation;
 
-		public Creeper(World world)
+		public Creeper(Vector2 position, World world)
 		{
+			Position = position;
 			this._spriteSet = new AnimatedSpriteSet("badass.png", 32, 64);
+			Health = 1;
 			Mass = 1;
 			MaxSpeed = 200;
+			Velocity = new Vector2(MaxSpeed, 0);
 			// Wandering is the default state.
 			this._world = world;
 			this._stateMachine = new StateMachine<Creeper>(

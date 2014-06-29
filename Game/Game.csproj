@@ -67,6 +67,7 @@
     <Compile Include="Collections\EuclideanDistanceHeuristic.cs" />
     <Compile Include="Collections\IShortestPathAlgorithm.cs" />
     <Compile Include="Entities\Adventurer.cs" />
+    <Compile Include="Entities\CreeperExplosion.cs" />
     <Compile Include="Entities\Creeper\Creeper.cs" />
     <Compile Include="Entities\Creeper\CreeperSeeking.cs" />
     <Compile Include="Entities\Creeper\CreeperWandering.cs" />

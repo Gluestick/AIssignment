@@ -19,7 +19,10 @@ namespace ISGPAI.Game
 		private bool _drawGraph;
 		private Pen _graphPen = new Pen(Color.FromArgb(5, 60, 5), 1);
 		private Bitmap _graphCache;
+		private bool _entitiesReadOnly;
 		private ICollection<Entity> _entities;
+		private ICollection<Entity> _removable;
+		private ICollection<Entity> _addable;
 		private Graph _graph;
 
 		public Graph Graph
@@ -42,10 +45,24 @@ namespace ISGPAI.Game
 			// We don't need to access individual elements of this collection,
 			// so a linked list makes sense here.
 			_entities = new LinkedList<Entity>();
+			_addable = new LinkedList<Entity>();
+			_removable = new LinkedList<Entity>();
 			_graph = WorldGraphFactory.CreateGraph(
 				GraphWidth / -2, GraphHeight / -2,
 				GraphWidth, GraphHeight,
 				GraphEdgeSize);
+		}
+
+		public void RemoveEntity(Entity entity)
+		{
+			if (!_entitiesReadOnly)
+			{
+				_entities.Remove(entity);
+			}
+			else
+			{
+				_removable.Add(entity);
+			}
 		}
 
 		/// <summary>
@@ -53,7 +70,14 @@ namespace ISGPAI.Game
 		/// </summary>
 		public void AddEntity(Entity newEntity)
 		{
-			_entities.Add(newEntity);
+			if (!_entitiesReadOnly)
+			{
+				_entities.Add(newEntity);
+			}
+			else
+			{
+				_addable.Add(newEntity);
+			}
 		}
 
 		/// <summary>
@@ -62,7 +86,14 @@ namespace ISGPAI.Game
 		/// </summary>
 		public void AddCollidingEntity(Entity newEntity)
 		{
-			_entities.Add(newEntity);
+			if (!_entitiesReadOnly)
+			{
+				_entities.Add(newEntity);
+			}
+			else
+			{
+				_addable.Add(newEntity);
+			}
 			_graph.RemoveEdgesFor(newEntity);
 		}
 
@@ -70,10 +101,24 @@ namespace ISGPAI.Game
 		public void Update(double elapsed)
 		{
 			this.Elapsed = elapsed;
+
+			foreach (Entity entity in _addable)
+			{
+				_entities.Add(entity);
+			}
+			_addable.Clear();
+			foreach (Entity entity in _removable)
+			{
+				_entities.Remove(entity);
+			}
+			_removable.Clear();
+
+			_entitiesReadOnly = true;
 			foreach (Entity entity in _entities)
 			{
 				entity.Update(elapsed);
 			}
+			_entitiesReadOnly = false;
 			if (!_gPressed && Keyboard.IsKeyDown(Keys.G))
 			{
 				_gPressed = true;

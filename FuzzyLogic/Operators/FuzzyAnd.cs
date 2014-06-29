@@ -4,7 +4,7 @@ namespace FuzzyLogic.Operators
 {
 	public class FuzzyAnd : FuzzyOperator
 	{
-		public FuzzyAnd(IEnumerable<IFuzzyTerm> terms)
+		public FuzzyAnd(params IFuzzyTerm[] terms)
 		{
 			Operate(terms);
 		}
