@@ -27,7 +27,7 @@ namespace ISGPAI.Game.Entities
 			this._spriteSet = new AnimatedSpriteSet("badass.png", 32, 64);
 			this._world = world;
 			Mass = 1;
-			MaxSpeed = 400;
+			MaxSpeed = 375;
 		}
 
 		public override void Update(double elapsed)
