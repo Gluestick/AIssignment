@@ -28,7 +28,7 @@ namespace ISGPAI.Game.Entities
 		// Score check methods
 		private int ScoreAfterFleeing()
 		{
-			int score = (int)Math.Pow(Math.Max(10, _safety + 4), 2);
+			int score = (int)Math.Pow(Math.Min(10, _safety + 4), 2);
 			score += (int)Math.Pow(Math.Max(0, _helping - 2), 2);
 			score += (int)Math.Pow(Math.Max(0, _energy - 1), 2);
 			return score;
@@ -36,7 +36,7 @@ namespace ISGPAI.Game.Entities
 
 		private int ScoreAfterAttacking()
 		{
-			int score = (int)Math.Pow(Math.Min(0, _safety - 2), 2);
+			int score = (int)Math.Pow(Math.Max(0, _safety - 2), 2);
 			score += (int)Math.Pow(Math.Min(10, _helping + 2), 2);
 			score += (int)Math.Pow(Math.Max(0, _energy - 2), 2);
 			return score;
@@ -53,17 +53,17 @@ namespace ISGPAI.Game.Entities
 		// Action methods
 		private void Flee()
 		{
-			_safety = Math.Min(10, _safety - 2);
-			_safety = Math.Max(0, _safety - 2);
-			_safety = Math.Max(0, _safety - 2);
+			_safety = Math.Min(10, _safety + 4);
+			_helping = Math.Max(0, _helping - 2);
+			_energy = Math.Max(0, _energy - 1);
 			throw new NotImplementedException();
 		}
 
 		private void Attack()
 		{
-			_safety = Math.Min(0, _safety - 2);
-			_energy = Math.Min(0, _energy - 2);
+			_safety = Math.Max(0, _safety - 2);
 			_helping = Math.Min(10, _helping + 2);
+			_energy = Math.Max(0, _energy - 2);
 			throw new NotImplementedException();
 		}
 
