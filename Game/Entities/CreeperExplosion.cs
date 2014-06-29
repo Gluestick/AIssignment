@@ -7,7 +7,7 @@ namespace ISGPAI.Game.Entities
 	{
 		private const double StartRadius = 10;
 		private const double MaxRadius = 100;
-		private const double Duration = 0.3;
+		private const double Duration = 0.2;
 
 		private Brush _brush = Brushes.Yellow;
 		private World _world;
