@@ -1,5 +1,7 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Linq;
+using ISGPAI.Game.Artwork;
 
 namespace ISGPAI.Game.Entities
 {
@@ -7,11 +9,23 @@ namespace ISGPAI.Game.Entities
 	{
 		public const int Sight = 250;
 
+		// In seconds.
+		private const double AnimationInterval = 0.05;
+
+		// If this entity's speed is below this value, it will stand still
+		// (instead of showing the walking animation.
+		private const double AnimationSpeedThreshold = 25;
+
+		private AnimatedSpriteSet _spriteSet;
 		private World _world;
 		private StateMachine<Creeper> _stateMachine;
 
+		// In seconds.
+		private double _timeSinceLastAnimation;
+
 		public Creeper(World world)
 		{
+			this._spriteSet = new AnimatedSpriteSet("badass.png", 32, 64);
 			Mass = 1;
 			MaxSpeed = 200;
 			// Wandering is the default state.
@@ -28,16 +42,62 @@ namespace ISGPAI.Game.Entities
 		public override void Update(double elapsed)
 		{
 			_stateMachine.Update(elapsed);
+			UpdateSpriteDirection();
+			UpdateSpriteAnimation(elapsed);
+		}
+
+		private void UpdateSpriteDirection()
+		{
+			// Change the direction the sprite is facing depending on
+			// the current velocity.
+			if (Math.Abs(Velocity.X) > Math.Abs(Velocity.Y))
+			{
+				if (Velocity.X < 0)
+				{
+					_spriteSet.ChangeRow(2);
+				}
+				else
+				{
+					_spriteSet.ChangeRow(3);
+				}
+			}
+			else
+			{
+				if (Velocity.Y < 0)
+				{
+					_spriteSet.ChangeRow(0);
+				}
+				else
+				{
+					_spriteSet.ChangeRow(1);
+				}
+			}
+		}
+
+		private void UpdateSpriteAnimation(double elapsed)
+		{
+			if (Velocity.Length > AnimationSpeedThreshold)
+			{
+				double timeFactor = Velocity.Length / 200;
+				if (_timeSinceLastAnimation * timeFactor > AnimationInterval)
+				{
+					_timeSinceLastAnimation = 0;
+					_spriteSet.AdvanceAnimation();
+				}
+				else
+				{
+					_timeSinceLastAnimation += elapsed;
+				}
+			}
+			else
+			{
+				_spriteSet.ChangeColumn(1);
+			}
 		}
 
 		public override void Paint(Graphics g)
 		{
-			const int Size = 20;
-			g.FillRectangle(Brushes.Green,
-				(int)Position.X - Size / 2,
-				(int)Position.Y - Size / 2,
-				Size, Size
-			);
+			_spriteSet.PaintAt(g, this.Position);
 		}
 	}
 }

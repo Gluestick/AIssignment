@@ -13,7 +13,7 @@ namespace ISGPAI.Game
 			World world = new World();
 			Adventurer adventurer = new Adventurer(world);
 			world.AddEntity(adventurer);
-			world.AddEntity(new Badass(world));
+			world.AddEntity(new Creeper(world));
 
 			// Conga conga conga conga!
 			const int CongaSize = 4;
