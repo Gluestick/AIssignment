@@ -3,7 +3,6 @@ using FuzzyLogic;
 using FuzzyLogic.Operators;
 using ISGPAI.Game.Maths;
 using ISGPAI.Game.SteeringBehaviors;
-using ISGPAI.Game.Entities;
 
 namespace ISGPAI.Game.Entities
 {

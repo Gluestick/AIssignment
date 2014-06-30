@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="94135107-e165-4e9e-baac-872747f1ddd6" name="UMLClassDiagram1" linkedPackageId="c6a0799c-9553-4444-9429-b95638990cf9" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="e28a0753-cab8-4832-b25a-312f77d23005">
+      <profileInstance Id="dea72111-4e92-4bec-bc47-b9752f263b49" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="2ad8077f-15cb-47df-afaf-a1b01ec20237">
+      <profileInstance Id="d9447eec-377e-433a-b85e-81ccc20c2569" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="50577a49-5007-4ac2-b45a-bdecf2111d00" name="ISteeringBehavior" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ff5405f3-52ff-409e-b4f5-f559dbe0e50e" />
+        <ownedOperations>
+          <operation Id="cb21baae-8cff-44cc-bc71-d8b9326cbfaf" name="Steer" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7599b5c9-0939-4bf9-a1ec-f4c5cd0e74fb" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b523f5c0-6a66-4220-be6b-be4f7ec47f7b" direction="Return" isUnique="false">
+                  <elementDefinition Id="6f60af5c-6a12-472e-b041-1f93ecf9bf5c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="eb1ebefc-4bbd-440d-bba6-f205f7eb5b00" LastKnownName="Vector2" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9cdad12b-7330-4d25-8d3e-312eb08519e0" name="agent" direction="In" isUnique="false">
+                  <elementDefinition Id="d11ebb54-4ce7-44a3-8597-8ac32823c8f5" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="ef8fe858-abfc-4712-9a5f-69a2b9063a60" LastKnownName="MovingEntity" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f5082875-009c-4717-ae13-cbd59a969d7b" name="elapsed" direction="In" isUnique="false">
+                  <elementDefinition Id="73c1cc12-8ce5-491b-af14-2d600123dfd5" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="8ffa0c5f-fd06-4b38-83ce-fe6aa792199d" LastKnownName="double" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="ef8fe858-abfc-4712-9a5f-69a2b9063a60" name="MovingEntity" isAbstract="false" isLeaf="false" cachedFullName="MovingEntity">
+        <elementDefinition Id="066f6376-c80b-4199-a70d-2fd9f8ee0258" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="8ffa0c5f-fd06-4b38-83ce-fe6aa792199d" name="double" isAbstract="false" isLeaf="false" cachedFullName="double">
+        <elementDefinition Id="4c09137b-bd04-45fc-b13c-8e1c4600d884" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="eb1ebefc-4bbd-440d-bba6-f205f7eb5b00" name="Vector2" isAbstract="false" isLeaf="false" cachedFullName="Vector2">
+        <elementDefinition Id="7723031a-ed04-4a41-98ec-837c9a814a59" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a887f269-f6a4-49c2-a83d-36644a95d7ee" name="ArriveAtSteering" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="dcd78f98-170c-400a-ba3d-c3bd59d7e5eb" />
+        <suppliersInternal>
+          <interfaceRealization Id="4f754e4b-0dff-471e-8628-4b4cf4be9daa">
+            <interfaceMoniker Id="50577a49-5007-4ac2-b45a-bdecf2111d00" LastKnownName="ISteeringBehavior" />
+            <elementDefinition Id="88841845-d2a3-4776-b99d-9655bc617200" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="7d3bc16a-2b56-4117-b266-604be904e5f3" name="Location" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8edf8d4f-9b24-4d69-a538-58a06305f253" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="eb1ebefc-4bbd-440d-bba6-f205f7eb5b00" LastKnownName="Vector2" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="4408d63b-2e47-4c78-9df6-94b46bea67cf" name="ArriveAtSteering" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d59bafdd-f485-46b3-b311-f819d6557dc4" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3cfd160a-e346-4949-8f20-400a26403ded" name="location" direction="In" isUnique="false">
+                  <elementDefinition Id="d206c798-72f2-46b8-9a78-c9e8671e7c39" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="eb1ebefc-4bbd-440d-bba6-f205f7eb5b00" LastKnownName="Vector2" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="84433b21-8200-4bbe-8fcc-0f055235837b" name="FleeSteering" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="2853e1ae-3aa0-4d26-bdff-7ec67deb1eb0" />
+        <suppliersInternal>
+          <interfaceRealization Id="4d4a9da8-7ccf-41f7-a3d3-437b7c9969f6">
+            <interfaceMoniker Id="50577a49-5007-4ac2-b45a-bdecf2111d00" LastKnownName="ISteeringBehavior" />
+            <elementDefinition Id="a0f18d57-16be-4a5d-aec9-21be89713ecb" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="786308ab-7179-4cc4-8a0e-c19234ccb480" name="SeekSteering" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="962ca207-f61f-4e46-846f-5a092103538a" />
+        <suppliersInternal>
+          <interfaceRealization Id="4c5dc3db-9e55-41b8-a54b-22f4c62c41e8">
+            <interfaceMoniker Id="50577a49-5007-4ac2-b45a-bdecf2111d00" LastKnownName="ISteeringBehavior" />
+            <elementDefinition Id="71a15075-9a54-4869-a14b-7743927a7381" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="1ecc7e05-5c28-4a81-adef-e36d671fb786" name="Steer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f8a84dca-737d-424b-9e60-9d9dd8bc4dab" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="12e1ab9d-dc46-482f-99c4-2fdee0e0e6af" name="agent" direction="In" isUnique="false">
+                  <elementDefinition Id="ae45a294-774f-4efa-9e0a-c423bf8fa104" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="ef8fe858-abfc-4712-9a5f-69a2b9063a60" LastKnownName="MovingEntity" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5cd24920-bb4c-42b3-b2ed-eba8a9b496dd" name="elapsed" direction="In" isUnique="false">
+                  <elementDefinition Id="81e424ee-2123-4525-af74-e0002c126e55" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="8ffa0c5f-fd06-4b38-83ce-fe6aa792199d" LastKnownName="double" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7a2cdb3f-b332-4bc1-b1f7-1bed3cbcfbb0" direction="Return" isUnique="false">
+                  <elementDefinition Id="b93c2fda-e592-476c-a570-26dcea98ef57" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="eb1ebefc-4bbd-440d-bba6-f205f7eb5b00" LastKnownName="Vector2" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b93801ed-f984-42fd-aef2-6506c0b3baf9" name="SeekAtSteering" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7cca9224-a16d-4382-ab63-01589448ad23" />
+        <suppliersInternal>
+          <interfaceRealization Id="5679800f-114f-4032-95bd-8774ac88dbd6">
+            <interfaceMoniker Id="50577a49-5007-4ac2-b45a-bdecf2111d00" LastKnownName="ISteeringBehavior" />
+            <elementDefinition Id="36f2a9b9-6233-414d-80b6-4a2e5b8dffb5" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="b71e9f46-89a6-482b-8f6c-d98dabfaf36c" name="Steer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b7a65330-614c-4a86-a306-e4b7724d62ec" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9044b9c7-c4f6-4da3-9ec8-b4eaa3daaa37" name="agent" direction="In" isUnique="false">
+                  <elementDefinition Id="ba838b12-6954-4ceb-9c98-b0a89ea19e2e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="ef8fe858-abfc-4712-9a5f-69a2b9063a60" LastKnownName="MovingEntity" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f54ca126-c7f0-4468-986f-1699f74fd436" name="elapsed" direction="In" isUnique="false">
+                  <elementDefinition Id="34eb9512-e21f-42fd-87de-c733182a2bd8" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="8ffa0c5f-fd06-4b38-83ce-fe6aa792199d" LastKnownName="double" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="75e9f761-bbbc-4550-914e-a43a994f87c9" direction="Return" isUnique="false">
+                  <elementDefinition Id="7391ae7b-35ec-49f3-a30b-e880894dcbb2" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="eb1ebefc-4bbd-440d-bba6-f205f7eb5b00" LastKnownName="Vector2" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4def21f8-8eda-4d7d-a214-bbccb5f6ef8c" name="SeperationSteering" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="39f5c2db-5cd3-4517-9697-c911381a61b6" />
+        <suppliersInternal>
+          <interfaceRealization Id="28f6d771-579e-45dc-bffb-549d9d900f13">
+            <interfaceMoniker Id="50577a49-5007-4ac2-b45a-bdecf2111d00" LastKnownName="ISteeringBehavior" />
+            <elementDefinition Id="cf8b14e4-1bae-4158-992d-9c945f046c9a" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="fba0a0b7-ca0d-4933-839b-d735fa475447" name="WanderSteering" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="dabf23c6-c5b7-41af-a75d-aaec8d71eabb" />
+        <suppliersInternal>
+          <interfaceRealization Id="e1674fb0-c3eb-4fff-bcb7-e8c5d24e59e6">
+            <interfaceMoniker Id="50577a49-5007-4ac2-b45a-bdecf2111d00" LastKnownName="ISteeringBehavior" />
+            <elementDefinition Id="cfac9b8d-a680-4ac7-8969-a777a041fc40" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="838efc77-d2b8-4225-a540-80389f4a4c13" name="Steer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c8724141-477c-4386-b967-b427957be826" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="26a6c4d3-8390-40b2-bdd1-6e9a52353f58" name="agent" direction="In" isUnique="false">
+                  <elementDefinition Id="4c30d54b-0779-47e2-aa3c-73043007656b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="ef8fe858-abfc-4712-9a5f-69a2b9063a60" LastKnownName="MovingEntity" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="02123cd8-4cbd-46d3-815d-215f39fd062e" name="elapsed" direction="In" isUnique="false">
+                  <elementDefinition Id="24949071-c343-4ef1-9fc5-26b41bd902fc" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="8ffa0c5f-fd06-4b38-83ce-fe6aa792199d" LastKnownName="double" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="714ac878-69c8-410c-8c16-fdc5dabbe2bd" direction="Return" isUnique="false">
+                  <elementDefinition Id="94e59bc7-08e6-4133-ae8f-fcbf01059490" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="eb1ebefc-4bbd-440d-bba6-f205f7eb5b00" LastKnownName="Vector2" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9f7245f7-97ff-4f82-b377-f8b5a9b7e5ce" name="KeyboardSteering" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="289be200-794f-4402-9710-5f329d918a88" />
+        <suppliersInternal>
+          <interfaceRealization Id="71e3ef00-dcb2-4daa-b96e-810c5c70f739">
+            <interfaceMoniker Id="50577a49-5007-4ac2-b45a-bdecf2111d00" LastKnownName="ISteeringBehavior" />
+            <elementDefinition Id="ed6d7ad5-6147-4170-b3d3-cf1503143c9e" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="ac4c11a0-42a2-4d3f-a239-9f02835e227d" name="Steer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e9e4c68c-b043-4256-bd39-7ceabaf99a27" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="02512141-82d7-4bd6-b1ae-499850906f68" name="agent" direction="In" isUnique="false">
+                  <elementDefinition Id="ac05a79e-5986-4b0c-ae8a-0774dfed2b85" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="ef8fe858-abfc-4712-9a5f-69a2b9063a60" LastKnownName="MovingEntity" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c4f96dee-94d4-4200-aa5c-2133ed149ae5" name="elapsed" direction="In" isUnique="false">
+                  <elementDefinition Id="bcf0b564-5653-4109-a4f0-477fe4206196" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="8ffa0c5f-fd06-4b38-83ce-fe6aa792199d" LastKnownName="double" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b07d7581-8456-49a4-a599-18455140aae2" direction="Return" isUnique="false">
+                  <elementDefinition Id="c8d59d55-03ad-4b1c-af99-fa02db170976" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="eb1ebefc-4bbd-440d-bba6-f205f7eb5b00" LastKnownName="Vector2" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="c6a0799c-9553-4444-9429-b95638990cf9" name="ModelingProject1">
+    <elementDefinition Id="195e6dfe-acfc-40ad-a84d-a4c3b32b52f4" />
+  </package>
+</logicalClassDesignerModel>
