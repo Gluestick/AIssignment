@@ -30,7 +30,7 @@ namespace ISGPAI.Game.Entities
 		{
 			Position = position;
 			this._spriteSet = new AnimatedSpriteSet("badass.png", 32, 64);
-			Health = 100;
+			Health = 70;
 			Mass = 1;
 			MaxSpeed = 200;
 			Velocity = new Vector2(MaxSpeed, 0);
