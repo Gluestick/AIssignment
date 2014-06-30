@@ -30,7 +30,7 @@ namespace ISGPAI.Game.Entities
 		{
 			Position = position;
 			this._spriteSet = new AnimatedSpriteSet("badass.png", 32, 64);
-			Health = 1;
+			Health = 100;
 			Mass = 1;
 			MaxSpeed = 200;
 			Velocity = new Vector2(MaxSpeed, 0);
@@ -47,9 +47,17 @@ namespace ISGPAI.Game.Entities
 
 		public override void Update(double elapsed)
 		{
-			_stateMachine.Update(elapsed);
-			UpdateSpriteDirection();
-			UpdateSpriteAnimation(elapsed);
+			if (Health > 0)
+			{
+				_stateMachine.Update(elapsed);
+				UpdateSpriteDirection();
+				UpdateSpriteAnimation(elapsed);
+			}
+			else
+			{
+				_world.RemoveEntity(this);
+				_world.AddEntity(new CreeperExplosion(_world, Position));
+			}
 		}
 
 		private void UpdateSpriteDirection()

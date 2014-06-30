@@ -108,6 +108,7 @@
     <Compile Include="SteeringBehaviors\KeyboardSteering.cs" />
     <Compile Include="SteeringBehaviors\SeekAtSteering.cs" />
     <Compile Include="SteeringBehaviors\SeekSteering.cs" />
+    <Compile Include="SteeringBehaviors\FleeSteering.cs" />
     <Compile Include="SteeringBehaviors\SeparationSteering.cs" />
     <Compile Include="SteeringBehaviors\WanderSteering.cs" />
     <Compile Include="TestWorldFactory.cs" />
