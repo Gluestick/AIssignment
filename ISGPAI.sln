@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuzzyLogic", "FuzzyLogic\Fu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuzzyLogic.Tests", "FuzzyLogic.Tests\FuzzyLogic.Tests.csproj", "{56CE6C53-6832-44C1-B91B-C60AA31A61A1}"
 EndProject
-Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ModelingProject1", "ModelingProject1\ModelingProject1.modelproj", "{5AF6156F-0D6B-4D9D-A904-BE3857B22715}"
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ModelingProject", "ModelingProject1\ModelingProject.modelproj", "{5AF6156F-0D6B-4D9D-A904-BE3857B22715}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

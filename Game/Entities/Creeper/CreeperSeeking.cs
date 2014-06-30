@@ -63,8 +63,8 @@ namespace ISGPAI.Game.Entities
 		public override void Update(double elapsed)
 		{
 			double distance = (_target.Position - _agent.Position).Length;
-			_fuzzy.Fuzzify("distance", distance);
-			_fuzzy.Fuzzify("health", _agent.Health);
+			_fuzzy.Fuzzify("distance", 8);
+			_fuzzy.Fuzzify("health", 20);
 
 			double detonate = _fuzzy.DeFuzzify("detonate", DefuzzifyType.MaxAv);
 			if (detonate > 60)
