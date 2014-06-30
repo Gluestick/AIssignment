@@ -1,9 +1,7 @@
 ﻿namespace ISGPAI.Game.Maths
 {
-	/// <summary>
-	/// I had no idea what matrices were when I made this. Now I know about
-	/// them I am too lazy to refactor this, so excuse the shitty code.
-	/// </summary>
+	// I had no idea what matrices were when I made this. It works, but the class design
+	// is pretty weird.
 	public class Matrix2
 	{
 		private Matrix _matrix;

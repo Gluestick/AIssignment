@@ -57,7 +57,7 @@ namespace Game.Tests
 		[Timeout(1500)]
 		public void BigConnectedGraph_GetShortestPath_NoInfiniteLoop()
 		{
-			Graph graph = WorldGraphFactory.CreateGraph(-5, -5, 10, 10, 10);
+			Graph graph = WorldGraphFactory.CreateGraph(-9, -20, 18, 40, 10);
 			GraphNode startNode = graph.NearestNode(new Vector2(-50, -50));
 			GraphNode endNode = graph.NearestNode(new Vector2(50, 50));
 

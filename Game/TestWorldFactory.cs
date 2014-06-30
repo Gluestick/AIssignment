@@ -16,7 +16,7 @@ namespace ISGPAI.Game
 			world.AddEntity(new Creeper(new Vector2(300, 100), world));
 			world.AddEntity(new Creeper(new Vector2(-300, 100), world));
 			world.AddEntity(new Creeper(new Vector2(-100, 200), world));
-			world.AddEntity(new CreeperHelper(world));
+			world.AddEntity(new Helper(world));
 
 			// Conga conga conga conga!
 			const int CongaSize = 4;

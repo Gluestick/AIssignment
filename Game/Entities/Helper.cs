@@ -7,7 +7,7 @@ using ISGPAI.Game.SteeringBehaviors;
 
 namespace ISGPAI.Game.Entities
 {
-	public class CreeperHelper : MovingEntity
+	public class Helper : MovingEntity
 	{
 		// In seconds.
 		private double _timeSinceLastAnimation;
@@ -36,7 +36,7 @@ namespace ISGPAI.Game.Entities
 		private Creeper _target;
 		private AnimatedSpriteSet _sprite;
 
-		public CreeperHelper(World world)
+		public Helper(World world)
 		{
 			MaxSpeed = 200;
 			Mass = 1;

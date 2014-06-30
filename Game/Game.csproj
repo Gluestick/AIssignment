@@ -68,7 +68,7 @@
     <Compile Include="Collections\IShortestPathAlgorithm.cs" />
     <Compile Include="Entities\Adventurer.cs" />
     <Compile Include="Entities\CreeperExplosion.cs" />
-    <Compile Include="Entities\CreeperHelper.cs" />
+    <Compile Include="Entities\Helper.cs" />
     <Compile Include="Entities\Creeper\Creeper.cs" />
     <Compile Include="Entities\Creeper\CreeperSeeking.cs" />
     <Compile Include="Entities\Creeper\CreeperWandering.cs" />
@@ -100,7 +100,6 @@
     <Compile Include="Maths\RandomHolder.cs" />
     <Compile Include="Mouse.cs" />
     <Compile Include="SteeringBehaviors\ArriveAtSteering.cs" />
-    <Compile Include="SteeringBehaviors\ExploreSteering.cs" />
     <Compile Include="SteeringBehaviors\ISteeringBehavior.cs" />
     <Compile Include="Entities\MovingEntity.cs" />
     <Compile Include="Program.cs" />
