@@ -66,6 +66,7 @@
     <Compile Include="Collections\IAStarHeuristic.cs" />
     <Compile Include="Collections\EuclideanDistanceHeuristic.cs" />
     <Compile Include="Collections\IShortestPathAlgorithm.cs" />
+    <Compile Include="Collections\ShortestPath.cs" />
     <Compile Include="Entities\Adventurer.cs" />
     <Compile Include="Entities\CreeperExplosion.cs" />
     <Compile Include="Entities\Helper.cs" />

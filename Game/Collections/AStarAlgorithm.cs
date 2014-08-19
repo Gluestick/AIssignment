@@ -9,6 +9,7 @@ namespace ISGPAI.Game.Collections
 		private Graph _graph;
 		private ICollection<GraphNode> _openList;
 		private ICollection<GraphNode> _closedList;
+		private ICollection<GraphEdge> _consideredEdges;
 		private GraphNode _destination;
 		private IAStarHeuristic _heuristic;
 
@@ -24,6 +25,7 @@ namespace ISGPAI.Game.Collections
 			if (GetShortestPathRecursive(start, destination))
 			{
 				var path = new LinkedList<GraphNode>();
+				_consideredEdges = new LinkedList<GraphEdge>();
 				GraphNode current = destination;
 				path.AddFirst(current);
 				while (current != start)
@@ -73,6 +75,7 @@ namespace ISGPAI.Game.Collections
 					edge.Destination.Parent = current;
 					_openList.Add(edge.Destination);
 				}
+				_consideredEdges.Add(edge);
 			}
 			_openList.Remove(current);
 			_closedList.Add(current);
