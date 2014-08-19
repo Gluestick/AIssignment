@@ -18,14 +18,14 @@ namespace ISGPAI.Game.Collections
 			this._graph = graph;
 		}
 
-		public IEnumerable<GraphNode> GetShortestPath(GraphNode start, GraphNode destination)
+		public ShortestPath GetShortestPath(GraphNode start, GraphNode destination)
 		{
 			Initialize(destination);
 			start.BestDistance = 0f;
+			_consideredEdges = new LinkedList<GraphEdge>();
 			if (GetShortestPathRecursive(start, destination))
 			{
 				var path = new LinkedList<GraphNode>();
-				_consideredEdges = new LinkedList<GraphEdge>();
 				GraphNode current = destination;
 				path.AddFirst(current);
 				while (current != start)
@@ -33,7 +33,7 @@ namespace ISGPAI.Game.Collections
 					current = current.Parent;
 					path.AddFirst(current);
 				}
-				return path.ToList();
+				return new ShortestPath(path.ToList(), _consideredEdges);
 			}
 			throw new ArgumentException("Startnode is not connected to destination node.");
 		}

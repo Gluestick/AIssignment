@@ -48,7 +48,8 @@ namespace Game.Tests
 			graph.AddEdge(new GraphEdge(midSecond, destination));
 
 			AStarAlgorithm astar = new AStarAlgorithm(graph);
-			IEnumerable<GraphNode> path = astar.GetShortestPath(start, destination);
+			IEnumerable<GraphNode> path =
+				astar.GetShortestPath(start, destination).Path;
 			Assert.IsTrue(path.Count() == NodeCount,
 				"Path has an invalid amount of nodes");
 		}

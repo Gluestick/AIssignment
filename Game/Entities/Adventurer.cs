@@ -74,7 +74,7 @@ namespace ISGPAI.Game.Entities
 			GraphNode nearestDestination =
 				_world.Graph.NearestNode(Mouse.Position);
 			IEnumerable<GraphNode> path = new AStarAlgorithm(_world.Graph)
-				.GetShortestPath(nearestCurrent, nearestDestination);
+				.GetShortestPath(nearestCurrent, nearestDestination).Path;
 			_path = path.GetEnumerator();
 			if (!_path.MoveNext())
 			{
