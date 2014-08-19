@@ -25,7 +25,8 @@ namespace ISGPAI.Game.Entities
 		private ISteeringBehavior _keyboardSteering;
 		private SeekAtSteering _seekAtSteering;
 		private AnimatedSpriteSet _spriteSet;
-		private IEnumerator<GraphNode> _path;
+		private ShortestPath _path;
+		private IEnumerator<GraphNode> _pathEnum;
 
 		// In seconds.
 		private double _timeSinceLastAnimation;
@@ -73,10 +74,10 @@ namespace ISGPAI.Game.Entities
 				_world.Graph.NearestNode(Position);
 			GraphNode nearestDestination =
 				_world.Graph.NearestNode(Mouse.Position);
-			IEnumerable<GraphNode> path = new AStarAlgorithm(_world.Graph)
-				.GetShortestPath(nearestCurrent, nearestDestination).Path;
-			_path = path.GetEnumerator();
-			if (!_path.MoveNext())
+			_path = new AStarAlgorithm(_world.Graph)
+				.GetShortestPath(nearestCurrent, nearestDestination);
+			_pathEnum = _path.Path.GetEnumerator();
+			if (!_pathEnum.MoveNext())
 			{
 				// Delete path if we're already at the destination.
 				_path = null;
@@ -107,17 +108,17 @@ namespace ISGPAI.Game.Entities
 		{
 			// Move to the next node in our path if we are close enough to
 			// our current target node.
-			if ((Position - _path.Current.Position).Length < NavigationDistance)
+			if ((Position - _pathEnum.Current.Position).Length < NavigationDistance)
 			{
 				// Set path to null if we have reached our destination.
-				if (!_path.MoveNext())
+				if (!_pathEnum.MoveNext())
 				{
 					_path = null;
 				}
 			}
 			if (_path != null)
 			{
-				_seekAtSteering.Location = _path.Current.Position;
+				_seekAtSteering.Location = _pathEnum.Current.Position;
 				Vector2 steeringForce = _seekAtSteering.Steer(this, elapsed) * 10;
 				Vector2 acceleration = steeringForce / Mass;
 				Velocity += acceleration * elapsed;
