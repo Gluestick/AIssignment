@@ -28,6 +28,9 @@ namespace ISGPAI.Game.Entities
 		private ShortestPath _path;
 		private IEnumerator<GraphNode> _pathEnum;
 
+		private Pen ConsideredEdgePen = new Pen(Brushes.Orange, 2);
+		private Pen PathPen = new Pen(Brushes.Red, 2);
+
 		// In seconds.
 		private double _timeSinceLastAnimation;
 
@@ -178,6 +181,27 @@ namespace ISGPAI.Game.Entities
 
 		public override void Paint(Graphics g)
 		{
+			if (_path != null)
+			{
+				var enumerator = _path.Path.GetEnumerator();
+				foreach (GraphEdge edge in _path.ConsideredEdges)
+				{
+					g.DrawLine(ConsideredEdgePen,
+						(int)edge.Source.Position.X, (int)edge.Source.Position.Y,
+						(int)edge.Destination.Position.X, (int)edge.Destination.Position.Y
+					);
+				}
+				enumerator.MoveNext();
+				GraphNode last = enumerator.Current;
+				while (enumerator.MoveNext())
+				{
+					g.DrawLine(PathPen,
+						(int)last.Position.X, (int)last.Position.Y,
+						(int)enumerator.Current.Position.X, (int)enumerator.Current.Position.Y
+					);
+					last = enumerator.Current;
+				}
+			}
 			_spriteSet.PaintAt(g, this.Position);
 		}
 	}
