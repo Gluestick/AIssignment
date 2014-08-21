@@ -69,6 +69,8 @@
     <Compile Include="Collections\ShortestPath.cs" />
     <Compile Include="Entities\Adventurer.cs" />
     <Compile Include="Entities\CreeperExplosion.cs" />
+    <Compile Include="Entities\GoalDrivenBehavior\Goal.cs" />
+    <Compile Include="Entities\GoalDrivenBehavior\Status.cs" />
     <Compile Include="Entities\Helper.cs" />
     <Compile Include="Entities\Creeper\Creeper.cs" />
     <Compile Include="Entities\Creeper\CreeperSeeking.cs" />
