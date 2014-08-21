@@ -1,5 +1,6 @@
 ﻿using System;
 using ISGPAI.Game.Maths;
+using ISGPAI.Game.SteeringBehaviors;
 
 namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 {
@@ -23,7 +24,10 @@ namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 		public override void Activate()
 		{
 			this._status = Status.Active;
-			_owner.MoveTo(_target);
+			_owner.SetSteering(new SeekAtSteering()
+				{
+					Location = _target
+				});
 		}
 
 		public override Status Process()
@@ -49,7 +53,7 @@ namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 
 		public override void Terminate()
 		{
-			_owner.StopMoving();
+			_owner.StopSteering();
 		}
 
 		public override void AddSubGoal(Goal<Helper> goal)
