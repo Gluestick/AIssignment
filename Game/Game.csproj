@@ -74,6 +74,7 @@
     <Compile Include="Entities\GoalDrivenBehavior\EnterHouseGoal.cs" />
     <Compile Include="Entities\GoalDrivenBehavior\FleeGoal.cs" />
     <Compile Include="Entities\GoalDrivenBehavior\Goal.cs" />
+    <Compile Include="Entities\GoalDrivenBehavior\LeaveHouseGoal.cs" />
     <Compile Include="Entities\GoalDrivenBehavior\MotivateGoal.cs" />
     <Compile Include="Entities\GoalDrivenBehavior\SeekGoal.cs" />
     <Compile Include="Entities\GoalDrivenBehavior\Status.cs" />
