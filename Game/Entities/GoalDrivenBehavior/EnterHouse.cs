@@ -1,4 +1,6 @@
-﻿namespace ISGPAI.Game.Entities.GoalDrivenBehavior
+﻿using System;
+
+namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 {
 	public class EnterHouse : Goal<Helper>
 	{
@@ -9,22 +11,26 @@
 
 		public override void Activate()
 		{
-			throw new System.NotImplementedException();
+			_status = Status.Active;
 		}
 
 		public override Status Process()
 		{
-			throw new System.NotImplementedException();
+			Activate();
+			_owner.StopMovement();
+			_owner.IsVisible = false;
+			_status = Status.Completed;
+			return _status;
 		}
 
 		public override void Terminate()
 		{
-			throw new System.NotImplementedException();
 		}
 
 		public override void AddSubGoal(Goal<Helper> goal)
 		{
-			throw new System.NotImplementedException();
+			throw new InvalidOperationException(
+				"Cannot add subgoals to an atomic goal");
 		}
 	}
 }
