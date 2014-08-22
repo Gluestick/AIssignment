@@ -2,9 +2,9 @@
 
 namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 {
-	public class EnterHouse : Goal<Helper>
+	public class EnterHouseGoal : Goal<Helper>
 	{
-		public EnterHouse(Helper owner)
+		public EnterHouseGoal(Helper owner)
 		{
 			this._owner = owner;
 		}

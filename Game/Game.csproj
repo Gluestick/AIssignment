@@ -71,7 +71,7 @@
     <Compile Include="Entities\CreeperExplosion.cs" />
     <Compile Include="Entities\GoalDrivenBehavior\AttackGoal.cs" />
     <Compile Include="Entities\GoalDrivenBehavior\CompositeGoal.cs" />
-    <Compile Include="Entities\GoalDrivenBehavior\EnterHouse.cs" />
+    <Compile Include="Entities\GoalDrivenBehavior\EnterHouseGoal.cs" />
     <Compile Include="Entities\GoalDrivenBehavior\FleeGoal.cs" />
     <Compile Include="Entities\GoalDrivenBehavior\Goal.cs" />
     <Compile Include="Entities\GoalDrivenBehavior\MotivateGoal.cs" />
