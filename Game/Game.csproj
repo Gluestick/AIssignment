@@ -69,6 +69,7 @@
     <Compile Include="Collections\ShortestPath.cs" />
     <Compile Include="Entities\Adventurer.cs" />
     <Compile Include="Entities\CreeperExplosion.cs" />
+    <Compile Include="Entities\GoalDrivenBehavior\AttackCreeperGoal.cs" />
     <Compile Include="Entities\GoalDrivenBehavior\AttackGoal.cs" />
     <Compile Include="Entities\GoalDrivenBehavior\CompositeGoal.cs" />
     <Compile Include="Entities\GoalDrivenBehavior\EnterHouseGoal.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Entities\GoalDrivenBehavior\Goal.cs" />
     <Compile Include="Entities\GoalDrivenBehavior\LeaveHouseGoal.cs" />
     <Compile Include="Entities\GoalDrivenBehavior\MotivateGoal.cs" />
+    <Compile Include="Entities\GoalDrivenBehavior\RestAtHomeGoal.cs" />
     <Compile Include="Entities\GoalDrivenBehavior\RestGoal.cs" />
     <Compile Include="Entities\GoalDrivenBehavior\SeekGoal.cs" />
     <Compile Include="Entities\GoalDrivenBehavior\Status.cs" />

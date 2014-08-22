@@ -29,6 +29,7 @@ namespace ISGPAI.Game.Entities
 		{
 			MaxSpeed = 200;
 			Mass = 1;
+			IsVisible = true;
 
 			_sprite = new AnimatedSpriteSet("helper.png", 32, 64);
 			_isSteering = false;

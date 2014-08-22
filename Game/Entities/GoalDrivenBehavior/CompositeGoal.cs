@@ -42,5 +42,21 @@ namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 		{
 			_subGoals.Clear();
 		}
+
+		protected void ActivateIfInactive()
+		{
+			if (_status == Status.Inactive)
+			{
+				Activate();
+			}
+		}
+
+		protected void ReactivateIfFailed()
+		{
+			if (_status == Status.Failed)
+			{
+				Activate();
+			}
+		}
 	}
 }

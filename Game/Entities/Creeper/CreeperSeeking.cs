@@ -69,6 +69,7 @@ namespace ISGPAI.Game.Entities
 			double detonate = _fuzzy.DeFuzzify("detonate", DefuzzifyType.MaxAv);
 			if (detonate > 60)
 			{
+				_agent.Health = 0;
 				_world.AddEntity(new CreeperExplosion(_world, _agent.Position));
 				_world.RemoveEntity(_agent);
 				return;
