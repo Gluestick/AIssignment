@@ -5,7 +5,7 @@ using ISGPAI.Game.SteeringBehaviors;
 namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 {
 	/// <summary>
-	/// Atomic goal for a Helper that seeks to the location specified
+	/// Atomic goal for a Helper that seeks to the location/entity specified
 	/// during construction.
 	/// </summary>
 	public class SeekGoal : Goal<Helper>
@@ -14,6 +14,19 @@ namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 		private const double TargetDistance = 10;
 
 		private Vector2 _target;
+		private Entity _targetEntity;
+
+		private Vector2 TargetLocation
+		{
+			get
+			{
+				if (_targetEntity != null)
+				{
+					return _targetEntity.Position;
+				}
+				return _target;
+			}
+		}
 
 		public SeekGoal(Helper owner, Vector2 target)
 		{
@@ -21,13 +34,26 @@ namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 			this._target = target;
 		}
 
+		public SeekGoal(Helper owner, Entity target)
+		{
+			this._owner = owner;
+			this._targetEntity = target;
+		}
+
 		public override void Activate()
 		{
 			this._status = Status.Active;
-			_owner.SetSteering(new SeekAtSteering()
-				{
-					Location = _target
-				});
+			if (_targetEntity != null)
+			{
+				_owner.SetSteering(new SeekSteering(_targetEntity));
+			}
+			else
+			{
+				_owner.SetSteering(new SeekAtSteering()
+					{
+						Location = _target
+					});
+			}
 		}
 
 		public override Status Process()
