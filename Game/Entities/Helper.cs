@@ -23,6 +23,8 @@ namespace ISGPAI.Game.Entities
 		// In seconds.
 		private double _timeSinceLastAnimation;
 
+		public bool IsVisible { get; set; }
+
 		public Helper(World world)
 		{
 			MaxSpeed = 200;
@@ -42,7 +44,10 @@ namespace ISGPAI.Game.Entities
 
 		public override void Paint(Graphics g)
 		{
-			_sprite.PaintAt(g, this.Position);
+			if (IsVisible)
+			{
+				_sprite.PaintAt(g, this.Position);
+			}
 		}
 
 		public void StopMovement()
