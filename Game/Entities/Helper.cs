@@ -45,6 +45,11 @@ namespace ISGPAI.Game.Entities
 			_sprite.PaintAt(g, this.Position);
 		}
 
+		public void StopMovement()
+		{
+			Velocity = new Vector2();
+		}
+
 		public void SetSteering(ISteeringBehavior steering)
 		{
 			_steering = steering;

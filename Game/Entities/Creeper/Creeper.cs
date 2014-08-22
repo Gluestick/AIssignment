@@ -60,6 +60,15 @@ namespace ISGPAI.Game.Entities
 			}
 		}
 
+		/// <summary>
+		/// Lower health by specified amount. Health cannot be lower than 0.
+		/// </summary>
+		public void Attack(int damage)
+		{
+			Health -= damage;
+			Health = Health < 0 ? 0 : Health;
+		}
+
 		private void UpdateSpriteDirection()
 		{
 			// Change the direction the sprite is facing depending on
