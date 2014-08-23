@@ -4,7 +4,7 @@
 		where T : Entity
 	{
 		protected T _owner;
-		protected Status _status;
+		protected Status _status = Status.Inactive;
 
 		public abstract void Activate();
 		public abstract Status Process();

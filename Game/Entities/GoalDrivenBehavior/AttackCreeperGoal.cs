@@ -61,7 +61,7 @@ namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 			double currentDistance;
 			foreach (Entity entity in _world.Entities)
 			{
-				currentDistance = (_target.Position - entity.Position).Length;
+				currentDistance = (_owner.Position - entity.Position).Length;
 				if (entity is Creeper && currentDistance < closestCreeperDistance)
 				{
 					// Closer target found. Update closest target and distance.

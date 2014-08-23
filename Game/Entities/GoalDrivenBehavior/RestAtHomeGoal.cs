@@ -5,7 +5,7 @@ namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 {
 	public class RestAtHomeGoal : CompositeGoal<Helper>
 	{
-		private static Vector2 DoorOffset = new Vector2(112, 120);
+		private static Vector2 DoorOffset = new Vector2(0, 60);
 		private World _world;
 
 		public RestAtHomeGoal(Helper owner, World world)

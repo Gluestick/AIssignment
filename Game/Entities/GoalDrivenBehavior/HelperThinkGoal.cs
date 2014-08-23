@@ -16,15 +16,17 @@ namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 		public override void Activate()
 		{
 			_status = Status.Active;
+			AddNewGoal();
 		}
 
 		public override Status Process()
 		{
 			ActivateIfInactive();
-			if (ProcessSubGoals() == Status.Completed)
+			if (_subGoals.Count == 0)
 			{
 				AddNewGoal();
 			}
+			ProcessSubGoals();
 			return Status.Active;
 		}
 

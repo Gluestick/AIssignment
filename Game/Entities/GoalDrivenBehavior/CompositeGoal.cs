@@ -5,7 +5,7 @@ namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 	public abstract class CompositeGoal<T> : Goal<T>
 		where T : Entity
 	{
-		protected Stack<Goal<T>> _subGoals;
+		protected Stack<Goal<T>> _subGoals = new Stack<Goal<T>>();
 
 		public override void AddSubGoal(Goal<T> goal)
 		{
@@ -16,7 +16,7 @@ namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 		{
 			// Terminate and remove the current subgoal if completed/failed.
 			while (_subGoals.Count > 0 &&
-				_subGoals.Peek().IsCompleted() || _subGoals.Peek().HasFailed())
+				(_subGoals.Peek().IsCompleted() || _subGoals.Peek().HasFailed()))
 			{
 				_subGoals.Peek().Terminate();
 				_subGoals.Pop();

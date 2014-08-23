@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using ISGPAI.Game.Artwork;
+using ISGPAI.Game.Entities.GoalDrivenBehavior;
 using ISGPAI.Game.Maths;
 using ISGPAI.Game.SteeringBehaviors;
 
@@ -19,6 +20,7 @@ namespace ISGPAI.Game.Entities
 		private AnimatedSpriteSet _sprite;
 		private ISteeringBehavior _steering;
 		private bool _isSteering;
+		private HelperThinkGoal _goal;
 
 		// In seconds.
 		private double _timeSinceLastAnimation;
@@ -33,6 +35,8 @@ namespace ISGPAI.Game.Entities
 
 			_sprite = new AnimatedSpriteSet("helper.png", 32, 64);
 			_isSteering = false;
+			_world = world;
+			_goal = new HelperThinkGoal(this, _world);
 		}
 
 		public override void Update(double elapsed)
@@ -41,6 +45,9 @@ namespace ISGPAI.Game.Entities
 			{
 				Steer(elapsed);
 			}
+			_goal.Process();
+			UpdateSpriteDirection();
+			UpdateSpriteAnimation(elapsed);
 		}
 
 		public override void Paint(Graphics g)

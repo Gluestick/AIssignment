@@ -20,6 +20,7 @@ namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 
 		public override Status Process()
 		{
+			Activate();
 			_restIterations++;
 			if (_restIterations > MaxRestIterations)
 			{

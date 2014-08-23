@@ -90,7 +90,7 @@ namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 
 		private bool IsNearTarget()
 		{
-			return (_owner.Position - _target).Length < TargetDistance;
+			return (_owner.Position - TargetLocation).Length < TargetDistance;
 		}
 	}
 }
