@@ -47,14 +47,13 @@ namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 		{
 			double shortestDistance = double.MaxValue;
 			double currentDistance;
-			Explorer closestExplorer;
 			foreach (Entity entity in _world.Entities)
 			{
 				currentDistance = (entity.Position - _owner.Position).Length;
 				if (entity is Explorer && currentDistance < shortestDistance)
 				{
 					shortestDistance = currentDistance;
-					closestExplorer = (Explorer)entity;
+					_target = (Explorer)entity;
 				}
 			}
 		}
