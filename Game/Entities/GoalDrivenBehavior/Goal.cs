@@ -1,4 +1,6 @@
-﻿namespace ISGPAI.Game.Entities.GoalDrivenBehavior
+﻿using System.Drawing;
+using ISGPAI.Game.Maths;
+namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 {
 	public abstract class Goal<T>
 		where T : Entity
@@ -10,6 +12,10 @@
 		public abstract Status Process();
 		public abstract void Terminate();
 		public abstract void AddSubGoal(Goal<T> goal);
+
+		private static readonly Font Font = new Font(FontFamily.GenericSansSerif, 8);
+
+		public abstract string Name { get; }
 
 		public bool IsActive()
 		{
@@ -29,6 +35,12 @@
 		public bool HasFailed()
 		{
 			return _status == Status.Failed;
+		}
+
+		public virtual void DrawDebugText(Graphics g, float x, float y)
+		{
+			Brush brush = _status == Status.Active ? Brushes.White : Brushes.DarkGray;
+			g.DrawString(Name, Font, brush, x, y);
 		}
 	}
 }

@@ -57,5 +57,10 @@ namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 				}
 			}
 		}
+
+		public override string Name
+		{
+			get { return "Motivate nearby explorer"; }
+		}
 	}
 }

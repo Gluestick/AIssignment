@@ -62,5 +62,10 @@ namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 		{
 			return (_owner.Position - _target.Position).Length < FleeRange;
 		}
+
+		public override string Name
+		{
+			get { return "Flee from target."; }
+		}
 	}
 }

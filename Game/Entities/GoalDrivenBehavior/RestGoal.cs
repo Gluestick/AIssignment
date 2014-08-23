@@ -4,7 +4,7 @@ namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 {
 	public class RestGoal : Goal<Helper>
 	{
-		private const int MaxRestIterations = 2500;
+		private const int MaxRestIterations = 250;
 
 		private int _restIterations = 0;
 
@@ -38,6 +38,11 @@ namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 		{
 			throw new InvalidOperationException(
 				"Cannot add subgoals to an atomic goal");
+		}
+
+		public override string Name
+		{
+			get { return "Rest"; }
 		}
 	}
 }

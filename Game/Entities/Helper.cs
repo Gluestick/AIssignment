@@ -56,6 +56,7 @@ namespace ISGPAI.Game.Entities
 			{
 				_sprite.PaintAt(g, this.Position);
 			}
+			_goal.DrawDebugText(g, (float)Position.X + 25, (float)Position.Y - 25);
 		}
 
 		public void StopMovement()

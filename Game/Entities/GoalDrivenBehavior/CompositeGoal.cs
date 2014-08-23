@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Drawing;
 
 namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 {
@@ -56,6 +57,19 @@ namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 			if (_status == Status.Failed)
 			{
 				Activate();
+			}
+		}
+
+		public override void DrawDebugText(Graphics g, float x, float y)
+		{
+			base.DrawDebugText(g, x, y);
+			const int XOffset = 15;
+			const int YOffset = 15;
+			int nextYOffset = YOffset;
+			foreach (Goal<T> subGoal in _subGoals.ToArray())
+			{
+				subGoal.DrawDebugText(g, x + XOffset, y + nextYOffset);
+				nextYOffset += YOffset;
 			}
 		}
 	}

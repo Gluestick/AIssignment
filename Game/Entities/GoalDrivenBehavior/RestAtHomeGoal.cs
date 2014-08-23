@@ -45,5 +45,10 @@ namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 		public override void Terminate()
 		{
 		}
+
+		public override string Name
+		{
+			get { return "Rest at home"; }
+		}
 	}
 }

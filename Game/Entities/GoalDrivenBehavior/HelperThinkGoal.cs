@@ -50,5 +50,10 @@ namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 			}
 			_iterator++;
 		}
+
+		public override string Name
+		{
+			get { return "Think"; }
+		}
 	}
 }

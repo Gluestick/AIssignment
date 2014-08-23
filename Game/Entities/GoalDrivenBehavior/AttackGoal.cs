@@ -59,5 +59,10 @@ namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 			throw new InvalidOperationException(
 				"Cannot add subgoals to an atomic goal");
 		}
+
+		public override string Name
+		{
+			get { return "Attack target"; }
+		}
 	}
 }

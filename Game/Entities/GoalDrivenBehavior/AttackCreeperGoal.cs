@@ -75,5 +75,10 @@ namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 		{
 			return (_owner.Position - _target.Position).Length <= AttackRange;
 		}
+
+		public override string Name
+		{
+			get { return "Attack nearby creeper"; }
+		}
 	}
 }

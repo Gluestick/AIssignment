@@ -92,5 +92,10 @@ namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 		{
 			return (_owner.Position - TargetLocation).Length < TargetDistance;
 		}
+
+		public override string Name
+		{
+			get { return "Seek target"; }
+		}
 	}
 }
