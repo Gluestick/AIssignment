@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using ISGPAI.Game.Maths;
+
 namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 {
 	public abstract class Goal<T>
