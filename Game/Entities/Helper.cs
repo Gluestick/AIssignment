@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Windows.Forms;
 using ISGPAI.Game.Artwork;
 using ISGPAI.Game.Entities.GoalDrivenBehavior;
 using ISGPAI.Game.Maths;
@@ -21,6 +22,9 @@ namespace ISGPAI.Game.Entities
 		private ISteeringBehavior _steering;
 		private bool _isSteering;
 		private HelperThinkGoal _goal;
+
+		private bool _f12KeyDown;
+		private bool _isDebugVisible;
 
 		// In seconds.
 		private double _timeSinceLastAnimation;
@@ -45,6 +49,18 @@ namespace ISGPAI.Game.Entities
 			{
 				Steer(elapsed);
 			}
+			if (Keyboard.IsKeyDown(Keys.F12))
+			{
+				if (!_f12KeyDown)
+				{
+					_isDebugVisible = !_isDebugVisible;
+				}
+				_f12KeyDown = true;
+			}
+			else
+			{
+				_f12KeyDown = false;
+			}
 			_goal.Process();
 			UpdateSpriteDirection();
 			UpdateSpriteAnimation(elapsed);
@@ -56,7 +72,10 @@ namespace ISGPAI.Game.Entities
 			{
 				_sprite.PaintAt(g, this.Position);
 			}
-			_goal.DrawDebugText(g, (float)Position.X + 25, (float)Position.Y - 25);
+			if (_isDebugVisible)
+			{
+				_goal.DrawDebugText(g, (float)Position.X + 25, (float)Position.Y - 25);
+			}
 		}
 
 		public void StopMovement()

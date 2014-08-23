@@ -5,7 +5,7 @@ namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 	public class AttackGoal : Goal<Helper>
 	{
 		private const double AttackRange = 15;
-		private const int Damage = 10;
+		private const int Damage = 100;
 
 		private Creeper _target;
 		private World _world;
