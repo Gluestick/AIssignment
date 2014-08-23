@@ -4,7 +4,7 @@ namespace ISGPAI.Game.Entities.GoalDrivenBehavior
 {
 	public class RestGoal : Goal<Helper>
 	{
-		private const int MaxRestIterations = 250;
+		private const int MaxRestIterations = 2500;
 
 		private int _restIterations = 0;
 

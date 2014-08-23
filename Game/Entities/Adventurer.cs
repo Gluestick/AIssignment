@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 using ISGPAI.Game.Artwork;
@@ -77,13 +78,20 @@ namespace ISGPAI.Game.Entities
 				_world.Graph.NearestNode(Position);
 			GraphNode nearestDestination =
 				_world.Graph.NearestNode(Mouse.Position);
-			_path = new AStarAlgorithm(_world.Graph)
-				.GetShortestPath(nearestCurrent, nearestDestination);
-			_pathEnum = _path.Path.GetEnumerator();
-			if (!_pathEnum.MoveNext())
+			try
 			{
-				// Delete path if we're already at the destination.
-				_path = null;
+				_path = new AStarAlgorithm(_world.Graph)
+					.GetShortestPath(nearestCurrent, nearestDestination);
+				_pathEnum = _path.Path.GetEnumerator();
+				if (!_pathEnum.MoveNext())
+				{
+					// Delete path if we're already at the destination.
+					_path = null;
+				}
+			}
+			catch (ArgumentException)
+			{
+				Debug.WriteLine("Cannot plan a path to this location");
 			}
 		}
 

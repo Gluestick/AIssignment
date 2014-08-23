@@ -29,7 +29,7 @@ namespace ISGPAI.Game.Entities
 		private const double TargetDistance = 10;
 
 		private double _speedBoost;
-		private const double BoostDecrement = 0.05;
+		private const double BoostDecrement = 0.1;
 		private Graph _graph;
 		private IEnumerator<GraphNode> _enumerator;
 		private GraphNode _current;
@@ -49,7 +49,7 @@ namespace ISGPAI.Game.Entities
 
 		public void SpeedBoost()
 		{
-			_speedBoost = 1.4;
+			_speedBoost = 2;
 		}
 
 		private void Initialize()
@@ -61,7 +61,7 @@ namespace ISGPAI.Game.Entities
 
 		public override void Update(double elapsed)
 		{
-			_speedBoost -= BoostDecrement;
+			_speedBoost -= BoostDecrement * elapsed;
 			_speedBoost = _speedBoost < 1 ? 1 : _speedBoost;
 			double distance = (Position - _current.Position).Length;
 			if (distance < TargetDistance)
@@ -80,8 +80,8 @@ namespace ISGPAI.Game.Entities
 				Vector2 steeringForce = _steering.Steer(this, elapsed) * 3 * _speedBoost;
 				Vector2 acceleration = steeringForce / Mass;
 				Velocity += acceleration * elapsed;
-				Velocity = Velocity.Truncate(MaxSpeed * _speedBoost);
-				Position += Velocity * elapsed;
+				Velocity = Velocity.Truncate(MaxSpeed);
+				Position += Velocity * elapsed * _speedBoost;
 			}
 			UpdateSpriteDirection();
 			UpdateSpriteAnimation(elapsed);
