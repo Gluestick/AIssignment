@@ -52,7 +52,8 @@
 			this.Controls.Add(this._gamePanel);
 			this.Name = "GameForm";
 			this.ShowIcon = false;
-			this.Text = "AIssignment";
+			this.Text = "AIssignment (Press G to toggle grid. Press F12 for goal driven behavior debug tex" +
+    "t)";
 			this.ResumeLayout(false);
 
 		}
