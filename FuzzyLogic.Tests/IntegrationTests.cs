@@ -32,7 +32,7 @@ namespace FuzzyLogic.Tests
 		public void LowDecentAmmo_DeFuzzify_ModerateDesirability()
 		{
 			_module.Fuzzify("ammo", 12);
-			double expected = 37.5;
+			double expected = 31.25;
 			double actual = _module.DeFuzzify("desirability", DefuzzifyType.MaxAv);
 			Assert.AreEqual(expected, actual);
 		}

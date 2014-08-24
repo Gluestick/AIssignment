@@ -50,7 +50,7 @@ namespace FuzzyLogic
 			foreach (IFuzzySet set in _memberSets.Values)
 			{
 				bottom += set.Value;
-				top += set.Peak * set.Value;
+				top += set.RepresentativeValue * set.Value;
 			}
 			if (bottom == 0)
 			{

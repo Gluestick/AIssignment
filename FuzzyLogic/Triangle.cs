@@ -14,14 +14,15 @@
 			{
 				return 1.0;
 			}
-			else if (value >= _peakPoint && value < (_peakPoint + _maxOffset))
+			else if (value <= _peakPoint && value >= (_peakPoint - _minOffset))
+			{
+				double grad = 1.0 / _minOffset;
+				return grad * (value - (_peakPoint - _minOffset));
+			}
+			else if (value > _peakPoint && value < (_peakPoint + _maxOffset))
 			{
 				double grad = 1.0 / -_maxOffset;
 				return grad * (value - _peakPoint) + 1.0;
-			}
-			else if (value < _peakPoint && value >= (_peakPoint - _minOffset))
-			{
-				return 1.0;
 			}
 			else
 			{

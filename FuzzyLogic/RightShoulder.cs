@@ -3,7 +3,7 @@
 	public class RightShoulder : FuzzySet
 	{
 		public RightShoulder(double peak, double minOffset, double maxOffset)
-			: base(((peak - minOffset) + peak) / 2, peak, minOffset, maxOffset)
+			: base(((peak + maxOffset) + peak) / 2, peak, minOffset, maxOffset)
 		{
 		}
 

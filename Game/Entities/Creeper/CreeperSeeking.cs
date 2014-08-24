@@ -38,7 +38,7 @@ namespace ISGPAI.Game.Entities
 			FuzzyVariable health = _fuzzy.CreateFLV("health");
 			IFuzzySet hLow = health.AddLeftShoulderSet("low", 0, 25, 35);
 			IFuzzySet hNominal = health.AddTriangularSet("nominal", 25, 35, 75);
-			IFuzzySet hPlenty = health.AddRightShoulderSet("far", 35, 75, 100);
+			IFuzzySet hPlenty = health.AddRightShoulderSet("plenty", 35, 75, 100);
 
 			// One consequent (how desirable it is to commit suicide by detonating).
 			FuzzyVariable detonate = _fuzzy.CreateFLV("detonate");
@@ -63,11 +63,11 @@ namespace ISGPAI.Game.Entities
 		public override void Update(double elapsed)
 		{
 			double distance = (_target.Position - _agent.Position).Length;
-			_fuzzy.Fuzzify("distance", distance);
-			_fuzzy.Fuzzify("health", _agent.Health);
+			_fuzzy.Fuzzify("distance", 10);
+			_fuzzy.Fuzzify("health", 100);
 
 			double detonate = _fuzzy.DeFuzzify("detonate", DefuzzifyType.MaxAv);
-			if (detonate > 60)
+			if (detonate >= 60)
 			{
 				_agent.Health = 0;
 				_world.AddEntity(new CreeperExplosion(_world, _agent.Position));
