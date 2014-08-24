@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="837e2da5-062c-4386-acc8-6560e2c86ac4" name="GoalDrivenBehavior" linkedPackageId="04a67e4d-8a72-4167-bead-422f346d6c4b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="2bb97570-fe1e-443f-b5bc-9229c0509d0c">
-      <profileInstance Id="e4b3d776-820d-45a6-8b2a-f86029419afb" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="256dbc0e-9e19-446b-b7a8-329ab33d4928">
-      <profileInstance Id="b6863ddf-4cbf-4a8e-bffd-960f59971d39" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="1b444e85-2d19-4c07-8702-75f9f36e652a" name="Goal&lt;T&gt;" visibility="Package" isAbstract="true" isLeaf="false" isActiveClass="false">
@@ -260,7 +246,7 @@
       </referencedType>
     </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
-      <class Id="f51abdc5-b326-4a4c-949b-f3cb108cb059" name="CompositeGoal&lt;T&gt;" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="f51abdc5-b326-4a4c-949b-f3cb108cb059" name="CompositeGoal&lt;T&gt;" isAbstract="true" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="33609f29-1722-4a63-9336-8c99bc0c17bc" />
         <generalsInternal>
           <generalization Id="122428f3-121a-4408-a2b0-cebcb752a334" isSubstitutable="false">
@@ -395,5 +381,19 @@
   </packagedElements>
   <package Id="04a67e4d-8a72-4167-bead-422f346d6c4b" name="ModelingProject1">
     <elementDefinition Id="195e6dfe-acfc-40ad-a84d-a4c3b32b52f4" />
+    <profileInstances>
+      <packageHasProfileInstances Id="2bb97570-fe1e-443f-b5bc-9229c0509d0c">
+        <profileInstance Id="e4b3d776-820d-45a6-8b2a-f86029419afb" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="256dbc0e-9e19-446b-b7a8-329ab33d4928">
+        <profileInstance Id="b6863ddf-4cbf-4a8e-bffd-960f59971d39" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

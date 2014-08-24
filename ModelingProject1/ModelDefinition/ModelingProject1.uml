@@ -1973,7 +1973,7 @@
       <class
         Id="33609f29-1722-4a63-9336-8c99bc0c17bc"
         name="CompositeGoal&lt;T&gt;"
-        isAbstract="false"
+        isAbstract="true"
         isLeaf="false"
         isActiveClass="false">
         <generalsInternal>

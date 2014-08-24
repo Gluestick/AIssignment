@@ -73,6 +73,11 @@ namespace ISGPAI.Game.Entities
 					// to move towards.
 					Update(elapsed);
 				}
+				else
+				{
+					// Time to explore again!
+					Initialize();
+				}
 			}
 			else
 			{
@@ -82,9 +87,9 @@ namespace ISGPAI.Game.Entities
 				Velocity += acceleration * elapsed;
 				Velocity = Velocity.Truncate(MaxSpeed);
 				Position += Velocity * elapsed * _speedBoost;
+				UpdateSpriteDirection();
+				UpdateSpriteAnimation(elapsed);
 			}
-			UpdateSpriteDirection();
-			UpdateSpriteAnimation(elapsed);
 		}
 
 		public override void Paint(Graphics g)
